@@ -32,8 +32,8 @@ The workflow validates the static build; the existing Cloudflare Git integration
 owns deployment. Reconnecting Cloudflare is a dashboard operation and is not
 performed by moving these Git files.
 
-See the workspace migration guides `docs/web-repositories.md` and
-`docs/web-repositories-windows.md` for pending apps and older checkouts.
+All current product websites have independent repositories. Use the workspace
+`docs/web-repositories-windows.md` for older checkouts.
 See [CODEMAP.md](CODEMAP.md) for source ownership. App files are used only for
 capture/refresh workflows; an ordinary site install and build needs no sibling.
 
