@@ -1,0 +1,5 @@
+{
+    // Prettier is what actually performs format-on-save here and oxc supplies the
+    // save-time lint fixes; without them the settings.json beside this file is inert.
+    "recommendations": ["esbenp.prettier-vscode", "oxc.oxc-vscode"]
+}

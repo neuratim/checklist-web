@@ -1,0 +1,61 @@
+.platform-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.1rem;
+}
+
+.platform-card {
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.platform-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-sm);
+    margin-bottom: 1.1rem;
+}
+
+.platform-icon-web {
+    background: rgba(58, 168, 255, 0.14);
+    color: var(--brand-blue);
+}
+
+.platform-icon-android {
+    background: rgba(61, 220, 132, 0.14);
+    color: #3ddc84;
+}
+
+.platform-icon-ios {
+    background: rgba(242, 243, 247, 0.1);
+    color: var(--color-text-primary);
+}
+
+.platform-name {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+}
+
+.platform-detail {
+    color: var(--color-text-secondary);
+    font-size: 0.92rem;
+    margin-bottom: 1.4rem;
+    flex-grow: 1;
+}
+
+.platform-link {
+    width: 100%;
+    margin-top: auto;
+}
+
+@media (max-width: 640px) {
+    .platform-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  One page: everything on this site (How It Works, Privacy, the policy, Try
+  It) is a section or a client-side view of "/", so there is no second URL to
+  list. The host matches VITE_SITE_URL in .env — change both together.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://checklist.neuratim.com/</loc>
+  </url>
+</urlset>

@@ -1,0 +1,250 @@
+:root {
+    --color-bg: #0a0a12;
+    --color-bg-elevated: #0d0d16;
+    --color-border: rgba(255, 255, 255, 0.08);
+    --color-border-strong: rgba(255, 255, 255, 0.16);
+    --color-surface: #12121c;
+    --color-text-primary: #f2f3f7;
+    --color-text-secondary: #9aa0ae;
+
+    --brand-blue: #3aa8ff;
+    --brand-violet: #7c3aed;
+    --brand-gradient: linear-gradient(120deg, var(--brand-blue), var(--brand-violet));
+
+    /* App UI tokens, sampled from captures of the running app at 390x844,
+       light theme (scripts/app-screenshots/) — never re-derived from
+       lib/app_theme.dart, which names three colours and leaves M3 to seed the
+       rest. */
+    --app-bg: #f3f4f8;
+    --app-surface: #fafafd;
+    /* The Done group's card, and any surface the app dims one step. */
+    --app-surface-dim: #eceef2;
+    --app-primary: #1d5fe0;
+    /* A disabled filled button, and the label on it. */
+    --app-disabled: #d8d9de;
+    --app-on-disabled: #909196;
+    /* The app's error colour — what "2 required left" and an unencrypted
+       export are painted in. Measured, not guessed: the mockups previously
+       used #c0413b, which is not a colour the app paints anywhere. */
+    --app-error: #ba1a1a;
+    --app-on-surface: #191c20;
+    --app-on-surface-variant: #6b6f78;
+    --app-outline: rgba(27, 27, 33, 0.1);
+    /* What the app actually paints *on* a primary container: M3's
+       onPrimaryContainer, which CircleAvatar picks by itself. The mockups
+       used --app-primary there, which is the colour of a button, not of text
+       on a tinted circle — and at 11px it measured 4.45:1, just under AA. */
+    --app-on-primary-container: #134a74;
+    --app-primary-container: #dbe6ff;
+    --app-secondary-container: #ece2ff;
+
+    --font-sans:
+        -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, "Helvetica Neue", Arial, sans-serif;
+
+    --radius-sm: 10px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+
+    --container-width: 1120px;
+    --space-section: clamp(3.5rem, 8vw, 6.5rem);
+
+    color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+body {
+    margin: 0;
+    background: var(--color-bg);
+    color: var(--color-text-primary);
+    font-family: var(--font-sans);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin: 0;
+}
+
+a {
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+button {
+    font-family: inherit;
+}
+
+.container {
+    width: min(100% - 2.5rem, var(--container-width));
+    margin-inline: auto;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.section {
+    padding-block: var(--space-section);
+    /* The header is sticky, so a section jumped to from the menu would
+       otherwise start underneath it — losing its eyebrow and part of its
+       heading. Matches the header's own height plus a little air. */
+    scroll-margin-top: 5.5rem;
+}
+
+.section-elevated {
+    background: var(--color-bg-elevated);
+    border-block: 1px solid var(--color-border);
+}
+
+.eyebrow {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--brand-blue);
+    margin-bottom: 1rem;
+}
+
+.section-heading {
+    font-size: clamp(1.7rem, 3.2vw, 2.4rem);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-bottom: 1.1rem;
+}
+
+.section-intro {
+    color: var(--color-text-secondary);
+    font-size: 1.05rem;
+    max-width: 640px;
+    margin-bottom: 2.5rem;
+}
+
+.gradient-text {
+    background: var(--brand-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    transition:
+        border-color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.card:hover {
+    border-color: var(--color-border-strong);
+    transform: translateY(-2px);
+    box-shadow:
+        0 0 0 1px rgba(124, 58, 237, 0.25),
+        0 20px 40px -20px rgba(58, 168, 255, 0.35);
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.7rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    border: 1px solid var(--color-border-strong);
+    color: var(--color-text-secondary);
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.6rem;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.btn-primary {
+    background: var(--brand-gradient);
+    color: #06060a;
+}
+
+.btn-primary:hover {
+    box-shadow: 0 10px 30px -10px rgba(124, 58, 237, 0.6);
+}
+
+.btn-ghost {
+    background: transparent;
+    /* Inset shadow instead of a real border — a border on a border-radius: 999px pill can
+       leave a hairline anti-aliasing gap against the background in some browsers. */
+    box-shadow: inset 0 0 0 1px var(--color-border-strong);
+    color: var(--color-text-primary);
+}
+
+.btn-ghost:hover {
+    box-shadow: inset 0 0 0 1px var(--brand-blue);
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition:
+        opacity 0.6s ease,
+        transform 0.6s ease;
+}
+
+.reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        transition: none;
+        transform: none;
+    }
+}

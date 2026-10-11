@@ -1,0 +1,154 @@
+.tip-checkout {
+    padding: 1.75rem;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.tip-checkout-heading {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+/* Equal columns, so the two labels produce one shape in every language rather than two
+   sized by their own text (global rule 3.1). `align-items: stretch` is the grid default and
+   is what keeps them the same height when one label wraps and the other does not. */
+.tip-checkout-tabs {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.35rem;
+    padding: 0.3rem;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    background: var(--color-bg);
+}
+
+/* Selecting changes colour only. Nothing here differs in size between the two states, so the
+   tab under the pointer never moves (global rule 3.3). */
+.tip-checkout-tab {
+    padding: 0.55rem 0.9rem;
+    border: none;
+    border-radius: 999px;
+    background: transparent;
+    color: var(--color-text-secondary);
+    font: inherit;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-align: center;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.tip-checkout-tab:hover {
+    color: var(--color-text-primary);
+}
+
+.tip-checkout-tab-active {
+    background: color-mix(in srgb, var(--brand-blue) 14%, transparent);
+    color: var(--color-text-primary);
+}
+
+/* The card is a flex column with a gap, and the panel inherits that so the amount step's
+   controls keep the rhythm they had before the tabs were added. */
+.tip-checkout-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.tip-checkout-note {
+    color: var(--color-text-secondary);
+    font-size: 0.8rem;
+}
+
+.tip-checkout-amount-label,
+.tip-checkout-custom-label {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+}
+
+.tip-checkout-presets {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+}
+
+.tip-checkout-preset {
+    padding: 0.6rem 1.1rem;
+    border-radius: 999px;
+    border: 1px solid var(--color-border-strong);
+    background: transparent;
+    color: var(--color-text-primary);
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease;
+}
+
+.tip-checkout-preset:hover {
+    border-color: var(--brand-blue);
+}
+
+.tip-checkout-preset-active {
+    border-color: var(--brand-blue);
+    background: rgba(58, 168, 255, 0.12);
+}
+
+.tip-checkout-custom-input {
+    padding: 0.7rem 0.9rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--color-border-strong);
+    background: var(--color-bg);
+    color: var(--color-text-primary);
+    font-size: 0.95rem;
+    width: 100%;
+}
+
+.tip-checkout-custom-input:focus {
+    outline: none;
+    border-color: var(--brand-blue);
+}
+
+.tip-checkout-continue {
+    width: 100%;
+}
+
+.tip-checkout-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.tip-checkout-actions {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.tip-checkout-actions .btn {
+    flex: 1;
+}
+
+.tip-checkout-error {
+    color: #f87171;
+    font-size: 0.85rem;
+}
+
+.tip-checkout-success-heading {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+}
+
+.tip-checkout-success-body {
+    color: var(--color-text-secondary);
+    font-size: 0.95rem;
+}
+
+.tip-checkout-powered-by {
+    color: var(--color-text-secondary);
+    font-size: 0.8rem;
+}

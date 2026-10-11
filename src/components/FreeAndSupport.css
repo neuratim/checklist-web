@@ -1,0 +1,148 @@
+.not-here-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    margin-bottom: 2.5rem;
+}
+
+.not-here-badge {
+    font-size: 0.85rem;
+    padding: 0.45rem 1rem;
+}
+
+.support-note {
+    max-width: 680px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 1.75rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.3rem;
+}
+
+.support-note p {
+    color: var(--color-text-secondary);
+    font-size: 0.98rem;
+}
+
+.free-tip-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.free-tip-links-label {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+}
+
+.free-tip-links-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.free-tip-link-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.free-tip-link-note {
+    font-size: 0.72rem;
+    color: var(--color-text-secondary);
+}
+
+.free-tip-email {
+    font-size: 0.9rem;
+}
+
+.free-tip-email a {
+    color: var(--brand-blue);
+    text-decoration: underline;
+}
+
+/* The bordered appeal between the section's prose and the ways to pay. It is the one block
+   here meant to interrupt a reader, so it does not take the quiet treatment of everything
+   around it: an accent wash over the surface, an accent border rather than the neutral
+   hairline, a coloured glow, and the accent as a rule down the leading edge.
+
+   Every colour is mixed from the site's own accent token rather than written as a literal,
+   so the panel is legible on a light theme and a dark one without a second rule. `overflow`
+   is what clips the edge rule to the rounded corners. */
+.support-pledge {
+    position: relative;
+    overflow: hidden;
+    align-self: stretch;
+    display: flex;
+    gap: 1.15rem;
+    /* A little extra on the leading side, where the accent rule sits. Written in inline/block
+       terms so the rule and its clearance stay on the same edge in Arabic. */
+    padding-block: 1.6rem;
+    padding-inline: 1.9rem 1.6rem;
+    border: 1px solid color-mix(in srgb, var(--brand-blue) 38%, transparent);
+    border-radius: var(--radius-md);
+    background:
+        radial-gradient(
+            130% 160% at 100% 100%,
+            color-mix(in srgb, var(--brand-blue) 20%, transparent),
+            transparent 60%
+        ),
+        var(--color-surface);
+    box-shadow: 0 20px 45px -28px color-mix(in srgb, var(--brand-blue) 60%, transparent);
+}
+
+.support-pledge::before {
+    content: "";
+    position: absolute;
+    inset-block: 0;
+    inset-inline-start: 0;
+    width: 3px;
+    background: var(--brand-blue);
+}
+
+/* A badge rather than a bare glyph, so the panel reads as a callout at a glance. The explicit
+   size keeps it off the parent's `align-items: stretch` default, so it sits beside the heading
+   rather than growing down the length of the paragraph. */
+.support-pledge-icon {
+    flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border: 1px solid color-mix(in srgb, var(--brand-blue) 42%, transparent);
+    border-radius: var(--radius-sm);
+    background: color-mix(in srgb, var(--brand-blue) 16%, transparent);
+    color: var(--brand-blue);
+}
+
+.support-pledge-text {
+    min-width: 0;
+}
+
+.support-pledge-heading {
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.4rem;
+}
+
+.support-pledge-body {
+    color: var(--color-text-secondary);
+    font-size: 0.95rem;
+}
+
+/* On a phone the icon column costs the text most of a word per line, and the panel's own
+   padding has taken the rest — so the badge moves above the heading. */
+@media screen and (max-width: 520px) {
+    .support-pledge {
+        flex-direction: column;
+        gap: 0.85rem;
+        padding-block: 1.35rem;
+        padding-inline: 1.6rem 1.35rem;
+    }
+}

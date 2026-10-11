@@ -1,0 +1,41 @@
+.footer {
+    border-top: 1px solid var(--color-border);
+    padding-block: 2.5rem;
+}
+
+/* Two children only — the line of prose and the links — so `space-between`
+   pins the prose left and the links right on a wide screen, and the two stack
+   in reading order once the row no longer fits. */
+.footer-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem 1.5rem;
+}
+
+.footer-line {
+    color: var(--color-text-secondary);
+    font-size: 0.85rem;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 1.4rem;
+}
+
+/* The vertical padding is the tappable area, not decoration: it lifts a
+   0.85rem link to a target a thumb can hit without changing the rhythm. */
+.footer-links a {
+    padding-block: 0.55rem;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.footer-links a:hover {
+    color: var(--color-text-primary);
+}

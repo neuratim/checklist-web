@@ -1,0 +1,7 @@
+# checklist.neuratim.com — the product's page, and the one that should rank.
+# Without this file the SPA fallback answers /robots.txt with index.html,
+# which crawlers report as an invalid robots file.
+User-agent: *
+Allow: /
+
+Sitemap: https://checklist.neuratim.com/sitemap.xml

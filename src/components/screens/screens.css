@@ -1,0 +1,730 @@
+.app-bar {
+    padding: 44px 16px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Run screen pulls the subtitle closer to the title beneath it, and starts
+   higher: the status bar overlay is 30px tall, so 44px of clearance is 14px
+   the tallest mockup on the page cannot spare. */
+.app-bar-tight {
+    padding-top: 36px;
+    padding-bottom: 4px;
+}
+
+.app-bar-title {
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -0.2px;
+}
+
+.app-bar-heading {
+    min-width: 0;
+}
+
+/* The app truncates a long checklist name onto one line; letting it wrap in
+   the mockup costs a row at the bottom of a fixed-height frame. */
+.app-bar-title-truncated {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.app-bar-subtitle {
+    font-size: 11px;
+    color: var(--app-on-surface-variant);
+    margin-top: 2px;
+}
+
+/* A pushed screen leads with a back arrow, so its title sits beside it
+   rather than at the start of the bar. */
+.app-bar-title-leading {
+    margin-inline-start: 12px;
+}
+
+.app-bar-icons {
+    display: flex;
+    gap: 10px;
+    color: var(--app-on-surface-variant);
+    font-size: 15px;
+}
+
+.app-body {
+    flex: 1;
+    overflow: hidden;
+    padding: 10px 14px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* Containing block for the absolutely positioned .fab. */
+.app-body-anchored {
+    position: relative;
+}
+
+/* Checklist item rows sit almost flush against each other. */
+.app-body-dense {
+    gap: 2px;
+    padding-top: 6px;
+}
+
+/* Nothing in the run screen may absorb an overflow by squashing: a flex item
+   that shrinks here clips its own content instead of the frame showing the
+   list is longer than the screen. */
+.app-body-dense > * {
+    flex-shrink: 0;
+}
+
+.start-card {
+    background: var(--brand-gradient);
+    border-radius: 16px;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+}
+
+.start-card-title {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.start-card-subtitle {
+    font-size: 11px;
+    opacity: 0.85;
+    margin-top: 2px;
+}
+
+.section-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.section-label-count {
+    font-size: 11px;
+    color: var(--app-on-surface-variant);
+    font-weight: 600;
+}
+
+.tile-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.tile-stack-spaced {
+    margin-top: 8px;
+}
+
+.list-tile {
+    background: var(--app-surface);
+    border: 1px solid var(--app-outline);
+    border-radius: 14px;
+    padding: 10px 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Reminder tiles wrap onto two lines, so the icon anchors to the top. */
+.list-tile-top {
+    align-items: flex-start;
+}
+
+.list-tile-avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    flex-shrink: 0;
+    background: var(--app-primary-container);
+    color: var(--app-on-primary-container);
+}
+
+.list-tile-avatar.violet {
+    background: var(--app-secondary-container);
+    color: var(--brand-violet);
+}
+
+/* A template's own icon disc, which the app paints as the brand gradient. */
+.list-tile-avatar.gradient {
+    background: var(--brand-gradient);
+    color: #fff;
+}
+
+.list-tile-body {
+    flex: 1;
+    min-width: 0;
+}
+
+.list-tile-drag {
+    color: var(--app-on-surface-variant);
+    flex-shrink: 0;
+}
+
+.list-tile-title {
+    font-size: 12.5px;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.list-tile-subtitle {
+    font-size: 10.5px;
+    color: var(--app-on-surface-variant);
+    margin-top: 1px;
+}
+
+.chip-row {
+    display: flex;
+    gap: 6px;
+    overflow: hidden;
+}
+
+.chip {
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 10.5px;
+    font-weight: 600;
+    border: 1px solid var(--app-outline);
+    color: var(--app-on-surface-variant);
+    white-space: nowrap;
+}
+
+.chip.active {
+    background: var(--app-primary-container);
+    color: var(--app-primary);
+    border-color: transparent;
+}
+
+.fab {
+    position: absolute;
+    inset-inline-end: 16px;
+    bottom: 16px;
+    background: var(--brand-gradient);
+    color: #fff;
+    border-radius: 999px;
+    padding: 10px 16px;
+    font-size: 11px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 10px 20px -8px rgba(124, 58, 237, 0.6);
+}
+
+.bottom-nav {
+    display: flex;
+    border-top: 1px solid var(--app-outline);
+    background: var(--app-surface);
+    padding: 8px 0 10px;
+}
+
+.bottom-nav-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    font-size: 9.5px;
+    font-weight: 600;
+    color: var(--app-on-surface-variant);
+}
+
+.bottom-nav-item .dot {
+    width: 5px;
+    height: 5px;
+}
+
+.bottom-nav-item.active {
+    color: var(--app-primary);
+}
+
+.bottom-nav-icon {
+    font-size: 15px;
+    line-height: 1;
+}
+
+.item-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* Tight on purpose: the run mockup carries two groups plus the Done one
+       inside a 572px frame, and 1px per row is the difference between the
+       last row being drawn and being clipped. */
+    padding: 4px 0;
+    border-bottom: 1px solid var(--app-outline);
+}
+
+.item-row:last-child {
+    border-bottom: none;
+}
+
+/* The run screen keeps its rows inside one rounded card, and dims the whole
+   card once its group is the Done one. */
+.item-card {
+    background: var(--app-surface);
+    border: 1px solid var(--app-outline);
+    border-radius: 14px;
+    padding: 0 12px 2px;
+}
+
+.item-card-done {
+    background: var(--app-surface-dim);
+}
+
+.item-text {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.item-name {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.item-name.checked {
+    color: var(--app-on-surface-variant);
+    text-decoration: line-through;
+}
+
+.item-caption {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    font-size: 9.5px;
+    color: var(--app-on-surface-variant);
+}
+
+/* A conditional item whose rules currently hold — the app calls this out in
+   the error colour, since it has just started blocking Finish. */
+.item-caption.required-now {
+    color: var(--app-error);
+    font-weight: 700;
+}
+
+.checkbox {
+    width: 17px;
+    height: 17px;
+    border-radius: 5px;
+    border: 1.6px solid var(--app-on-surface-variant);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: #fff;
+}
+
+.checkbox.checked {
+    background: var(--app-primary);
+    border-color: var(--app-primary);
+}
+
+.group-label {
+    font-size: 10.5px;
+    font-weight: 700;
+    color: var(--app-on-surface-variant);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-top: 2px;
+}
+
+/* The Done group announces itself in the primary colour — it is the one
+   heading in the run that is a statement of progress rather than a label. */
+.done-label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 6px 0 3px;
+    font-size: 10.5px;
+    font-weight: 700;
+    color: var(--app-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.finish-bar {
+    padding: 8px 16px 16px;
+}
+
+.finish-note {
+    font-size: 10.5px;
+    color: var(--app-error);
+    margin-bottom: 6px;
+    text-align: center;
+}
+
+/* Solid primary, not the site's gradient: the app paints Finish in
+   --app-primary, and the mockup is a claim about the app. */
+.finish-btn {
+    width: 100%;
+    padding: 11px;
+    border-radius: 999px;
+    background: var(--app-primary);
+    color: #fff;
+    font-size: 12.5px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.finish-btn.disabled {
+    background: var(--app-disabled);
+    color: var(--app-on-disabled);
+}
+
+/* --- Condition builder ------------------------------------------------- */
+
+.condition-bar-title {
+    flex: 1;
+    margin-inline-start: 10px;
+}
+
+.condition-body {
+    gap: 10px;
+}
+
+.condition-item {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.condition-intro {
+    font-size: 10.5px;
+    color: var(--app-on-surface-variant);
+    margin-top: 2px;
+}
+
+.rule-card {
+    background: var(--app-surface);
+    border: 1px solid var(--app-outline);
+    border-radius: 12px;
+    padding: 8px 10px;
+}
+
+.rule-card-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.rule-card-name {
+    flex: 1;
+    min-width: 0;
+    font-size: 11.5px;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.rule-card-remove {
+    color: var(--app-on-surface-variant);
+    flex-shrink: 0;
+}
+
+.rule-card-state {
+    margin-top: 6px;
+    padding: 5px 9px;
+    border-radius: 8px;
+    background: var(--app-primary-container);
+    color: var(--app-on-surface-variant);
+    font-size: 10px;
+}
+
+.join-chip-row {
+    display: flex;
+    justify-content: center;
+    padding: 6px 0;
+}
+
+/* The AND/OR connector is a control, not a label — it reads as tappable. */
+.join-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--app-outline);
+    background: var(--app-surface);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
+
+.add-rule {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--app-primary);
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.summary-card {
+    margin-top: auto;
+    margin-bottom: 4px;
+    border-radius: 12px;
+    padding: 10px 12px;
+    background: var(--app-primary-container);
+}
+
+.summary-card-label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 9.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--app-primary);
+}
+
+.summary-card-body {
+    margin-top: 5px;
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+.reminder-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    flex-shrink: 0;
+    background: var(--app-primary-container);
+}
+
+.reminder-icon.finish {
+    background: var(--app-secondary-container);
+}
+
+/* --- Bottom sheet ------------------------------------------------------- */
+
+.sheet-scrim {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.42);
+}
+
+.sheet {
+    position: absolute;
+    inset-inline: 0;
+    bottom: 0;
+    background: var(--app-bg);
+    border-radius: 22px 22px 0 0;
+    padding: 8px 16px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.sheet-handle {
+    width: 32px;
+    height: 4px;
+    border-radius: 999px;
+    background: var(--app-on-surface-variant);
+    margin: 0 auto 10px;
+}
+
+.sheet-title {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.sheet-tile {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 7px 0;
+}
+
+.sheet-tile-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background: var(--app-primary-container);
+    color: var(--app-on-primary-container);
+}
+
+/* A template's own avatar, which the app paints as a gradient disc. */
+.sheet-tile-icon.gradient {
+    background: var(--brand-gradient);
+    color: #fff;
+}
+
+.sheet-tile-title {
+    font-size: 12.5px;
+    font-weight: 600;
+}
+
+.sheet-divider {
+    height: 1px;
+    background: var(--app-outline);
+    margin: 6px 0;
+}
+
+/* --- Statistics --------------------------------------------------------- */
+
+/* Padding without the 14px row gap: these screens are prose and cards, not a
+   stack of evenly spaced tiles. */
+.app-body-tight {
+    gap: 0;
+}
+
+.stats-subtitle {
+    font-size: 10.5px;
+    color: var(--app-on-surface-variant);
+    margin: 0 0 12px;
+}
+
+.stat-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.stat-tile {
+    background: var(--app-surface);
+    border: 1px solid var(--app-outline);
+    border-radius: 12px;
+    padding: 10px 12px;
+}
+
+.stat-value {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--app-primary);
+    line-height: 1.1;
+}
+
+.stat-label {
+    font-size: 10px;
+    margin-top: 2px;
+}
+
+.stats-section {
+    margin-top: 18px;
+}
+
+.stats-section-title {
+    font-size: 11.5px;
+    font-weight: 700;
+}
+
+.stats-section-help {
+    font-size: 10px;
+    color: var(--app-on-surface-variant);
+    margin-top: 2px;
+}
+
+.stat-card {
+    background: var(--app-surface);
+    border: 1px solid var(--app-outline);
+    border-radius: 12px;
+    margin-top: 8px;
+    padding: 2px 12px;
+}
+
+.stat-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--app-outline);
+}
+
+.stat-row:last-child {
+    border-bottom: none;
+}
+
+.stat-row-name {
+    font-size: 11.5px;
+}
+
+.stat-row-count {
+    font-size: 10px;
+    color: var(--app-on-surface-variant);
+    white-space: nowrap;
+}
+
+/* --- Backup & restore --------------------------------------------------- */
+
+.backup-intro {
+    font-size: 11px;
+    margin: 0 0 12px;
+    line-height: 1.45;
+}
+
+.privacy-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    background: var(--app-surface-dim);
+    border-radius: 12px;
+    padding: 10px 12px;
+    color: var(--app-on-surface-variant);
+}
+
+.privacy-note-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--app-on-surface);
+}
+
+.privacy-note-body {
+    font-size: 9.5px;
+    line-height: 1.45;
+    margin: 3px 0 0;
+}
+
+.app-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    margin-top: 12px;
+    padding: 10px;
+    border-radius: 999px;
+    font-size: 11.5px;
+    font-weight: 600;
+}
+
+.app-btn-filled {
+    background: var(--app-primary);
+    color: #fff;
+}
+
+.app-btn-outlined {
+    border: 1px solid var(--app-outline);
+    color: var(--app-primary);
+}
+
+.app-btn-text {
+    color: var(--app-primary);
+    justify-content: flex-start;
+    padding-inline: 4px;
+}

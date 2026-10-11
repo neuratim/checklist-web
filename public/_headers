@@ -1,0 +1,15 @@
+# Response headers for checklist.neuratim.com (Cloudflare serves this file
+# from the deployed assets — it is config, never served itself).
+#
+# Report-only CSP first: this page loads Stripe's SDK for the quick tip and
+# embeds the app from another origin, so an enforcing policy that is even
+# slightly wrong silently breaks payments or the Try It demo. No report-to
+# endpoint exists, so violations surface in the browser console: walk the
+# page (tip widget and Try It included), then promote this to
+# Content-Security-Policy.
+/*
+  Content-Security-Policy-Report-Only: default-src 'self'; base-uri 'self'; connect-src 'self' https://neuratim.com https://api.stripe.com; font-src 'self' data:; form-action 'self'; frame-ancestors 'none'; frame-src https://js.stripe.com https://hooks.stripe.com https://checklist-app.neuratim.com; img-src 'self' data:; object-src 'none'; script-src 'self' https://js.stripe.com; style-src 'self' 'unsafe-inline'; upgrade-insecure-requests
+  Permissions-Policy: camera=(), geolocation=(), microphone=()
+  Referrer-Policy: strict-origin-when-cross-origin
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  X-Content-Type-Options: nosniff

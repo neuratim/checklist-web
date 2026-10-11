@@ -1,0 +1,39 @@
+name: Verify website
+
+on:
+    push:
+        branches: [main]
+    workflow_dispatch:
+
+permissions:
+    contents: read
+
+concurrency:
+    group: website-${{ github.ref }}
+    cancel-in-progress: false
+
+jobs:
+    verify:
+        if: github.ref == 'refs/heads/main'
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout website only
+              uses: actions/checkout@v6
+              with:
+                  fetch-depth: 1
+                  submodules: false
+            - name: Set up Node
+              uses: actions/setup-node@v6
+              with:
+                  node-version: 24
+                  cache: npm
+            - name: Install dependencies
+              run: npm ci
+            - name: Check formatting
+              run: npm run format:check
+            - name: Lint
+              run: npm run lint
+            - name: Type-check
+              run: npm run tsc
+            - name: Build and verify static output
+              run: npm run build

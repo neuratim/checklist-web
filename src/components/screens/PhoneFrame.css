@@ -1,0 +1,31 @@
+.phone-frame {
+    position: relative;
+    width: 280px;
+    background: #08080c;
+    border-radius: 38px;
+    padding: 10px;
+    box-shadow:
+        0 0 0 2px rgba(255, 255, 255, 0.06),
+        0 40px 80px -30px rgba(0, 0, 0, 0.7),
+        0 0 60px -15px rgba(124, 58, 237, 0.35);
+    flex-shrink: 0;
+}
+
+.phone-screen {
+    aspect-ratio: 1206 / 2622;
+    background: var(--app-bg);
+    border-radius: 28px;
+    overflow: hidden;
+    width: 100%;
+}
+
+@media (max-width: 640px) {
+    .phone-frame {
+        border-radius: 32px;
+        width: 240px;
+    }
+
+    .phone-screen {
+        border-radius: 22px;
+    }
+}

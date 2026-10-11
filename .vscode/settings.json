@@ -1,0 +1,49 @@
+{
+    // Save runs *this project's* tools, never a global default. Prettier reads the
+    // .prettierrc.json beside this folder and oxlint reads its .oxlintrc.json, so
+    // the editor and `npm run format` / `npm run lint` cannot drift apart — which
+    // is what the pre-commit hook rejects a commit for.
+    "[css]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+    "[html]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+    // oxlint's safe fixes, on a real Ctrl+S only: "always" would also fire on
+    // auto-save and rewrite code while you are still typing it.
+    "[javascript]": {
+        "editor.codeActionsOnSave": { "source.fixAll.oxc": "explicit" },
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascriptreact]": {
+        "editor.codeActionsOnSave": { "source.fixAll.oxc": "explicit" },
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+    "[jsonc]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+    // Two trailing spaces are a hard line break in Markdown, so the trim below
+    // must not apply here.
+    "[markdown]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "files.trimTrailingWhitespace": false
+    },
+    "[typescript]": {
+        "editor.codeActionsOnSave": { "source.fixAll.oxc": "explicit" },
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescriptreact]": {
+        "editor.codeActionsOnSave": { "source.fixAll.oxc": "explicit" },
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[yaml]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+    "editor.formatOnSave": true,
+    "files.eol": "\n",
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
+    // oxc-vscode 1.60 turns its experimental oxfmt formatter on by default. It
+    // registers for the same files as Prettier and formats to its own style
+    // rather than to .prettierrc.json, so it stays off — oxlint is the half of
+    // that extension this workspace wants.
+    "oxc.enable.oxfmt": false,
+    // No .oxlintrc.json in the folder means no oxc language server for it at all.
+    "oxc.requireConfig": true,
+    // A file whose project declares no Prettier config is left alone rather than
+    // reformatted to Prettier's defaults.
+    "prettier.requireConfig": true
+}

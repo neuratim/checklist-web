@@ -1,0 +1,318 @@
+.nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+
+    /* Sticky header height: used so the open hamburger panel can scroll inside
+       the remaining viewport rather than vanishing under the fold. */
+    --nav-height: calc(40px + 1.7rem + 1px);
+
+    background: rgba(10, 10, 18, 0.75);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.nav-inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding-block: 0.85rem;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    flex-shrink: 0;
+    min-width: 0;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.98rem;
+    color: var(--color-text-primary);
+}
+
+.nav-brand span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.nav-brand-icon {
+    border-radius: 7px;
+    flex-shrink: 0;
+}
+
+/* Trailing cluster: as many links as fit, then language, then (only when no
+   link fits) the hamburger. */
+.nav-end {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.85rem;
+    min-width: 0;
+    flex: 1;
+}
+
+.nav-inline {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    gap: 1.15rem;
+    min-width: 0;
+}
+
+.nav-inline > a {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+    flex-shrink: 0;
+    position: relative;
+    white-space: nowrap;
+    transition: color 0.2s ease;
+}
+
+.nav-inline > a:hover {
+    color: var(--color-text-primary);
+}
+
+.nav-inline > a[aria-current="location"] {
+    color: var(--brand-blue);
+}
+
+.nav-inline > a[aria-current="location"]::after {
+    background: currentColor;
+    border-radius: 999px;
+    content: "";
+    height: 2px;
+    inset-block-end: -0.45rem;
+    inset-inline: 0;
+    position: absolute;
+}
+
+.nav-language {
+    flex-shrink: 0;
+}
+
+.nav-more-wrap {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.nav-more {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius-sm);
+    background: transparent;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    font-size: 1.25rem;
+    line-height: 1;
+    letter-spacing: 0.05em;
+    transition:
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.nav-more:hover,
+.nav-more[aria-expanded="true"],
+.nav-more[data-has-current="true"] {
+    color: var(--color-text-primary);
+    border-color: var(--brand-blue);
+}
+
+.nav-more:focus-visible {
+    outline: 2px solid var(--brand-blue);
+    outline-offset: 2px;
+}
+
+.nav-more-menu {
+    position: absolute;
+    top: calc(100% + 0.45rem);
+    inset-inline-end: 0;
+    z-index: 60;
+    display: flex;
+    flex-direction: column;
+    min-width: 12rem;
+    padding: 0.35rem 0;
+    background: var(--color-bg-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+}
+
+.nav-more-menu a {
+    padding: 0.65rem 1rem;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    white-space: nowrap;
+    transition:
+        color 0.15s ease,
+        background 0.15s ease;
+}
+
+.nav-more-menu a:hover,
+.nav-more-menu a:focus-visible {
+    color: var(--color-text-primary);
+    background: rgba(255, 255, 255, 0.04);
+    outline: none;
+}
+
+.nav-more-menu a[aria-current="location"] {
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--brand-blue);
+}
+
+.nav-hamburger-wrap {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.nav-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+}
+
+.nav-toggle span {
+    display: block;
+    height: 2px;
+    margin-inline: 9px;
+    background: var(--color-text-primary);
+    border-radius: 2px;
+}
+
+.nav-toggle:focus-visible {
+    outline: 2px solid var(--brand-blue);
+    outline-offset: 2px;
+}
+
+.nav-toggle[data-has-current="true"] {
+    border-color: var(--brand-blue);
+}
+
+.nav-toggle[data-has-current="true"] span {
+    background: var(--brand-blue);
+}
+
+.nav-hamburger-menu {
+    position: absolute;
+    top: calc(100% + 0.55rem);
+    inset-inline-end: 0;
+    z-index: 60;
+    display: flex;
+    flex-direction: column;
+    min-width: min(18rem, calc(100vw - 2rem));
+    max-height: 0;
+    overflow: hidden;
+    background: var(--color-bg-elevated);
+    border: 1px solid transparent;
+    border-radius: var(--radius-sm);
+    overscroll-behavior: contain;
+    transition: max-height 0.3s ease;
+}
+
+.nav-hamburger-menu-open {
+    max-height: calc(100vh - var(--nav-height));
+    max-height: calc(100dvh - var(--nav-height));
+    overflow-y: auto;
+    border-color: var(--color-border);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+.nav-hamburger-menu a {
+    padding: 1rem 1.25rem;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.nav-hamburger-menu a:hover,
+.nav-hamburger-menu a:focus-visible {
+    color: var(--color-text-primary);
+    background: rgba(255, 255, 255, 0.04);
+    outline: none;
+}
+
+.nav-hamburger-menu a[aria-current="location"] {
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--brand-blue);
+}
+
+/* Invisible twin of the inline row — widths only, never painted or focusable. */
+.nav-measure {
+    position: absolute;
+    inset-inline-start: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    gap: 1.15rem;
+    visibility: hidden;
+    pointer-events: none;
+    height: 0;
+    overflow: hidden;
+}
+
+.nav-measure [data-nav-measure] {
+    font-size: 0.88rem;
+    font-weight: 500;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* The wordmark measured at both its lengths, in the type it actually renders in:
+   the brand ladder (full name → product name → mark) is picked from these two
+   widths, so they have to come from the brand's own rules and must never be the
+   shrunken ones. */
+.nav-measure .nav-brand,
+.nav-measure .nav-brand span {
+    flex-shrink: 0;
+    overflow: visible;
+}
+
+/* Mobile presentation header: pin the mark left and the language/menu cluster
+   right so the sticky bar stays compact and never wraps to a second row. */
+@media (max-width: 520px) {
+    .nav {
+        --nav-height: 52px;
+    }
+
+    .nav-inner {
+        gap: 0.75rem;
+        justify-content: space-between;
+        padding-block: 0.4rem;
+    }
+
+    .nav-inner > .nav-brand {
+        gap: 0;
+        margin-inline-end: auto;
+    }
+
+    .nav-inner > .nav-brand span {
+        display: none;
+    }
+
+    .nav-end {
+        margin-inline-start: auto;
+    }
+}

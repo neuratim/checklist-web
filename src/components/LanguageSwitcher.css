@@ -1,0 +1,189 @@
+/* The closed control and the open panel are one object: the panel is pinned to both
+   inline edges of the trigger (inset-inline: 0) and the trigger is held at the width
+   of the longest language name, so every border lines up whatever is selected. */
+.language-switcher {
+    --switcher-border: var(--color-border-strong);
+    --switcher-border-open: color-mix(in srgb, var(--brand-blue) 55%, var(--color-border-strong));
+    --switcher-hover: color-mix(in srgb, var(--color-text-primary) 7%, transparent);
+    --switcher-icon: 12px;
+    --switcher-inline: 0.8rem;
+    --switcher-radius: var(--radius-sm);
+
+    display: inline-flex;
+    position: relative;
+}
+
+.language-switcher-trigger {
+    align-items: center;
+    background: var(--color-surface);
+    border: 1px solid var(--switcher-border);
+    border-radius: var(--switcher-radius);
+    color: var(--color-text-primary);
+    cursor: pointer;
+    display: inline-flex;
+    font-family: inherit;
+    font-size: 0.85rem;
+    gap: 0.6rem;
+    line-height: 1.4;
+    padding-block: 0.45rem;
+    padding-inline: var(--switcher-inline);
+    text-align: start;
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.language-switcher-trigger:hover {
+    border-color: var(--brand-blue);
+}
+
+.language-switcher-trigger[aria-expanded="true"] {
+    background: var(--color-bg-elevated);
+    border-color: var(--switcher-border-open);
+}
+
+.language-switcher-trigger:focus-visible {
+    outline: 2px solid var(--brand-blue);
+    outline-offset: 2px;
+}
+
+/* Both children occupy the same grid cell; the sizer is measured, never painted. */
+.language-switcher-value {
+    display: grid;
+    min-width: 0;
+}
+
+.language-switcher-current,
+.language-switcher-sizer {
+    grid-area: 1 / 1;
+}
+
+.language-switcher-current {
+    white-space: nowrap;
+}
+
+.language-switcher-sizer {
+    display: flex;
+    flex-direction: column;
+    height: 0;
+    overflow: hidden;
+    pointer-events: none;
+    visibility: hidden;
+}
+
+.language-switcher-sizer > span {
+    white-space: nowrap;
+}
+
+.language-switcher-caret,
+.language-switcher-check {
+    flex-shrink: 0;
+    height: var(--switcher-icon);
+    width: var(--switcher-icon);
+}
+
+.language-switcher-caret {
+    color: var(--color-text-secondary);
+    transition: color 0.2s ease;
+}
+
+.language-switcher-trigger:hover .language-switcher-caret,
+.language-switcher-trigger[aria-expanded="true"] .language-switcher-caret {
+    color: var(--brand-blue);
+}
+
+.language-switcher-list {
+    animation: language-switcher-in 0.14s ease-out;
+    background: var(--color-bg-elevated);
+    border: 1px solid var(--switcher-border-open);
+    border-radius: var(--radius-sm);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.45);
+    display: flex;
+    flex-direction: column;
+    inset-inline: 0;
+    max-height: min(19rem, calc(100dvh - 7rem));
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding-block: 0.3rem;
+    position: absolute;
+    scrollbar-color: color-mix(in srgb, var(--color-text-secondary) 55%, transparent) transparent;
+    scrollbar-width: thin;
+    top: calc(100% + 0.4rem);
+    z-index: 60;
+}
+
+.language-switcher-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.language-switcher-list::-webkit-scrollbar-thumb {
+    background: color-mix(in srgb, var(--color-text-secondary) 55%, transparent);
+    background-clip: padding-box;
+    border: 2px solid transparent;
+    border-radius: 999px;
+}
+
+/* Same inline padding as the trigger, and the check sits in the caret's column —
+   so the ticked row reads as the value the closed control shows. */
+.language-switcher-option {
+    align-items: center;
+    background: transparent;
+    border: 0;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    display: flex;
+    font-family: inherit;
+    font-size: 0.85rem;
+    gap: 0.6rem;
+    justify-content: space-between;
+    line-height: 1.4;
+    padding-block: 0.5rem;
+    padding-inline: var(--switcher-inline);
+    text-align: start;
+    transition:
+        background 0.15s ease,
+        color 0.15s ease;
+}
+
+.language-switcher-option-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.language-switcher-option:hover,
+.language-switcher-option:focus-visible {
+    background: var(--switcher-hover);
+    color: var(--color-text-primary);
+}
+
+.language-switcher-option:focus-visible {
+    outline: 2px solid var(--brand-blue);
+    outline-offset: -2px;
+}
+
+.language-switcher-option[aria-checked="true"] {
+    color: var(--brand-blue);
+}
+
+/* Hidden rather than absent, so a row never changes width when it is ticked. */
+.language-switcher-check {
+    visibility: hidden;
+}
+
+.language-switcher-option[aria-checked="true"] .language-switcher-check {
+    visibility: visible;
+}
+
+@keyframes language-switcher-in {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .language-switcher-list {
+        animation: none;
+    }
+}
