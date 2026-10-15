@@ -97,3 +97,7 @@ failure boundary; it never substitutes English or clears the prerendered page.
 `index.html` also retains this host's issued `yandex-verification` ownership
 meta in every generated locale head. Preserve it with the Seznam proof and
 permanent IndexNow key across rebuilds; it adds no analytics.
+
+`index.html` also retains this host's issued `naver-site-verification` ownership
+meta in every generated locale head. Preserve it with the Seznam and Yandex proofs and
+permanent IndexNow key across rebuilds; it adds no analytics.
