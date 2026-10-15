@@ -1,3 +1,4 @@
+import { isLanguageCode, LANGUAGES as SEO_LANGUAGES } from "./i18n/languages";
 import type { LanguageCode } from "./types/language";
 import { DICTIONARIES } from "./i18n/registry";
 import { renderToStaticMarkup } from "react-dom/server";
@@ -24,4 +25,20 @@ export function renderPrivacyPolicyMetadata() {
 
 export function renderPrivacyPolicyCopy(language: LanguageCode = "en") {
     return DICTIONARIES[language].privacyPolicy;
+}
+
+export const seoLanguages = SEO_LANGUAGES.map((language) => language.code);
+
+export async function renderSeoPage(pathname: string, requestedLanguage: string) {
+    if (!isLanguageCode(requestedLanguage)) throw new Error(`Unsupported language: ${requestedLanguage}`);
+    const language = requestedLanguage;
+    const dictionary = DICTIONARIES[language];
+    const policyPage = pathname.replace(/\/$/, "") === "/privacy-policy";
+    const metadata = policyPage
+        ? {
+              title: `${dictionary.privacyPolicy.title} — ${dictionary.privacyPolicy.eyebrow}`,
+              description: dictionary.privacyPolicy.intro,
+          }
+        : {};
+    return { ...metadata, markup: await renderApp(pathname, language) };
 }

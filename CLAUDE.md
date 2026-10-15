@@ -84,10 +84,10 @@ locale is a `LocaleDictionary` (a `DeepPartial`) overlaid onto English at load t
 - **Arrays merge by index.** Keep their semantic ordering consistent in all languages;
   insertions and reordering require the corresponding translated entries.
 
-18 locales, same set as the app. `LanguageProvider` resolves the initial language from
-`?lang=` → `localStorage` → `navigator.language` → `en`, writes the choice back into the
-URL, and sets `documentElement.lang`/`dir` (`ar` is the one RTL locale). Read copy with
-`useLanguage()`, which throws outside the provider.
+18 locales, same set as the app. `LanguageProvider` reads an explicit language path first, accepts legacy `?lang=`
+links on unprefixed paths, and otherwise uses English so each URL stays stable.
+It sets `documentElement.lang`/`dir`; language changes navigate to the matching
+static document. Read [SEO.md](SEO.md) for the URL and build contract.
 
 ## Native app presentation images
 

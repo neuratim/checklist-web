@@ -1,3 +1,4 @@
+import { currentLanguageHref } from "../lib/seoLanguage";
 import {
     useCallback,
     useEffect,
@@ -83,6 +84,11 @@ export function LanguageSwitcher() {
 
     const handleListKeyDown = useCallback(
         (event: ReactKeyboardEvent<HTMLDivElement>) => {
+            if (event.key === " " && event.target instanceof HTMLAnchorElement) {
+                event.preventDefault();
+                event.target.click();
+                return;
+            }
             if (event.key === "Escape") {
                 event.preventDefault();
                 close(true);
@@ -129,7 +135,10 @@ export function LanguageSwitcher() {
     );
 
     const handleOptionClick = useCallback(
-        (event: ReactMouseEvent<HTMLButtonElement>) => {
+        (event: ReactMouseEvent<HTMLAnchorElement>) => {
+            if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey)
+                return;
+            event.preventDefault();
             const code = event.currentTarget.dataset.code;
 
             if (code && isLanguageCode(code)) {
@@ -181,22 +190,22 @@ export function LanguageSwitcher() {
                     tabIndex={-1}
                 >
                     {languages.map((meta) => (
-                        <button
+                        <a
                             aria-checked={meta.code === language}
                             className="language-switcher-option"
+                            href={currentLanguageHref(meta.code)}
                             data-code={meta.code}
                             key={meta.code}
                             lang={meta.code}
                             onClick={handleOptionClick}
                             role="menuitemradio"
                             tabIndex={-1}
-                            type="button"
                         >
                             <span className="language-switcher-option-name">{meta.nativeName}</span>
                             <svg className="language-switcher-check" {...LANGUAGE_ICON_PROPS}>
                                 <path d="m2.6 6.3 2.4 2.4 4.4-5.4" />
                             </svg>
-                        </button>
+                        </a>
                     ))}
                 </div>
             ) : null}

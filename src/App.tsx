@@ -1,3 +1,4 @@
+import { unlocalizedPath } from "./lib/seoLanguage";
 import { ConditionalItems } from "./components/ConditionalItems";
 import { Features } from "./components/Features";
 import { Footer } from "./components/Footer";
@@ -20,7 +21,7 @@ import type { AppProps } from "./types/app";
 function App({ pathname }: AppProps) {
     const hash = useHashRoute();
     const policyPage = isPrivacyPolicyPath(
-        pathname ?? (typeof window === "undefined" ? "/" : window.location.pathname),
+        pathname ?? (typeof window === "undefined" ? "/" : unlocalizedPath(window.location.pathname)),
     );
 
     if (!policyPage && hash === ROUTE_HREFS.tryApp) {

@@ -37,7 +37,7 @@ function verifyPolicy(html, copy, language) {
     assert.ok(text.length > 800, `${language}: serve meaningful app-specific policy content`);
     assert.ok(/href="mailto:[^"]+"/.test(html), `${language}: reachable privacy contact`);
     assert.ok(
-        html.includes(`href="/?lang=${language}`),
+        html.includes(`href="${language === "en" ? "/" : `/${language}/`}`),
         `${language}: preserve language when returning home`,
     );
     for (const [, fragment] of html.matchAll(/href="(#[^"]+)"/g))
@@ -51,7 +51,7 @@ function verifyPolicy(html, copy, language) {
 const metadata = renderPrivacyPolicyMetadata();
 const homepage = await readFile(new URL("dist/index.html", root), "utf8");
 assert.ok(
-    /<footer\b[\s\S]*?href="\/privacy-policy\/\?lang=en"/.test(homepage),
+    /<footer\b[\s\S]*?href="\/privacy-policy\/"/.test(homepage),
     "The homepage footer links to the dedicated policy in its active language.",
 );
 const dedicated = await readFile(new URL("dist/privacy-policy/index.html", root), "utf8");
@@ -96,7 +96,9 @@ await Promise.all(
         );
         const home = await renderApp("/", language);
         assert.ok(
-            home.includes(`href="/privacy-policy/?lang=${language}"`),
+            home.includes(
+                `href="${language === "en" ? "/privacy-policy/" : `/${language}/privacy-policy/`}"`,
+            ),
             `${language}: the footer retains the selected locale`,
         );
     }),

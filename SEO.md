@@ -1,25 +1,30 @@
 # Search and crawler output
 
-The production build renders the actual English React page into the initial HTML.
-There is no separately maintained plain-text fallback page. The same styled content
-is readable without JavaScript; React replaces that markup when it starts, using the
-visitor's existing language and route preferences. Baked reveal sections start visible.
-Interactive controls still require JavaScript.
+The production build serves static HTML for every genuinely translated language.
+English retains the existing URLs; other languages use explicit paths such as
+`/cs/` and `/cs/privacy-policy/`. Each translated page has its own title,
+description, canonical URL, reciprocal hreflang links and sitemap entry.
+There is no separately maintained fallback copy or added server runtime.
+The styled content is readable without JavaScript; React selects the language
+from the explicit URL when it starts. Interactive controls require JavaScript.
 
-Run `npm run build` to produce and verify the complete deployable output, then
-`npm run verify:seo` to repeat the crawler checks. Deploy the normal asset directory;
-`dist-ssr/` is build tooling and is never deployed. No server runtime was added.
+`npm run build` runs the existing prerender, `scripts/localize.mjs`, then the
+SEO and product-specific checks. Deploy the normal asset directory; `dist-ssr/`
+is build tooling and is never deployed. `npm run verify:seo` repeats the
+crawler checks without rebuilding.
 
-The build checks the canonical URL, Open Graph URL, title, description, primary
-headings, JSON-LD, unresolved variables, sitemap URLs and robots rules. It adds a
-site-specific WebSite node when needed, plus sitemap and llms.txt discovery links.
-The supplementary llms.txt quotes the page metadata; it is not a Google ranking signal.
-Existing product claims and intentional noindex directives are preserved. A scaffold
-without page content is reported; this build does not invent a presentation for it.
+The build checks each indexed document's canonical and social URLs, metadata,
+primary heading, structured data, reciprocal alternates, crawler files and
+real static assets. It emits a dedicated 404 document for unknown paths.
+English-only placeholders do not advertise untranslated alternate pages.
+Empty unfinished presentations remain `noindex, follow` with empty sitemaps
+until substantive product content is ready.
 
-Translations and hash routes remain client-side views, so the sitemap does not claim
-they are independently served pages. Only use lastmod when an actual content-change
-date is known, never the current build date.
+Explicit language paths take precedence over preferences. Legacy `?lang=`
+links still work and migrate to the matching language path while retaining
+the section and other query values. Language choices navigate between real
+documents; hash-only application previews remain client-side and stay out of
+the sitemap. Use lastmod only for an actual known content-change date.
 
 ## Safari Reader
 

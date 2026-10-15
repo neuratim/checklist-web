@@ -21,7 +21,7 @@ use the sibling `../app/` only while preparing images; CI consumes committed med
 ## Privacy policy
 
 `src/constants/routes.ts` defines the canonical `/privacy-policy/` page;
-`src/lib/pageLinks.ts` accepts the slashless URL and preserves the active `?lang=`.
+`src/lib/pageLinks.ts` accepts the slashless URL and preserves the active language path.
 `src/types/app.ts` defines explicit static/browser route selection.
 `src/App.tsx` also keeps legacy `#privacy-policy` navigation working.
 `src/components/PrivacyPolicy.tsx` renders the app policy and owns its safe-inset
@@ -33,3 +33,17 @@ static document and its policy-specific metadata and WebPage schema.
 `scripts/verify-privacy.mjs` is a build gate for the complete static policy,
 all locale content and return links, metadata, sitemap and safe-inset ownership;
 `scripts/privacy-route.test.mjs` rejects unrelated paths and lost locale links.
+
+## Indexed language documents
+
+`scripts/localize.mjs` is a standalone copy of the workspace
+`scripts/site-localization-template.mjs`, refreshed by
+`node scripts/sync-site-seo.mjs checklist`. It runs after prerendering and
+emits translated static documents, canonical/hreflang metadata and the sitemap.
+`src/entry-server.tsx` exports the real translated `seoLanguages` and
+`renderSeoPage` contract; untranslated placeholders advertise English only.
+`src/lib/seoLanguage.ts` is copied from the workspace language URL template
+by `node scripts/site-language-sync.mjs`. English retains its existing paths;
+other languages use prefixes such as `/cs/` and `/cs/privacy-policy/`.
+Explicit URLs select the language deterministically, while legacy `?lang=` links
+migrate with their section and other query values preserved.
