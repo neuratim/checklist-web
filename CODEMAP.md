@@ -47,3 +47,10 @@ by `node scripts/site-language-sync.mjs`. English retains its existing paths;
 other languages use prefixes such as `/cs/` and `/cs/privacy-policy/`.
 Explicit URLs select the language deterministically, while legacy `?lang=` links
 migrate with their section and other query values preserved.
+
+## Webmaster verification
+
+`index.html` retains the issued Seznam ownership meta in its static head.
+`public/ae5a50858faf2d8dbed2814509f0ac83.txt` is the permanent, per-host IndexNow
+ownership key, copied unchanged to the deployment root. Keep both for ownership
+rechecks; these files add no analytics and send no indexing notifications.
