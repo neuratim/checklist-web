@@ -1,3 +1,6 @@
+/** Dedicated static pages; legacy hash links remain supported. */
+export const PAGE_PATHS = { home: "/", privacyPolicy: "/privacy-policy/" } as const;
+
 /** The element ids of the page sections. Anything that links to a section reads them from here. */
 export const SECTION_IDS = {
     conditionalItems: "conditional-items",

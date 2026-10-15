@@ -1,7 +1,9 @@
 import { useEffect } from "react";
 import { CONTACT_EMAIL, CONTACT_MAILTO_URL } from "../../site.config";
-import { SECTION_HREFS } from "../constants/routes";
+import { PAGE_PATHS, SECTION_HREFS } from "../constants/routes";
 import { useLanguage } from "../i18n/useLanguage";
+import { localizedPageHref } from "../lib/pageLinks";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 import "./PrivacyPolicy.css";
 
 /**
@@ -12,7 +14,7 @@ import "./PrivacyPolicy.css";
  * the same facts; this is the version that has to be complete.
  */
 export function PrivacyPolicy() {
-    const { dictionary } = useLanguage();
+    const { dictionary, language } = useLanguage();
     const { privacyPolicy } = dictionary;
 
     useEffect(() => {
@@ -29,8 +31,9 @@ export function PrivacyPolicy() {
     }, [privacyPolicy.eyebrow, privacyPolicy.title]);
 
     return (
-        <div className="policy">
-            <a className="policy-back" href={SECTION_HREFS.top}>
+        <main className="policy safe-page" id="content">
+            <LanguageSwitcher />
+            <a className="policy-back" href={localizedPageHref(PAGE_PATHS.home, language, SECTION_HREFS.top)}>
                 {privacyPolicy.back}
             </a>
 
@@ -68,6 +71,6 @@ export function PrivacyPolicy() {
                     </p>
                 </section>
             </article>
-        </div>
+        </main>
     );
 }

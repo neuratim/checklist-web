@@ -46,3 +46,8 @@ export interface LanguageContextValue {
     languages: readonly LanguageMeta[];
     setLanguage: (language: LanguageCode) => void;
 }
+
+/** Optional deterministic initial locale for static rendering and verification. */
+export interface LanguageProviderProps {
+    initialLanguage?: LanguageCode;
+}

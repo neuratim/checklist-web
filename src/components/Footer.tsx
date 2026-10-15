@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { CONTACT_MAILTO_URL, NEURATIM_URL } from "../../site.config";
-import { ROUTE_HREFS } from "../constants/routes";
+import { PAGE_PATHS } from "../constants/routes";
 import { useLanguage } from "../i18n/useLanguage";
 import { formatCopy } from "../lib/formatCopy";
+import { localizedPageHref } from "../lib/pageLinks";
 import "./Footer.css";
 
 export function Footer() {
-    const { dictionary } = useLanguage();
+    const { dictionary, language } = useLanguage();
     const { footer } = dictionary;
     const [year] = useState(() => new Date().getFullYear());
 
@@ -15,7 +16,7 @@ export function Footer() {
             <div className="container footer-inner">
                 <p className="footer-line">{formatCopy(footer.tagline, { year })}</p>
                 <div className="footer-links">
-                    <a href={ROUTE_HREFS.privacyPolicy}>{footer.privacyPolicy}</a>
+                    <a href={localizedPageHref(PAGE_PATHS.privacyPolicy, language)}>{footer.privacyPolicy}</a>
                     <a href={NEURATIM_URL} rel="noreferrer" target="_blank">
                         {footer.mainSite}
                     </a>

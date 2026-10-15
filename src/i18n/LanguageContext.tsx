@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState, type PropsWithChildren } from "react";
 import { LANGUAGE_QUERY_PARAM, LANGUAGE_STORAGE_KEY } from "../constants/storage";
 import { readStored, writeStored } from "../lib/storage";
-import type { LanguageCode, LanguageContextValue } from "../types/language";
+import type { LanguageCode, LanguageContextValue, LanguageProviderProps } from "../types/language";
 import { LanguageContext } from "./LanguageContext.context";
 import {
     DEFAULT_DIRECTION,
@@ -33,8 +33,10 @@ function detectInitialLanguage(): LanguageCode {
     return languageFromLocale(window.navigator.language);
 }
 
-export function LanguageProvider({ children }: PropsWithChildren) {
-    const [language, setLanguageState] = useState<LanguageCode>(detectInitialLanguage);
+export function LanguageProvider({ children, initialLanguage }: PropsWithChildren<LanguageProviderProps>) {
+    const [language, setLanguageState] = useState<LanguageCode>(
+        () => initialLanguage ?? detectInitialLanguage(),
+    );
 
     useEffect(() => {
         const meta = LANGUAGES.find((candidate) => candidate.code === language);

@@ -1,10 +1,11 @@
-import { ROUTE_HREFS, SECTION_IDS } from "../constants/routes";
+import { PAGE_PATHS, SECTION_IDS } from "../constants/routes";
 import { useLanguage } from "../i18n/useLanguage";
+import { localizedPageHref } from "../lib/pageLinks";
 import { Reveal } from "./Reveal";
 import "./Privacy.css";
 
 export function Privacy() {
-    const { dictionary } = useLanguage();
+    const { dictionary, language } = useLanguage();
     const { privacy } = dictionary;
 
     return (
@@ -19,7 +20,10 @@ export function Privacy() {
                             <li key={point}>{point}</li>
                         ))}
                     </ul>
-                    <a className="privacy-policy-link" href={ROUTE_HREFS.privacyPolicy}>
+                    <a
+                        className="privacy-policy-link"
+                        href={localizedPageHref(PAGE_PATHS.privacyPolicy, language)}
+                    >
                         {privacy.policyLink}
                     </a>
                 </Reveal>

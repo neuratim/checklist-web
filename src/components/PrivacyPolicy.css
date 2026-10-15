@@ -84,3 +84,20 @@
         display: none;
     }
 }
+
+/* Shared policy-page primitive consumes every system inset once. */
+.safe-page {
+    padding-top: max(clamp(1.5rem, 4vw, 3rem), env(safe-area-inset-top));
+    padding-right: max(1.25rem, env(safe-area-inset-right));
+    padding-bottom: max(clamp(3rem, 8vw, 5rem), env(safe-area-inset-bottom));
+    padding-left: max(1.25rem, env(safe-area-inset-left));
+}
+.safe-page :is(a, button) {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+}
+
+.safe-page .language-switcher-list {
+    max-height: min(19rem, calc(100dvh - 8rem - env(safe-area-inset-top) - env(safe-area-inset-bottom)));
+}

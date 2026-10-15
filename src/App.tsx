@@ -14,17 +14,22 @@ import { Security } from "./components/Security";
 import { TryApp } from "./components/TryApp";
 import { ROUTE_HREFS } from "./constants/routes";
 import { useHashRoute } from "./hooks/useHashRoute";
+import { isPrivacyPolicyPath } from "./lib/pageLinks";
+import type { AppProps } from "./types/app";
 
-function App() {
+function App({ pathname }: AppProps) {
     const hash = useHashRoute();
+    const policyPage = isPrivacyPolicyPath(
+        pathname ?? (typeof window === "undefined" ? "/" : window.location.pathname),
+    );
 
-    if (hash === ROUTE_HREFS.tryApp) {
+    if (!policyPage && hash === ROUTE_HREFS.tryApp) {
         return <TryApp />;
     }
 
     // Its own route rather than a section: the policy is reached from a link
     // or the menu, and its address is what app stores are given.
-    if (hash === ROUTE_HREFS.privacyPolicy) {
+    if (policyPage || hash === ROUTE_HREFS.privacyPolicy) {
         return <PrivacyPolicy />;
     }
 

@@ -40,7 +40,7 @@ site.config.ts        The only reader of import.meta.env and the only place a UR
                       written; store links in a fixed order: android, web, ios, mac, windows
                       (mac and windows are optional and come together)
 src/main.tsx          StrictMode → LanguageProvider → App
-src/App.tsx           Hash router: #try → TryApp, #privacy-policy → PrivacyPolicy,
+src/App.tsx           Routes: #try → TryApp, /privacy-policy/ → PrivacyPolicy,
                       otherwise the landing page (Nav, Hero, HowItWorks, QuickStart,
                       ConditionalItems, Features, Insights, Security, Privacy,
                       FreeAndSupport, GetApp, Footer)
@@ -68,8 +68,8 @@ Notable components: `TryApp` embeds the live Flutter web app in a sandboxed cros
 iframe with a bootstrap-grace overlay and an optional `checklist-app:ready` postMessage
 handshake. `TipCheckout` mounts Stripe Elements and gets its PaymentIntent from the hub
 Worker at `STRIPE_API_BASE_URL` — nothing secret lives in this project. `PrivacyPolicy` is
-its own hash route, not a section, because that URL is what the app stores are given (the
-app links to it as `/?lang=xx#privacy-policy`).
+its own dedicated page, not a section, because that URL is what the app stores are given (the
+app’s legacy `/?lang=xx#privacy-policy` links also remain compatible).
 
 ## i18n — English is the source of truth
 
@@ -142,3 +142,5 @@ This directory is the checklist-web Git root. Read [CODEMAP.md](CODEMAP.md) and
 settings; those repository boundaries supersede older parent-workflow descriptions.
 Run format checking, lint, type checking and the complete build before committing.
 Sibling app paths are for capture/refresh tasks, never ordinary CI build inputs.
+
+The public app policy is served at `/privacy-policy/` (also accepts `/privacy-policy`); legacy `#privacy-policy` links remain compatible. The build includes `scripts/verify-privacy.mjs`; run `npm test` for route regressions. See [CODEMAP.md](CODEMAP.md) for content, rendering and navigation ownership.
