@@ -49,5 +49,6 @@ export interface LanguageContextValue {
 
 /** Optional deterministic initial locale for static rendering and verification. */
 export interface LanguageProviderProps {
+    initialDictionary?: Dictionary;
     initialLanguage?: LanguageCode;
 }

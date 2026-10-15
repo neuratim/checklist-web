@@ -11,5 +11,9 @@
   Content-Security-Policy-Report-Only: default-src 'self'; base-uri 'self'; connect-src 'self' https://neuratim.com https://api.stripe.com; font-src 'self' data:; form-action 'self'; frame-ancestors 'none'; frame-src https://js.stripe.com https://hooks.stripe.com https://checklist-app.neuratim.com; img-src 'self' data:; object-src 'none'; script-src 'self' https://js.stripe.com; style-src 'self' 'unsafe-inline'; upgrade-insecure-requests
   Permissions-Policy: camera=(), geolocation=(), microphone=()
   Referrer-Policy: strict-origin-when-cross-origin
-  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  Strict-Transport-Security: max-age=31536000
   X-Content-Type-Options: nosniff
+
+# Bundler-generated filenames are fingerprinted; document and ownership URLs revalidate.
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable

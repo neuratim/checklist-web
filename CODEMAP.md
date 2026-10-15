@@ -54,3 +54,42 @@ migrate with their section and other query values preserved.
 `public/ae5a50858faf2d8dbed2814509f0ac83.txt` is the permanent, per-host IndexNow
 ownership key, copied unchanged to the deployment root. Keep both for ownership
 rechecks; these files add no analytics and send no indexing notifications.
+
+## Static hosting contract
+
+`wrangler.jsonc` pins the existing `checklist-web` Worker and serves
+`dist/` with `404-page` fallback. The Git deploy command must explicitly use
+`--config wrangler.jsonc` so automatic Vite SPA configuration cannot replace it.
+`public/_headers` supplies host-only HSTS, nosniff and referrer policy while preserving
+existing CSP and embed allowances. Only fingerprinted `/assets/*` files are immutable;
+HTML, crawler files and permanent webmaster keys retain normal revalidation.
+
+`npm run build` ends with `scripts/verify-hosting.mjs`, a standalone copy of the
+workspace hosting guard. It checks the exact Worker/output/fallback contract, the
+noindex 404 artifact, preserved headers and fingerprinted immutable asset scope.
+Refresh it from the workspace with `node scripts/sync-site-hosting.mjs`; standalone
+CI needs only this repository and its locked dependencies.
+
+The pinned Cloudflare Git deploy command is documented in [REPOSITORY.md](REPOSITORY.md#pinned-static-worker-deployment).
+
+## Browser language loading
+
+'src/i18n/registry.ts' imports only English eagerly and asynchronously loads the
+selected browser dictionary. 'serverRegistry.ts' retains the complete synchronous
+SSR inventory; 'src/entry-server.tsx' supplies its exact dictionary to the provider.
+'src/main.tsx' keeps the translated static document visible until initialization
+finishes. 'scripts/locale-loading.test.mjs' checks all-locale SSR parity, English
+fallback, caching and the browser import boundary without a browser or network.
+
+## Startup transfer budget
+
+`scripts/verify-startup.mjs` checks the generated entry and module preloads,
+recursively counts static dependencies plus selected-locale chunks, and rejects
+startup JavaScript above 150 KiB gzip. `scripts/startup-budget.test.mjs` guards
+static/dynamic boundaries and the selected-language budget; ordinary builds run
+the budget gate before the final hosting validation.
+
+`src/lib/retainStaticPage.ts` restores the existing reveal sections when startup
+cannot load its selected locale, preserving translated static text.
+`scripts/static-fallback.test.mjs` guards both reveal forms and the bootstrap
+failure boundary; it never substitutes English or clears the prerendered page.

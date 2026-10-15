@@ -35,5 +35,7 @@ jobs:
               run: npm run lint
             - name: Type-check
               run: npm run tsc
+            - name: Test presentation contracts
+              run: npm test
             - name: Build and verify static output
               run: npm run build

@@ -130,10 +130,10 @@ The Flutter workflow publishes `app/build/web` to Cloudflare Pages at
 `checklist-app.neuratim.com`; that is separate from this presentation site.
 Cloudflare's dashboard Git integration deploys this static site from `main`, with
 the repository root as the project root. `npm run build` produces the deployable `dist/` directory.
-Like Decolab, this repository uses plain Vite: no Wrangler configuration or dependency,
-Cloudflare Vite plugin, Worker types or local deploy script. Build first, then use
-`npm run preview` to serve `dist/` locally. Cloudflare manages deployment tooling in
-its build environment; successful local verification does not prove a remote deployment.
+This repository uses plain Vite. `wrangler.jsonc` pins the existing assets-only
+Worker with real 404 fallback; `scripts/verify-hosting.mjs` checks the final packaging.
+Use the explicit deploy command in [REPOSITORY.md](REPOSITORY.md#pinned-static-worker-deployment).
+Build first, then use `npm run preview` locally; a local build does not verify production.
 
 ## Independent repository
 

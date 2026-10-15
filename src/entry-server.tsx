@@ -1,6 +1,6 @@
 import { isLanguageCode, LANGUAGES as SEO_LANGUAGES } from "./i18n/languages";
 import type { LanguageCode } from "./types/language";
-import { DICTIONARIES } from "./i18n/registry";
+import { DICTIONARIES } from "./i18n/serverRegistry";
 import { renderToStaticMarkup } from "react-dom/server";
 import App from "./App";
 import { LanguageProvider } from "./i18n/LanguageContext";
@@ -8,7 +8,7 @@ import { LanguageProvider } from "./i18n/LanguageContext";
 /** Render the actual English landing page at build time, without a browser or network. */
 export function renderApp(pathname = "/", language: LanguageCode = "en"): string {
     return renderToStaticMarkup(
-        <LanguageProvider initialLanguage={language}>
+        <LanguageProvider initialDictionary={DICTIONARIES[language]} initialLanguage={language}>
             <App pathname={pathname} />
         </LanguageProvider>,
     );

@@ -42,3 +42,12 @@ capture/refresh workflows; an ordinary site install and build needs no sibling.
 Initial website content was exported from `neuratim/checklist` at
 `d8d2b7ab91c2341d5dfc2f274a3169ccdcb753b6`, tree `web/`. The independent repository
 contains website history only; application history is retained in the parent.
+
+## Pinned static Worker deployment
+
+The existing Git-integrated Worker is `checklist-web`. Keep the repository
+root and `npm run build` build command. Its deploy command must be exactly
+`npx --yes wrangler@4.148.0 deploy --config wrangler.jsonc`. The checked-in config
+serves `dist/` using `404-page`; do not fall back to automatic Vite SPA
+configuration. Changing dashboard settings or publishing requires separate approval.
+A local build verifies packaging and headers, not the deployed HTTP status.

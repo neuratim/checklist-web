@@ -1,0 +1,135 @@
+/* Shared navigation geometry, including width-only measurement twins. */
+:root {
+    --navigation-target-size: 44px;
+}
+
+.nav-touch-target {
+    box-sizing: border-box;
+    min-block-size: var(--navigation-target-size);
+    min-inline-size: var(--navigation-target-size);
+}
+
+:where(a, span, summary).nav-touch-target {
+    align-items: center;
+    display: inline-flex;
+}
+
+/* The compact row keeps space for the full target at 200% text size. */
+@media (max-width: 520px) {
+    .nav-inline > .nav-touch-target,
+    .nav__inline > .nav-touch-target {
+        line-height: 1.35;
+        padding-block: 0;
+    }
+}
+
+/* A viewport header owns these insets; policy surfaces consume them upstream. */
+.nav-safe-viewport {
+    --navigation-header-inset-top: env(safe-area-inset-top, 0px);
+    --navigation-header-inset-inline-start: env(safe-area-inset-left, 0px);
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-right: env(safe-area-inset-right, 0px);
+    padding-left: env(safe-area-inset-left, 0px);
+}
+
+.nav-safe-viewport:dir(rtl) {
+    --navigation-header-inset-inline-start: env(safe-area-inset-right, 0px);
+}
+
+:is(.safe-page, .policy-page) .nav-safe-viewport {
+    --navigation-header-inset-top: 0px;
+    --navigation-header-inset-inline-start: 0px;
+    padding-top: 0;
+    padding-right: 0;
+    padding-left: 0;
+}
+
+/* A skip link occupies space only while focused, including legacy sr-only links. */
+.nav-touch-target:is(.nav-skip, .skip-link):not(:focus) {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    min-block-size: 1px;
+    min-inline-size: 1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+.nav-touch-target:is(.nav-skip, .skip-link):focus {
+    clip: auto;
+    clip-path: none;
+    display: inline-flex;
+    height: auto;
+    inset: auto;
+    inset-block-start: calc(8px + var(--navigation-header-inset-top, 0px));
+    inset-inline-start: calc(8px + var(--navigation-header-inset-inline-start, 0px));
+    margin: 0;
+    max-inline-size: calc(100vw - 32px);
+    min-block-size: var(--navigation-target-size);
+    min-inline-size: var(--navigation-target-size);
+    overflow: visible;
+    padding: 8px 12px;
+    white-space: normal;
+    width: auto;
+    z-index: 100;
+}
+
+@media (max-width: 520px) {
+    :is(.nav, .site-header) :is(.nav-end, .nav__end, .nav-actions) {
+        gap: 8px;
+    }
+
+    :is(.nav, .site-header)
+        :is(.language-switcher-list, .language-switcher__list, .language-switcher-menu, .language-menu) {
+        max-inline-size: calc(100vw - 32px - env(safe-area-inset-left) - env(safe-area-inset-right));
+        min-inline-size: min(
+            15rem,
+            calc(100vw - 32px - env(safe-area-inset-left) - env(safe-area-inset-right))
+        );
+    }
+
+    :is(.nav, .site-header) :is(.language-switcher-option, .language-switcher__option) {
+        gap: 8px;
+        min-inline-size: var(--navigation-target-size);
+        padding-inline: 12px;
+    }
+
+    .site-header .mobile-menu summary {
+        font-size: 0;
+        justify-content: center;
+        min-width: var(--navigation-target-size);
+        padding: 0;
+        width: var(--navigation-target-size);
+    }
+
+    .site-header .mobile-menu summary::before {
+        content: "\22EF";
+        font-size: 24px;
+        line-height: 1;
+    }
+}
+
+/* Header-row anchoring gives a compact trigger a full, safe language panel. */
+
+@media (max-width: 520px) {
+    :is(.nav, .site-header) :is(.nav-inner, .header-inner, .nav__inner, .nav-bar),
+    :is(.policy-nav, .privacy-nav) {
+        position: relative;
+    }
+
+    :is(.nav, .site-header, .policy-nav, .privacy-nav) .language-switcher:not(:has(select)),
+    :is(.nav, .site-header, .policy-nav, .privacy-nav) .language-picker {
+        position: static;
+    }
+
+    :is(.nav, .site-header, .policy-nav, .privacy-nav)
+        :is(.language-switcher-list, .language-switcher__list, .language-switcher-menu, .language-menu) {
+        inset-inline-start: auto;
+        inset-inline-end: 0;
+    }
+}

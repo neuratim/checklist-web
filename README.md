@@ -7,8 +7,8 @@ React + TypeScript + Vite. Notes below the fold are the Vite template's own.
 Run `npm ci`, then `npm run build` to produce the static site in `dist/`.
 Run `npm run preview` after building to preview it with Vite.
 Cloudflare's dashboard Git integration deploys `main`, using the repository root as the project root.
-There is no repository Wrangler configuration, Wrangler dependency, Cloudflare Vite
-plugin or local deploy script. Cloudflare supplies its own deployment tooling.
+`wrangler.jsonc` pins the existing assets-only Worker and real 404 fallback.
+The pinned deploy command is recorded in [REPOSITORY.md](REPOSITORY.md#pinned-static-worker-deployment).
 See [CODEMAP.md](CODEMAP.md) for the source and configuration map.
 
 ## Copy and translations

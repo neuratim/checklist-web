@@ -24,6 +24,7 @@ import { shortBrand } from "../lib/brand";
 import { countFittingLinks, fittingBrandStage, navContentWidth } from "../lib/navFit";
 import type { BrandStage, ResolvedNavLink } from "../types/navigation";
 import { LanguageSwitcher } from "./LanguageSwitcher";
+import "./NavigationTarget.css";
 import "./Nav.css";
 
 export function Nav() {
@@ -133,7 +134,10 @@ export function Nav() {
             short: brandShortMeasure.getBoundingClientRect().width,
         };
         const brandWidthFor = (stage: BrandStage): number =>
-            iconWidth + (stage === "icon" ? 0 : brandGap + textWidth[stage]);
+            Math.max(
+                Number.parseFloat(brandStyle.minInlineSize) || 0,
+                iconWidth + (stage === "icon" ? 0 : brandGap + textWidth[stage]),
+            );
         const brandRoom = content - languageWidth - rowGap;
         const fittingStage = (reserved: number): BrandStage =>
             fittingBrandStage(brandWidthFor, reserved, brandRoom);
@@ -273,9 +277,14 @@ export function Nav() {
     }, []);
 
     return (
-        <header className="nav" id={SECTION_IDS.top}>
+        <header className="nav nav-safe-viewport" id={SECTION_IDS.top}>
             <div className="container nav-inner" ref={innerRef}>
-                <a aria-label={brandFull} className="nav-brand" href={SECTION_HREFS.top} ref={brandRef}>
+                <a
+                    aria-label={brandFull}
+                    className="nav-brand nav-touch-target"
+                    href={SECTION_HREFS.top}
+                    ref={brandRef}
+                >
                     {/* 64px so it is still crisp at 2x; the 1024px master is
                         store/PWA artwork, three quarters of a megabyte, and has
                         no business in the page chrome. */}
@@ -298,6 +307,7 @@ export function Nav() {
                             {visibleLinks.map((link) => (
                                 <a
                                     aria-current={link.href === activeHref ? "location" : undefined}
+                                    className="nav-touch-target"
                                     href={link.href}
                                     key={link.href}
                                     onClick={handleLinkClick}
@@ -313,7 +323,7 @@ export function Nav() {
                                         aria-expanded={isMoreOpen}
                                         aria-haspopup="menu"
                                         aria-label={nav.more}
-                                        className="nav-more"
+                                        className="nav-more nav-touch-target"
                                         data-has-current={overflowHasActiveSection || undefined}
                                         onClick={handleToggleMore}
                                         onKeyDown={handleMoreKeyDown}
@@ -328,6 +338,7 @@ export function Nav() {
                                                     aria-current={
                                                         link.href === activeHref ? "location" : undefined
                                                     }
+                                                    className="nav-touch-target"
                                                     href={link.href}
                                                     key={link.href}
                                                     onClick={handleLinkClick}
@@ -354,7 +365,7 @@ export function Nav() {
                                 aria-controls={NAV_HAMBURGER_MENU_ID}
                                 aria-expanded={isHamburgerOpen}
                                 aria-label={isHamburgerOpen ? nav.closeMenu : nav.openMenu}
-                                className="nav-toggle"
+                                className="nav-toggle nav-touch-target"
                                 data-has-current={activeSection !== null || undefined}
                                 onClick={handleToggleHamburger}
                                 type="button"
@@ -371,10 +382,12 @@ export function Nav() {
                                         : "nav-hamburger-menu"
                                 }
                                 id={NAV_HAMBURGER_MENU_ID}
+                                inert={!isHamburgerOpen}
                             >
                                 {navLinks.map((link) => (
                                     <a
                                         aria-current={link.href === activeHref ? "location" : undefined}
+                                        className="nav-touch-target"
                                         href={link.href}
                                         key={link.href}
                                         onClick={handleLinkClick}
@@ -391,14 +404,14 @@ export function Nav() {
                     type styles as the real controls so a locale change remeasures. */}
                 <div aria-hidden="true" className="nav-measure" ref={measureRef}>
                     {navLinks.map((link) => (
-                        <span data-nav-measure key={link.href}>
+                        <span className="nav-touch-target" data-nav-measure key={link.href}>
                             {link.label}
                         </span>
                     ))}
-                    <span className="nav-more" ref={moreMeasureRef}>
+                    <span className="nav-more nav-touch-target" ref={moreMeasureRef}>
                         <span>{NAV_OVERFLOW_GLYPH}</span>
                     </span>
-                    <span className="nav-toggle" ref={hamburgerMeasureRef}>
+                    <span className="nav-toggle nav-touch-target" ref={hamburgerMeasureRef}>
                         <span />
                         <span />
                         <span />

@@ -10,6 +10,7 @@ import {
 import { LANGUAGE_ICON_PROPS, LANGUAGE_MENU_ID, LANGUAGE_OPTION_SELECTOR } from "../constants/ui";
 import { isLanguageCode } from "../i18n/languages";
 import { useLanguage } from "../i18n/useLanguage";
+import "./NavigationTarget.css";
 import "./LanguageSwitcher.css";
 
 /**
@@ -156,13 +157,17 @@ export function LanguageSwitcher() {
                 aria-controls={LANGUAGE_MENU_ID}
                 aria-expanded={isOpen}
                 aria-haspopup="menu"
-                className="language-switcher-trigger"
+                aria-label={`${label}: ${currentName}`}
+                className="language-switcher-trigger nav-touch-target"
                 onClick={handleToggle}
                 onKeyDown={handleTriggerKeyDown}
                 ref={triggerRef}
                 type="button"
             >
                 <span className="sr-only">{label}</span>
+                <span aria-hidden="true" className="language-switcher-code">
+                    {language.toUpperCase()}
+                </span>
                 <span className="language-switcher-value">
                     <span className="language-switcher-current">{currentName}</span>
                     {/* Width-only twin of every name: it holds the control at the width of
@@ -192,7 +197,7 @@ export function LanguageSwitcher() {
                     {languages.map((meta) => (
                         <a
                             aria-checked={meta.code === language}
-                            className="language-switcher-option"
+                            className="language-switcher-option nav-touch-target"
                             href={currentLanguageHref(meta.code)}
                             data-code={meta.code}
                             key={meta.code}
