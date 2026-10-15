@@ -93,3 +93,7 @@ the budget gate before the final hosting validation.
 cannot load its selected locale, preserving translated static text.
 `scripts/static-fallback.test.mjs` guards both reveal forms and the bootstrap
 failure boundary; it never substitutes English or clears the prerendered page.
+
+`index.html` also retains this host's issued `yandex-verification` ownership
+meta in every generated locale head. Preserve it with the Seznam proof and
+permanent IndexNow key across rebuilds; it adds no analytics.
