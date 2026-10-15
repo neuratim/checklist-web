@@ -25,7 +25,9 @@ use the sibling `../app/` only while preparing images; CI consumes committed med
 `src/types/app.ts` defines explicit static/browser route selection.
 `src/App.tsx` also keeps legacy `#privacy-policy` navigation working.
 `src/components/PrivacyPolicy.tsx` renders the app policy and owns its safe-inset
-surface through `PrivacyPolicy.css`. `src/entry-server.tsx` selects and renders
+surface through `PrivacyPolicy.css`. Its wrapping `policy-nav` keeps Back left
+and the language selector physically right in LTR and RTL, and is hidden in print.
+`src/entry-server.tsx` selects and renders
 all locale policies for `scripts/prerender.mjs`, which writes the independent
 static document and its policy-specific metadata and WebPage schema.
 `scripts/verify-privacy.mjs` is a build gate for the complete static policy,

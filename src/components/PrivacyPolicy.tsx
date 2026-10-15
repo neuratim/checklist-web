@@ -32,10 +32,15 @@ export function PrivacyPolicy() {
 
     return (
         <main className="policy safe-page" id="content">
-            <LanguageSwitcher />
-            <a className="policy-back" href={localizedPageHref(PAGE_PATHS.home, language, SECTION_HREFS.top)}>
-                {privacyPolicy.back}
-            </a>
+            <div className="policy-nav">
+                <a
+                    className="policy-back"
+                    href={localizedPageHref(PAGE_PATHS.home, language, SECTION_HREFS.top)}
+                >
+                    {privacyPolicy.back}
+                </a>
+                <LanguageSwitcher />
+            </div>
 
             <article className="policy-body">
                 <header className="policy-header">
