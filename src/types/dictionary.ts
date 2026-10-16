@@ -1,3 +1,5 @@
+import type { SiteShareCopy } from "./siteShare";
+
 type DeepPartial<T> = T extends readonly (infer Element)[]
     ? readonly DeepPartial<Element>[]
     : T extends object
@@ -306,6 +308,7 @@ export interface Dictionary {
         note: string;
         points: [FeatureItem, FeatureItem, FeatureItem, FeatureItem];
     };
+    siteShare: SiteShareCopy;
     tryApp: {
         back: string;
         dismissNotice: string;

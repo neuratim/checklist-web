@@ -476,6 +476,16 @@ const de: LocaleDictionary = {
             title: "Statistik",
         },
     },
+    siteShare: {
+        copied: "Link kopiert",
+        copyLink: "Link kopieren",
+        error: "Das Teilen konnte nicht gestartet werden. Versuche es erneut oder kopiere den Link.",
+        heading: "Diese Website teilen",
+        manualCopy: "Diesen Link manuell kopieren",
+        nativeShare: "Mit deinem Gerät teilen",
+        selectLabel: "Soziales Netzwerk oder Freigabeoption",
+        share: "Teilen",
+    },
     tryApp: {
         back: "Zurück zur Übersicht",
         dismissNotice: "Schließen",

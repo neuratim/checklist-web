@@ -474,6 +474,16 @@ const pl: LocaleDictionary = {
             title: "Statystyki",
         },
     },
+    siteShare: {
+        copied: "Link skopiowany",
+        copyLink: "Kopiuj link",
+        error: "Nie udało się rozpocząć udostępniania. Spróbuj ponownie lub skopiuj link.",
+        heading: "Udostępnij tę stronę",
+        manualCopy: "Skopiuj ten link ręcznie",
+        nativeShare: "Udostępnij przez urządzenie",
+        selectLabel: "Serwis społecznościowy lub sposób udostępniania",
+        share: "Udostępnij",
+    },
     tryApp: {
         back: "Wróć do przeglądu",
         dismissNotice: "Zamknij",

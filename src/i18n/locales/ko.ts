@@ -472,6 +472,16 @@ const ko: LocaleDictionary = {
             title: "통계",
         },
     },
+    siteShare: {
+        copied: "링크가 복사되었습니다",
+        copyLink: "링크 복사",
+        error: "공유를 시작할 수 없습니다. 다시 시도하거나 링크를 복사하세요.",
+        heading: "이 사이트 공유하기",
+        manualCopy: "이 링크를 직접 복사하세요",
+        nativeShare: "기기로 공유",
+        selectLabel: "소셜 네트워크 또는 공유 방법",
+        share: "공유",
+    },
     tryApp: {
         back: "개요로 돌아가기",
         dismissNotice: "닫기",

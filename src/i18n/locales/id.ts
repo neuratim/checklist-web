@@ -477,6 +477,16 @@ const id: LocaleDictionary = {
             title: "Statistik",
         },
     },
+    siteShare: {
+        copied: "Tautan disalin",
+        copyLink: "Salin tautan",
+        error: "Proses berbagi tidak dapat dimulai. Coba lagi atau salin tautan.",
+        heading: "Bagikan situs ini",
+        manualCopy: "Salin tautan ini secara manual",
+        nativeShare: "Bagikan melalui perangkat Anda",
+        selectLabel: "Jejaring sosial atau opsi berbagi",
+        share: "Bagikan",
+    },
     tryApp: {
         back: "Kembali ke ringkasan",
         dismissNotice: "Tutup",

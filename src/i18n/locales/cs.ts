@@ -473,6 +473,16 @@ const cs: LocaleDictionary = {
             title: "Statistiky",
         },
     },
+    siteShare: {
+        copied: "Odkaz zkopírován",
+        copyLink: "Zkopírovat odkaz",
+        error: "Sdílení se nepodařilo spustit. Zkuste to znovu nebo zkopírujte odkaz.",
+        heading: "Sdílejte tento web",
+        manualCopy: "Zkopírujte tento odkaz ručně",
+        nativeShare: "Sdílet pomocí zařízení",
+        selectLabel: "Sociální síť nebo způsob sdílení",
+        share: "Sdílet",
+    },
     tryApp: {
         back: "Zpět na přehled",
         dismissNotice: "Zavřít",

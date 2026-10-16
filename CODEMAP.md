@@ -101,3 +101,14 @@ permanent IndexNow key across rebuilds; it adds no analytics.
 `index.html` also retains this host's issued `naver-site-verification` ownership
 meta in every generated locale head. Preserve it with the Seznam and Yandex proofs and
 permanent IndexNow key across rebuilds; it adds no analytics.
+
+## Site sharing
+
+`src/components/SiteShare.tsx` and its stylesheet own the homepage's final sharing
+selector, explicit action, device sharing and copy-link recovery.
+`src/lib/siteShare.ts`, `src/constants/siteShare.ts` and `src/types/siteShare.ts`
+own URL construction, supported destinations and contracts; external endpoints and
+existing preview artwork are configured in `site.config.ts`. Every locale owns its
+`siteShare` copy. `scripts/site-sharing.test.mjs` guards URL encoding, native capability and recovery contracts.
+Shared sources are refreshed by the workspace's `node scripts/sync-site-sharing.mjs`;
+this repository's build and tests need no workspace checkout.

@@ -479,6 +479,16 @@ const hi: LocaleDictionary = {
             title: "आँकड़े",
         },
     },
+    siteShare: {
+        copied: "लिंक कॉपी हो गया",
+        copyLink: "लिंक कॉपी करें",
+        error: "शेयर करना शुरू नहीं हो सका। फिर कोशिश करें या लिंक कॉपी करें।",
+        heading: "यह साइट शेयर करें",
+        manualCopy: "इस लिंक को खुद कॉपी करें",
+        nativeShare: "अपने डिवाइस से शेयर करें",
+        selectLabel: "सोशल नेटवर्क या शेयर करने का विकल्प",
+        share: "शेयर करें",
+    },
     tryApp: {
         back: "मुख्य जानकारी पर लौटें",
         dismissNotice: "बंद करें",

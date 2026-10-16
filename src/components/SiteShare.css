@@ -1,0 +1,211 @@
+.site-share {
+    border-block-start: 1px solid var(--color-border, var(--surface-line, var(--line)));
+    padding-block: 2.5rem calc(1.5rem + env(safe-area-inset-bottom, 0px));
+    padding-left: max(1.25rem, env(safe-area-inset-left, 0px));
+    padding-right: max(1.25rem, env(safe-area-inset-right, 0px));
+    overflow-wrap: normal;
+    word-break: normal;
+}
+
+.site-share:lang(ko) {
+    word-break: keep-all;
+}
+
+/* Shared page primitives already own these insets. */
+:is(.safe-page, .policy-page) .site-share {
+    padding-block-end: 1.5rem;
+    padding-inline: 1.25rem;
+}
+
+.site-share--bottom-consumed {
+    padding-block-end: 1.5rem;
+}
+
+.site-share-inner {
+    inline-size: 100%;
+    margin-inline: auto;
+    max-inline-size: var(--container-width, var(--shell, 70rem));
+}
+
+.site-share-heading {
+    font-size: clamp(1.15rem, 2vw, 1.4rem);
+    margin-block-end: 0.75rem;
+}
+
+.site-share-label,
+.site-share-fallback label {
+    color: var(--color-text-secondary, var(--ink-dim, var(--muted)));
+    display: block;
+    margin-block-end: 0.5rem;
+}
+
+.site-share-controls {
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    max-inline-size: 42rem;
+}
+
+.site-share-picker-display,
+.site-share-action,
+.site-share-url {
+    background: var(--color-surface, var(--surface, var(--paper)));
+    border: 1px solid var(--color-border-strong, var(--surface-line, var(--line)));
+    border-radius: var(--radius-sm, var(--radius-s, 12px));
+    color: var(--color-text-primary, var(--ink));
+    font: inherit;
+    inline-size: 100%;
+    line-height: 1.5;
+    min-block-size: 44px;
+    min-inline-size: 0;
+    padding-block: 0.65rem;
+    padding-inline: 1rem;
+}
+
+.site-share-picker {
+    block-size: 100%;
+    cursor: pointer;
+    font: inherit;
+    inline-size: 100%;
+    inset: 0;
+    margin: 0;
+    opacity: 0;
+    position: absolute;
+    z-index: 1;
+}
+
+/* The real select keeps its keyboard, accessibility and platform popup behaviour.
+   The display below it wraps instead of clipping the selected option's text. */
+.site-share-picker-wrap {
+    display: grid;
+    min-inline-size: 0;
+    position: relative;
+}
+
+.site-share-picker-display {
+    align-items: center;
+    display: grid;
+    padding-inline-end: 2.75rem;
+    pointer-events: none;
+    position: relative;
+    white-space: normal;
+}
+
+.site-share-picker-display::after {
+    block-size: 0.5rem;
+    border-block-end: 2px solid currentColor;
+    border-inline-end: 2px solid currentColor;
+    content: "";
+    inline-size: 0.5rem;
+    inset-inline-end: 1rem;
+    position: absolute;
+    transform: rotate(45deg);
+}
+
+.site-share-selected-label,
+.site-share-label-sizer {
+    grid-area: 1 / 1;
+    min-inline-size: 0;
+}
+
+/* All names reserve their wrapped height, including the optional device action.
+   Choosing another service therefore leaves the picker and its peer unchanged. */
+.site-share-label-sizer {
+    display: grid;
+    visibility: hidden;
+}
+
+.site-share-label-sizer > span {
+    grid-area: 1 / 1;
+    min-inline-size: 0;
+}
+
+.site-share-picker-wrap:hover .site-share-picker-display {
+    border-color: var(--color-text-secondary, var(--ink-dim, var(--muted)));
+}
+
+.site-share-action {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    font-weight: 600;
+    justify-content: center;
+    padding-inline: 2.5rem;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    white-space: normal;
+}
+
+.site-share-action::after {
+    block-size: 0.9em;
+    border: 2px solid currentColor;
+    border-inline-end-color: transparent;
+    border-radius: 50%;
+    content: "";
+    inline-size: 0.9em;
+    inset-inline-end: 0.65rem;
+    position: absolute;
+    visibility: hidden;
+}
+
+.site-share-action[aria-busy="true"]::after {
+    animation: site-share-progress 0.8s linear infinite;
+    visibility: visible;
+}
+
+.site-share-action:hover {
+    background: var(--color-bg-elevated, var(--surface-high, var(--paper)));
+    border-color: var(--color-text-secondary, var(--ink-dim, var(--muted)));
+}
+
+.site-share-picker-wrap:has(.site-share-picker:focus-visible) .site-share-picker-display,
+:is(.site-share-action, .site-share-url):focus-visible {
+    outline: 2px solid var(--color-text-primary, var(--ink));
+    outline-offset: 3px;
+}
+
+.site-share-picker:disabled {
+    cursor: progress;
+}
+
+.site-share-picker:disabled + .site-share-picker-display,
+.site-share-action:disabled {
+    cursor: progress;
+    opacity: 0.65;
+}
+
+.site-share-status {
+    color: var(--color-text-secondary, var(--ink-dim, var(--muted)));
+    display: block;
+    margin-block-start: 0.75rem;
+    min-block-size: 1.55em;
+}
+
+.site-share-fallback {
+    margin-block-start: 0.75rem;
+    max-inline-size: 42rem;
+}
+
+.site-share-url {
+    direction: ltr;
+    user-select: text;
+}
+
+@keyframes site-share-progress {
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+@media (max-width: 600px) {
+    .site-share-controls {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .site-share-action[aria-busy="true"]::after {
+        animation: none;
+    }
+}

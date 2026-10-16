@@ -475,6 +475,16 @@ const pt: LocaleDictionary = {
             title: "Estatísticas",
         },
     },
+    siteShare: {
+        copied: "Link copiado",
+        copyLink: "Copiar link",
+        error: "Não foi possível iniciar o compartilhamento. Tente novamente ou copie o link.",
+        heading: "Compartilhe este site",
+        manualCopy: "Copie este link manualmente",
+        nativeShare: "Compartilhar pelo seu dispositivo",
+        selectLabel: "Rede social ou opção de compartilhamento",
+        share: "Compartilhar",
+    },
     tryApp: {
         back: "Voltar à apresentação",
         dismissNotice: "Fechar",

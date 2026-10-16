@@ -46,3 +46,29 @@ export const PAYPAL_URL = import.meta.env.VITE_PAYPAL_URL;
 // cross-origin — see ../../web/AI_TEMPLATE_GUIDE.md §5.
 export const STRIPE_PUBLISHABLE_KEY = import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY;
 export const STRIPE_API_BASE_URL = import.meta.env.VITE_STRIPE_API_BASE_URL.replace(/\/$/, "");
+
+// Site sharing destinations (maintained by workspace sync-site-sharing.mjs).
+export const SHARE_IMAGE_URL = new URL("/og-image.png", SITE_URL).href;
+export const SHARE_ENDPOINTS = {
+    bluesky: "https://bsky.app/intent/compose",
+    facebook: "https://www.facebook.com/sharer/sharer.php",
+    flipboard: "https://share.flipboard.com/bookmarklet/popout",
+    hackerNews: "https://news.ycombinator.com/submitlink",
+    hatena: "https://b.hatena.ne.jp/entry/panel/",
+    line: "https://social-plugins.line.me/lineit/share",
+    linkedin: "https://www.linkedin.com/sharing/share-offsite/",
+    mastodon: "https://share.joinmastodon.org/",
+    odnoklassniki: "https://connect.ok.ru/offer",
+    pinterest: "https://www.pinterest.com/pin/create/button/",
+    qq: "https://connect.qq.com/widget/shareqq/index.html",
+    qzone: "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey",
+    reddit: "https://www.reddit.com/submit",
+    telegram: "https://t.me/share/url",
+    threads: "https://www.threads.com/intent/post",
+    tumblr: "https://www.tumblr.com/widgets/share/tool",
+    vk: "https://vk.com/share.php",
+    weibo: "https://service.weibo.com/share/share.php",
+    whatsapp: "https://wa.me/",
+    x: "https://x.com/intent/tweet",
+    xing: "https://www.xing.com/spi/shares/new",
+} as const;

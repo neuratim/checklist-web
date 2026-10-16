@@ -478,6 +478,16 @@ const es: LocaleDictionary = {
             title: "Estadísticas",
         },
     },
+    siteShare: {
+        copied: "Enlace copiado",
+        copyLink: "Copiar enlace",
+        error: "No se pudo iniciar el proceso para compartir. Inténtalo de nuevo o copia el enlace.",
+        heading: "Comparte este sitio",
+        manualCopy: "Copia este enlace manualmente",
+        nativeShare: "Compartir con tu dispositivo",
+        selectLabel: "Red social u opción para compartir",
+        share: "Compartir",
+    },
     tryApp: {
         back: "Volver al resumen",
         dismissNotice: "Cerrar",

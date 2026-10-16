@@ -478,6 +478,16 @@ const fr: LocaleDictionary = {
             title: "Statistiques",
         },
     },
+    siteShare: {
+        copied: "Lien copié",
+        copyLink: "Copier le lien",
+        error: "Le partage n’a pas pu démarrer. Réessayez ou copiez le lien.",
+        heading: "Partagez ce site",
+        manualCopy: "Copiez ce lien manuellement",
+        nativeShare: "Partager avec votre appareil",
+        selectLabel: "Réseau social ou option de partage",
+        share: "Partager",
+    },
     tryApp: {
         back: "Retour à la présentation",
         dismissNotice: "Fermer",

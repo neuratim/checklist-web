@@ -1,3 +1,4 @@
+import { SiteShare } from "./components/SiteShare";
 import { unlocalizedPath } from "./lib/seoLanguage";
 import { ConditionalItems } from "./components/ConditionalItems";
 import { Features } from "./components/Features";
@@ -52,6 +53,7 @@ function App({ pathname }: AppProps) {
                 <FreeAndSupport />
                 <GetApp />
             </main>
+            <SiteShare />
             <Footer />
         </>
     );

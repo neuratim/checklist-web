@@ -482,6 +482,16 @@ const vi: LocaleDictionary = {
             title: "Thống kê",
         },
     },
+    siteShare: {
+        copied: "Đã sao chép liên kết",
+        copyLink: "Sao chép liên kết",
+        error: "Không thể bắt đầu chia sẻ. Hãy thử lại hoặc sao chép liên kết.",
+        heading: "Chia sẻ trang web này",
+        manualCopy: "Sao chép liên kết này thủ công",
+        nativeShare: "Chia sẻ bằng thiết bị của bạn",
+        selectLabel: "Mạng xã hội hoặc cách chia sẻ",
+        share: "Chia sẻ",
+    },
     tryApp: {
         back: "Quay lại tổng quan",
         dismissNotice: "Đóng",

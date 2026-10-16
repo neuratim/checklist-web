@@ -478,6 +478,16 @@ const tr: LocaleDictionary = {
             title: "İstatistikler",
         },
     },
+    siteShare: {
+        copied: "Bağlantı kopyalandı",
+        copyLink: "Bağlantıyı kopyala",
+        error: "Paylaşım başlatılamadı. Yeniden deneyin veya bağlantıyı kopyalayın.",
+        heading: "Bu siteyi paylaşın",
+        manualCopy: "Bu bağlantıyı elle kopyalayın",
+        nativeShare: "Cihazınızla paylaşın",
+        selectLabel: "Sosyal ağ veya paylaşım seçeneği",
+        share: "Paylaş",
+    },
     tryApp: {
         back: "Genel bakışa dön",
         dismissNotice: "Kapat",

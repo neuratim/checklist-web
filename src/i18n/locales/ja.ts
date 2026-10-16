@@ -474,6 +474,16 @@ const ja: LocaleDictionary = {
             title: "統計",
         },
     },
+    siteShare: {
+        copied: "リンクをコピーしました",
+        copyLink: "リンクをコピー",
+        error: "共有を開始できませんでした。もう一度試すか、リンクをコピーしてください。",
+        heading: "このサイトを共有",
+        manualCopy: "このリンクを手動でコピー",
+        nativeShare: "お使いの端末で共有",
+        selectLabel: "SNSまたは共有方法",
+        share: "共有",
+    },
     tryApp: {
         back: "概要に戻る",
         dismissNotice: "閉じる",

@@ -539,6 +539,16 @@ const en: Dictionary = {
             },
         ],
     },
+    siteShare: {
+        copied: "Link copied",
+        copyLink: "Copy link",
+        error: "Sharing could not start. Try again or copy the link.",
+        heading: "Share this site",
+        manualCopy: "Copy this link manually",
+        nativeShare: "Share with your device",
+        selectLabel: "Social network or sharing option",
+        share: "Share",
+    },
     tryApp: {
         back: "Back to overview",
         dismissNotice: "Dismiss",

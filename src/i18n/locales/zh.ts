@@ -470,6 +470,16 @@ const zh: LocaleDictionary = {
             title: "统计",
         },
     },
+    siteShare: {
+        copied: "链接已复制",
+        copyLink: "复制链接",
+        error: "无法开始分享。请重试或复制链接。",
+        heading: "分享此网站",
+        manualCopy: "手动复制此链接",
+        nativeShare: "通过设备分享",
+        selectLabel: "社交平台或分享方式",
+        share: "分享",
+    },
     tryApp: {
         back: "返回概览",
         dismissNotice: "关闭",

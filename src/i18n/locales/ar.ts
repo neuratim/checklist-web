@@ -472,6 +472,16 @@ const ar: LocaleDictionary = {
             title: "الإحصاءات",
         },
     },
+    siteShare: {
+        copied: "تم نسخ الرابط",
+        copyLink: "نسخ الرابط",
+        error: "تعذّر بدء المشاركة. حاول مجددًا أو انسخ الرابط.",
+        heading: "شارك هذا الموقع",
+        manualCopy: "انسخ هذا الرابط يدويًا",
+        nativeShare: "المشاركة عبر جهازك",
+        selectLabel: "شبكة اجتماعية أو خيار مشاركة",
+        share: "مشاركة",
+    },
     tryApp: {
         back: "العودة إلى النظرة العامة",
         dismissNotice: "إغلاق",
