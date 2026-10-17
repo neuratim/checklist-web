@@ -483,9 +483,7 @@ const cs: LocaleDictionary = {
         selectLabel: "Sociální síť nebo způsob sdílení",
         share: "Sdílet",
     },
-    siteShareRoller: {
-        hint: "Otáčejte tažením, rolováním nebo klávesami ← →. Kliknutím na ikonu zahájíte sdílení.",
-    },
+    siteShareRoller: { hint: "Otáčejte tažením nebo klávesami ← →. Kliknutím na ikonu zahájíte sdílení." },
     tryApp: {
         back: "Zpět na přehled",
         dismissNotice: "Zavřít",

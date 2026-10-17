@@ -475,9 +475,7 @@ const pt: LocaleDictionary = {
             title: "Estatísticas",
         },
     },
-    siteShareRoller: {
-        hint: "Arraste, use a roda do rato ou as teclas ← → para rodar. Clique num ícone para partilhar.",
-    },
+    siteShareRoller: { hint: "Arraste ou use as teclas ← → para rodar. Clique num ícone para partilhar." },
     siteShare: {
         copied: "Link copiado",
         copyLink: "Copiar link",

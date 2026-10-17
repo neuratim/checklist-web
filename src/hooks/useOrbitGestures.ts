@@ -1,23 +1,20 @@
 import { useCallback, useRef, useState, type DragEvent, type PointerEvent } from "react";
 import { ORBIT_DRAG_THRESHOLD } from "../constants/siteShareRoller";
 import type { OrbitDrag, OrbitGestureProps } from "../types/siteShareRoller";
-import { useOrbitWheel } from "./useOrbitWheel";
 
 export function useOrbitGestures(props: OrbitGestureProps) {
     const { disabled, offsetRef, setOffset, spacing, stageRef } = props;
     const drag = useRef<OrbitDrag | null>(null);
     const ignoreClick = useRef(false);
     const [isDragging, setDragging] = useState(false);
-    const { pending, stopWheel } = useOrbitWheel(props);
 
     const handlePointerDown = useCallback(
         (event: PointerEvent<HTMLDivElement>) => {
             if (disabled || event.button !== 0) return;
-            stopWheel();
             ignoreClick.current = false;
             drag.current = { moved: false, offset: offsetRef.current, x: event.clientX, y: event.clientY };
         },
-        [disabled, offsetRef, stopWheel],
+        [disabled, offsetRef],
     );
 
     const handlePointerMove = useCallback(
@@ -68,7 +65,6 @@ export function useOrbitGestures(props: OrbitGestureProps) {
         handlePointerMove,
         shouldIgnoreClick,
         isDragging,
-        settled: !isDragging && !pending,
-        stopWheel,
+        settled: !isDragging,
     };
 }

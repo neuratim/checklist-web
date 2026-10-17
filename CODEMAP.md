@@ -104,32 +104,27 @@ permanent IndexNow key across rebuilds; it adds no analytics.
 
 ## Site sharing
 
-`src/components/SiteShare.tsx` and its stylesheet own the homepage's final sharing
-section, direct icon activation, device sharing and copy-link recovery.
-`SiteShareRoller.tsx`/`.css` render the flat planetary orbit with a prominent central
-icon, faded side icons and a name below every icon. `src/hooks/useSiteShareRoller.ts`
-owns responsive measurements, the cyclic position and keyboard focus.
-`src/hooks/useOrbitGestures.ts` handles mouse/touch dragging and prevents the
-release click from sharing. `src/hooks/useOrbitWheel.ts` handles continuous wheel
-rotation and the idle snap to a front icon. `src/lib/siteShareOrbit.ts` owns pure
-wrapping, responsive capacity and elliptical planet geometry;
-`src/lib/fitOrbitLabels.ts` measures unbreakable words and reserves label height.
-Its geometry constants and interaction contracts live in
-`src/constants/siteShareRoller.ts` and `src/types/siteShareRoller.ts`.
-Each icon starts its sharing action directly; mouse, wheel, touch and arrow-key
-movement rotate the orbit. Every locale owns the visible `siteShareRoller.hint`
-instruction for these inputs.
+`src/components/SiteShare.tsx`/`.css` own the homepage's final safe-inset sharing
+section, direct device/copy actions, pending locks and manual recovery.
+`SiteShareRoller.tsx`/`.css` display named social icons along a flat elliptical
+orbit, with faded sides and direct icon activation. Mouse/touch dragging and
+cyclic keyboard navigation rotate the orbit; the mouse wheel scrolls the page.
+`src/hooks/useOrbitGestures.ts` owns dragging and accidental-click suppression;
+`useSiteShareRoller.ts` owns responsive capacity, layout and keyboard focus.
+`src/lib/siteShareOrbit.ts` and `fitOrbitLabels.ts` own cyclic geometry and fitting
+only an oversized unbreakable word after label reflow. Orbit constants/contracts
+live in `src/constants/siteShareRoller.ts` and `src/types/siteShareRoller.ts`.
+
 `src/lib/siteShare.ts`, `src/constants/siteShare.ts` and `src/types/siteShare.ts`
-own URL construction, supported destinations and contracts; external endpoints and
-existing preview artwork are configured in `site.config.ts`. Every locale owns its
-`siteShare` copy. `scripts/site-sharing.test.mjs` guards URL encoding, native capability and recovery contracts.
-`public/share-icons/` contains all 21 service glyphs plus device/copy icons, licenses
-and an integrity manifest; [icon provenance](docs/share-icons.md) records their sources.
-`scripts/site-sharing-roller.test.mjs` guards the direct-action toolbar's SSR,
-translated interaction hints, pure orbit geometry and complete local icon delivery.
-The optional `npm run test:sharing:ui` browser suite requires
-the workspace's owned browser harness and a production build; it verifies the
-roller's responsive layout and actual mouse, wheel, touch, keyboard and direct sharing actions.
-Shared behavior is refreshed by the workspace's `node scripts/sync-site-sharing.mjs`,
-which explicitly preserves Checklist's local renderer. This repository's ordinary
-build and `npm test` need no workspace checkout.
+own encoded composer URLs, supported destinations and browser API boundaries.
+`site.config.ts` owns external endpoints, preview artwork and the local icon path.
+Every supported locale owns `siteShare` and the translated `siteShareRoller.hint`.
+`public/share-icons/` contains 23 local glyphs, licenses and integrity records;
+[icon provenance](docs/share-icons.md) records pinned sources.
+
+`scripts/site-sharing.test.mjs` guards URL/native/clipboard contracts;
+`scripts/site-sharing-orbit.test.mjs` guards cyclic responsive geometry,
+translated hints and exact asset integrity. Ordinary tests/builds are standalone.
+The workspace's `node scripts/sync-site-sharing.mjs` refreshes common source and
+assets. Its separate `test:site-sharing:browser` uses production artifacts to check
+pointer/touch/keyboard gestures, direct activation, responsive layout and insets.

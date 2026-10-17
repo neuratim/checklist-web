@@ -470,9 +470,7 @@ const zh: LocaleDictionary = {
             title: "统计",
         },
     },
-    siteShareRoller: {
-        hint: "拖动、滚动或使用 ← → 键来旋转。点击图标即可分享。",
-    },
+    siteShareRoller: { hint: "拖动或使用 ← → 键来旋转。点击图标即可分享。" },
     siteShare: {
         copied: "链接已复制",
         copyLink: "复制链接",

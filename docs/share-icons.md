@@ -1,4 +1,4 @@
-# Checklist social-sharing icons
+# Presentation social-sharing icons
 
 The orbital sharing roller uses these compact glyphs from `public/share-icons/`.
 Every asset has a `0 0 24 24` view box and a white fill for the roller's dark

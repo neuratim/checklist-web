@@ -479,7 +479,7 @@ const tr: LocaleDictionary = {
         },
     },
     siteShareRoller: {
-        hint: "Döndürmek için sürükleyin, kaydırın veya ← → tuşlarını kullanın. Paylaşmak için bir simgeye tıklayın.",
+        hint: "Döndürmek için sürükleyin veya ← → tuşlarını kullanın. Paylaşmak için bir simgeye tıklayın.",
     },
     siteShare: {
         copied: "Bağlantı kopyalandı",

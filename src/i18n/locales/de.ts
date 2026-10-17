@@ -486,9 +486,7 @@ const de: LocaleDictionary = {
         selectLabel: "Soziales Netzwerk oder Freigabeoption",
         share: "Teilen",
     },
-    siteShareRoller: {
-        hint: "Zum Drehen ziehen, scrollen oder ← → drücken. Zum Teilen auf ein Symbol klicken.",
-    },
+    siteShareRoller: { hint: "Zum Drehen ziehen oder ← → drücken. Zum Teilen auf ein Symbol klicken." },
     tryApp: {
         back: "Zurück zur Übersicht",
         dismissNotice: "Schließen",

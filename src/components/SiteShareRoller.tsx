@@ -66,7 +66,6 @@ export function SiteShareRoller({
         settled,
         shouldIgnoreClick,
         stageRef,
-        stopWheel,
     } = useSiteShareRoller(options.length, disabled);
     const handleClick = useCallback(
         (event: MouseEvent<HTMLAnchorElement | HTMLButtonElement>) => {
@@ -75,10 +74,9 @@ export function SiteShareRoller({
                 event.preventDefault();
                 return;
             }
-            stopWheel();
             if (!onActivate(id)) event.preventDefault();
         },
-        [disabled, onActivate, shouldIgnoreClick, stopWheel],
+        [disabled, onActivate, shouldIgnoreClick],
     );
 
     return (
@@ -103,7 +101,13 @@ export function SiteShareRoller({
                 tabIndex={-1}
             >
                 {options.map((option, index) => {
-                    const planet = orbitPlanet(index, offset, options.length, metrics, language === "ar");
+                    const planet = orbitPlanet(
+                        index,
+                        offset,
+                        options.length,
+                        metrics,
+                        String(language) === "ar",
+                    );
                     const href = getShareHref(option.id, data);
                     const content = planetContent(option.id, option.label, planet.iconStyle);
                     const tabIndex = !disabled && index === frontIndex ? 0 : -1;

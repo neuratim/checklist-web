@@ -1,5 +1,5 @@
 import type { RefObject } from "react";
-import type { ShareSelection, SiteShareData } from "./siteShare";
+import type { ShareSelection, SiteShareData } from "./siteShare.ts";
 
 export interface SiteShareRollerCopy {
     hint: string;

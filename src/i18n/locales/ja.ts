@@ -484,9 +484,7 @@ const ja: LocaleDictionary = {
         selectLabel: "SNSまたは共有方法",
         share: "共有",
     },
-    siteShareRoller: {
-        hint: "ドラッグ、スクロール、または ← → キーで回転できます。アイコンをクリックして共有します。",
-    },
+    siteShareRoller: { hint: "ドラッグまたは ← → キーで回転できます。アイコンをクリックして共有します。" },
     tryApp: {
         back: "概要に戻る",
         dismissNotice: "閉じる",

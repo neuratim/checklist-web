@@ -1,4 +1,56 @@
 .site-share {
+    --site-share-accent: var(
+        --brand-blue,
+        var(
+            --brand-teal,
+            var(
+                --brand-current,
+                var(
+                    --brand-jade,
+                    var(
+                        --brand-indigo,
+                        var(
+                            --brand-amber,
+                            var(--brand-lime, var(--accent-blue, var(--accent, var(--blue, #3aa8ff))))
+                        )
+                    )
+                )
+            )
+        )
+    );
+    --site-share-violet: var(
+        --brand-violet,
+        var(
+            --brand-indigo,
+            var(
+                --brand-deep,
+                var(
+                    --brand-clay,
+                    var(
+                        --brand-rust,
+                        var(
+                            --brand-signal,
+                            var(
+                                --brand-amber,
+                                var(--accent-violet, var(--accent-deep, var(--violet, #7c3aed)))
+                            )
+                        )
+                    )
+                )
+            )
+        )
+    );
+    --site-share-ink: var(--color-text-primary, var(--ink, #f2f3f7));
+    --site-share-muted: var(--color-text-secondary, var(--ink-dim, var(--muted, #9aa0ae)));
+    --site-share-surface: var(--color-surface, var(--surface, var(--paper, #12121c)));
+    --site-share-border: var(--color-border-strong, var(--surface-line, var(--line, #ffffff29)));
+    --site-share-planet-surface: color-mix(in srgb, var(--site-share-accent) 9%, #11131d);
+    --site-share-planet-elevated: color-mix(in srgb, var(--site-share-accent) 13%, #1a1d2b);
+    --site-share-planet-border: color-mix(in srgb, var(--site-share-accent) 25%, #343947);
+    --site-share-gradient: var(
+        --brand-gradient,
+        var(--accent-gradient, linear-gradient(120deg, var(--site-share-accent), var(--site-share-violet)))
+    );
     border-block-start: 1px solid var(--color-border, var(--surface-line, var(--line)));
     padding-block: 2.5rem calc(1.5rem + env(safe-area-inset-bottom, 0px));
     padding-left: max(1.25rem, env(safe-area-inset-left, 0px));
@@ -28,13 +80,14 @@
 }
 
 .site-share-heading {
-    font-size: clamp(1.15rem, 2vw, 1.4rem);
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    text-align: center;
     margin-block-end: 0.75rem;
 }
 
 .site-share-label,
 .site-share-fallback label {
-    color: var(--color-text-secondary, var(--ink-dim, var(--muted)));
+    color: var(--site-share-muted);
     display: block;
     margin-block-end: 0.5rem;
 }
@@ -46,10 +99,10 @@
 }
 
 .site-share-url {
-    background: var(--color-surface, var(--surface, var(--paper)));
-    border: 1px solid var(--color-border-strong, var(--surface-line, var(--line)));
+    background: var(--site-share-surface);
+    border: 1px solid var(--site-share-border);
     border-radius: var(--radius-sm, var(--radius-s, 12px));
-    color: var(--color-text-primary, var(--ink));
+    color: var(--site-share-ink);
     font: inherit;
     inline-size: 100%;
     line-height: 1.5;
@@ -60,12 +113,12 @@
 }
 
 .site-share-url:focus-visible {
-    outline: 2px solid var(--color-text-primary, var(--ink));
+    outline: 2px solid var(--site-share-ink);
     outline-offset: 3px;
 }
 
 .site-share-status {
-    color: var(--color-text-secondary, var(--ink-dim, var(--muted)));
+    color: var(--site-share-muted);
     display: block;
     margin-block-start: 0.75rem;
     min-block-size: 1.55em;

@@ -489,7 +489,7 @@ const fr: LocaleDictionary = {
         share: "Partager",
     },
     siteShareRoller: {
-        hint: "Faites glisser, faites défiler ou utilisez les touches ← → pour faire tourner. Cliquez sur une icône pour partager.",
+        hint: "Faites glisser ou utilisez les touches ← → pour faire tourner. Cliquez sur une icône pour partager.",
     },
     tryApp: {
         back: "Retour à la présentation",

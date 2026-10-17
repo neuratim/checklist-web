@@ -489,9 +489,7 @@ const it: LocaleDictionary = {
         selectLabel: "Social network o opzione di condivisione",
         share: "Condividi",
     },
-    siteShareRoller: {
-        hint: "Trascina, scorri o usa ← → per ruotare. Fai clic su un'icona per condividere.",
-    },
+    siteShareRoller: { hint: "Trascina o usa ← → per ruotare. Fai clic su un'icona per condividere." },
     tryApp: {
         back: "Torna alla panoramica",
         dismissNotice: "Chiudi",
