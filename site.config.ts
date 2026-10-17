@@ -72,3 +72,6 @@ export const SHARE_ENDPOINTS = {
     x: "https://x.com/intent/tweet",
     xing: "https://www.xing.com/spi/shares/new",
 } as const;
+
+// Checklist-only orbital sharing renderer assets.
+export const SHARE_ICON_BASE_PATH = "/share-icons/";

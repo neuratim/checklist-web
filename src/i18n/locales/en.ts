@@ -549,6 +549,9 @@ const en: Dictionary = {
         selectLabel: "Social network or sharing option",
         share: "Share",
     },
+    siteShareRoller: {
+        hint: "Drag, scroll or use ← → to rotate. Click an icon to share.",
+    },
     tryApp: {
         back: "Back to overview",
         dismissNotice: "Dismiss",

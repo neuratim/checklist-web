@@ -1,4 +1,5 @@
 import type { SiteShareCopy } from "./siteShare";
+import type { SiteShareRollerCopy } from "./siteShareRoller";
 
 type DeepPartial<T> = T extends readonly (infer Element)[]
     ? readonly DeepPartial<Element>[]
@@ -309,6 +310,7 @@ export interface Dictionary {
         points: [FeatureItem, FeatureItem, FeatureItem, FeatureItem];
     };
     siteShare: SiteShareCopy;
+    siteShareRoller: SiteShareRollerCopy;
     tryApp: {
         back: string;
         dismissNotice: string;

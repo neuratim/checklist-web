@@ -482,6 +482,9 @@ const ko: LocaleDictionary = {
         selectLabel: "소셜 네트워크 또는 공유 방법",
         share: "공유",
     },
+    siteShareRoller: {
+        hint: "드래그하거나 스크롤하거나 ← → 키를 사용해 회전하세요. 아이콘을 클릭해 공유하세요.",
+    },
     tryApp: {
         back: "개요로 돌아가기",
         dismissNotice: "닫기",

@@ -1,0 +1,181 @@
+.site-share-roller-shell {
+    inline-size: 100%;
+    min-inline-size: 0;
+}
+
+.site-share-heading {
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    text-align: center;
+}
+
+.site-share-orbit {
+    --orbit-icon-size: clamp(64px, 4.5rem, 80px);
+    block-size: max(17rem, calc(13rem + var(--planet-label-height, 4.5rem)));
+    cursor: grab;
+    isolation: isolate;
+    min-inline-size: 0;
+    overflow: clip;
+    position: relative;
+    touch-action: pan-y pinch-zoom;
+    user-select: none;
+    background: radial-gradient(
+        ellipse at 50% 45%,
+        color-mix(in srgb, var(--brand-blue) 7%, transparent),
+        transparent 65%
+    );
+}
+
+.site-share-orbit::before {
+    background: radial-gradient(
+        ellipse,
+        color-mix(in srgb, var(--brand-violet) 7%, transparent),
+        transparent 70%
+    );
+    block-size: 80px;
+    border: 1px solid color-mix(in srgb, var(--brand-blue) 25%, transparent);
+    border-radius: 50%;
+    box-shadow:
+        0 0 32px color-mix(in srgb, var(--brand-blue) 5%, transparent),
+        inset 0 0 24px color-mix(in srgb, var(--brand-violet) 5%, transparent);
+    content: "";
+    inset-inline: 7%;
+    pointer-events: none;
+    position: absolute;
+    top: calc(22% + var(--orbit-icon-size) / 2);
+    transform: translateY(-50%);
+    z-index: -1;
+}
+
+.site-share-orbit--dragging,
+.site-share-orbit--dragging .site-share-planet {
+    cursor: grabbing;
+}
+
+.site-share-planet {
+    align-items: center;
+    background: transparent;
+    border: 0;
+    border-radius: var(--radius-md);
+    color: var(--color-text-primary);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    font: inherit;
+    font-weight: 500;
+    gap: 0.75rem;
+    left: 50%;
+    min-block-size: 44px;
+    padding: 0.5rem 4px;
+    position: absolute;
+    text-align: center;
+    text-decoration: none;
+    top: 22%;
+    transition:
+        transform 220ms ease,
+        opacity 220ms ease;
+}
+
+.site-share-orbit--dragging .site-share-planet {
+    transition: none;
+}
+
+.site-share-planet[aria-hidden="true"] {
+    pointer-events: none;
+    visibility: hidden;
+}
+
+.site-share-planet-icon {
+    align-items: center;
+    background: linear-gradient(145deg, var(--color-bg-elevated), var(--color-surface));
+    block-size: var(--orbit-icon-size);
+    border: 1px solid var(--color-border-strong);
+    border-radius: 50%;
+    box-shadow:
+        0 14px 30px -12px #000b,
+        inset 0 1px 0 #ffffff0d;
+    display: flex;
+    flex: 0 0 auto;
+    inline-size: var(--orbit-icon-size);
+    justify-content: center;
+    transition:
+        border-color 160ms ease,
+        box-shadow 160ms ease;
+}
+
+.site-share-planet[tabindex="0"] .site-share-planet-icon {
+    background:
+        linear-gradient(var(--color-surface), var(--color-bg-elevated)) padding-box,
+        var(--brand-gradient) border-box;
+    border-color: transparent;
+    box-shadow:
+        0 0 0 4px color-mix(in srgb, var(--brand-blue) 8%, transparent),
+        0 12px 40px -14px color-mix(in srgb, var(--brand-blue) 50%, transparent);
+}
+
+.site-share-planet img {
+    block-size: 45%;
+    inline-size: 45%;
+    pointer-events: none;
+}
+
+.site-share-planet-label {
+    font-size: 1rem;
+    inline-size: 100%;
+    line-height: 1.5;
+    min-block-size: var(--planet-label-height, 4.5rem);
+    white-space: normal;
+}
+
+.site-share-planet-word {
+    font-size: calc(1em * var(--planet-word-fit, 1));
+}
+
+.site-share-planet:hover .site-share-planet-icon {
+    border-color: var(--brand-blue);
+}
+
+.site-share-planet:focus-visible {
+    outline: 2px solid var(--color-text-primary);
+    outline-offset: 2px;
+}
+
+.site-share-orbit-hint {
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin: 0 auto;
+    max-inline-size: 54ch;
+    text-align: center;
+}
+
+.site-share-orbit[aria-busy="true"] .site-share-planet {
+    cursor: progress;
+}
+
+.site-share-orbit[aria-busy="true"]::after {
+    animation: site-share-orbit-progress 0.8s linear infinite;
+    block-size: 1.25rem;
+    border: 2px solid var(--brand-blue);
+    border-inline-end-color: transparent;
+    border-radius: 50%;
+    bottom: 0.5rem;
+    content: "";
+    inline-size: 1.25rem;
+    left: calc(50% - 0.625rem);
+    position: absolute;
+}
+
+@keyframes site-share-orbit-progress {
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .site-share-planet,
+    .site-share-planet-icon {
+        transition: none;
+    }
+    .site-share-orbit[aria-busy="true"]::after {
+        animation: none;
+    }
+}

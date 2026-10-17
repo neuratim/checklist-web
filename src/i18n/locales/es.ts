@@ -488,6 +488,9 @@ const es: LocaleDictionary = {
         selectLabel: "Red social u opción para compartir",
         share: "Compartir",
     },
+    siteShareRoller: {
+        hint: "Arrastra, desplázate o usa ← → para girar. Haz clic en un icono para compartir.",
+    },
     tryApp: {
         back: "Volver al resumen",
         dismissNotice: "Cerrar",

@@ -482,6 +482,9 @@ const vi: LocaleDictionary = {
             title: "Thống kê",
         },
     },
+    siteShareRoller: {
+        hint: "Kéo, cuộn hoặc dùng phím ← → để xoay. Nhấp vào biểu tượng để chia sẻ.",
+    },
     siteShare: {
         copied: "Đã sao chép liên kết",
         copyLink: "Sao chép liên kết",

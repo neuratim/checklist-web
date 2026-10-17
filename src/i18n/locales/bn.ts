@@ -474,6 +474,9 @@ const bn: LocaleDictionary = {
             title: "পরিসংখ্যান",
         },
     },
+    siteShareRoller: {
+        hint: "ঘোরাতে টানুন, স্ক্রল করুন বা ← → ব্যবহার করুন। শেয়ার করতে কোনো আইকনে ক্লিক করুন।",
+    },
     siteShare: {
         copied: "লিংক কপি হয়েছে",
         copyLink: "লিংক কপি করুন",

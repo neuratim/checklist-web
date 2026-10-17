@@ -105,10 +105,31 @@ permanent IndexNow key across rebuilds; it adds no analytics.
 ## Site sharing
 
 `src/components/SiteShare.tsx` and its stylesheet own the homepage's final sharing
-selector, explicit action, device sharing and copy-link recovery.
+section, direct icon activation, device sharing and copy-link recovery.
+`SiteShareRoller.tsx`/`.css` render the flat planetary orbit with a prominent central
+icon, faded side icons and a name below every icon. `src/hooks/useSiteShareRoller.ts`
+owns responsive measurements, the cyclic position and keyboard focus.
+`src/hooks/useOrbitGestures.ts` handles mouse/touch dragging and prevents the
+release click from sharing. `src/hooks/useOrbitWheel.ts` handles continuous wheel
+rotation and the idle snap to a front icon. `src/lib/siteShareOrbit.ts` owns pure
+wrapping, responsive capacity and elliptical planet geometry;
+`src/lib/fitOrbitLabels.ts` measures unbreakable words and reserves label height.
+Its geometry constants and interaction contracts live in
+`src/constants/siteShareRoller.ts` and `src/types/siteShareRoller.ts`.
+Each icon starts its sharing action directly; mouse, wheel, touch and arrow-key
+movement rotate the orbit. Every locale owns the visible `siteShareRoller.hint`
+instruction for these inputs.
 `src/lib/siteShare.ts`, `src/constants/siteShare.ts` and `src/types/siteShare.ts`
 own URL construction, supported destinations and contracts; external endpoints and
 existing preview artwork are configured in `site.config.ts`. Every locale owns its
 `siteShare` copy. `scripts/site-sharing.test.mjs` guards URL encoding, native capability and recovery contracts.
-Shared sources are refreshed by the workspace's `node scripts/sync-site-sharing.mjs`;
-this repository's build and tests need no workspace checkout.
+`public/share-icons/` contains all 21 service glyphs plus device/copy icons, licenses
+and an integrity manifest; [icon provenance](docs/share-icons.md) records their sources.
+`scripts/site-sharing-roller.test.mjs` guards the direct-action toolbar's SSR,
+translated interaction hints, pure orbit geometry and complete local icon delivery.
+The optional `npm run test:sharing:ui` browser suite requires
+the workspace's owned browser harness and a production build; it verifies the
+roller's responsive layout and actual mouse, wheel, touch, keyboard and direct sharing actions.
+Shared behavior is refreshed by the workspace's `node scripts/sync-site-sharing.mjs`,
+which explicitly preserves Checklist's local renderer. This repository's ordinary
+build and `npm test` need no workspace checkout.

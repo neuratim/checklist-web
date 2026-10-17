@@ -487,6 +487,9 @@ const id: LocaleDictionary = {
         selectLabel: "Jejaring sosial atau opsi berbagi",
         share: "Bagikan",
     },
+    siteShareRoller: {
+        hint: "Seret, gulir, atau gunakan ← → untuk memutar. Klik ikon untuk berbagi.",
+    },
     tryApp: {
         back: "Kembali ke ringkasan",
         dismissNotice: "Tutup",

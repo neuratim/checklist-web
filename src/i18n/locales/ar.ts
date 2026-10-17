@@ -482,6 +482,9 @@ const ar: LocaleDictionary = {
         selectLabel: "شبكة اجتماعية أو خيار مشاركة",
         share: "مشاركة",
     },
+    siteShareRoller: {
+        hint: "اسحب أو مرّر أو استخدم ← → للتدوير. انقر على أيقونة للمشاركة.",
+    },
     tryApp: {
         back: "العودة إلى النظرة العامة",
         dismissNotice: "إغلاق",

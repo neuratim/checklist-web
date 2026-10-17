@@ -474,6 +474,9 @@ const pl: LocaleDictionary = {
             title: "Statystyki",
         },
     },
+    siteShareRoller: {
+        hint: "Przeciągnij, przewiń lub użyj klawiszy ← →, aby obracać. Kliknij ikonę, aby udostępnić.",
+    },
     siteShare: {
         copied: "Link skopiowany",
         copyLink: "Kopiuj link",

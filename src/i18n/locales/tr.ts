@@ -478,6 +478,9 @@ const tr: LocaleDictionary = {
             title: "İstatistikler",
         },
     },
+    siteShareRoller: {
+        hint: "Döndürmek için sürükleyin, kaydırın veya ← → tuşlarını kullanın. Paylaşmak için bir simgeye tıklayın.",
+    },
     siteShare: {
         copied: "Bağlantı kopyalandı",
         copyLink: "Bağlantıyı kopyala",
