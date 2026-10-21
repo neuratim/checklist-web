@@ -214,6 +214,7 @@ const de: LocaleDictionary = {
             "Backups werden standardmäßig mit einer selbst gewählten Passphrase verschlüsselt",
             "Die Statistik wird auf deinem Gerät aus deinen Checklisten berechnet",
         ],
+        chips: ["Kein Konto", "Kein Tracking", "Keine Cloud-Synchronisierung", "Verschlüsselte Backups"],
         policyLink: "Die vollständige Datenschutzerklärung lesen",
     },
     privacyPolicy: {

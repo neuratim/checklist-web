@@ -215,6 +215,7 @@ const fr: LocaleDictionary = {
             "Les sauvegardes sont chiffrées par défaut avec une phrase secrète que vous choisissez",
             "Les statistiques sont calculées sur votre appareil à partir de vos listes",
         ],
+        chips: ["Aucun compte", "Aucun pistage", "Pas de synchro cloud", "Sauvegardes chiffrées"],
         policyLink: "Lire la politique de confidentialité complète",
     },
     privacyPolicy: {

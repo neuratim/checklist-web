@@ -215,6 +215,7 @@ const id: LocaleDictionary = {
             "Secara default, cadangan dienkripsi dengan frasa sandi pilihanmu",
             "Statistik dihitung dari daftar periksa di perangkatmu",
         ],
+        chips: ["Tanpa akun", "Tanpa pelacakan", "Tanpa sinkronisasi cloud", "Cadangan terenkripsi"],
         policyLink: "Baca kebijakan privasi lengkap",
     },
     privacyPolicy: {

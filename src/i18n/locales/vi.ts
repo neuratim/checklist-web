@@ -219,6 +219,7 @@ const vi: LocaleDictionary = {
             "Bản sao lưu được mã hóa mặc định bằng cụm mật khẩu do bạn chọn",
             "Thống kê được tính trên thiết bị từ các danh sách của bạn",
         ],
+        chips: ["Không cần tài khoản", "Không theo dõi", "Không đồng bộ đám mây", "Sao lưu được mã hóa"],
         policyLink: "Đọc toàn bộ chính sách quyền riêng tư",
     },
     privacyPolicy: {

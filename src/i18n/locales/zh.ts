@@ -211,6 +211,7 @@ const zh: LocaleDictionary = {
             "备份默认使用你选择的密码短语加密",
             "统计在设备上根据你的清单计算",
         ],
+        chips: ["无需账号", "无追踪", "无云同步", "加密备份"],
         policyLink: "阅读完整隐私政策",
     },
     privacyPolicy: {

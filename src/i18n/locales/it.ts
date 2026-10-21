@@ -219,6 +219,7 @@ const it: LocaleDictionary = {
             "I backup sono crittografati per impostazione predefinita con una passphrase a tua scelta",
             "Le statistiche vengono calcolate sul dispositivo a partire dalle tue liste",
         ],
+        chips: ["Nessun account", "Nessun tracciamento", "Nessuna sincronizzazione cloud", "Backup cifrati"],
         policyLink: "Leggi l'informativa completa sulla privacy",
     },
     privacyPolicy: {
