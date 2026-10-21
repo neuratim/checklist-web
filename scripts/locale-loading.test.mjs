@@ -34,7 +34,7 @@ test("concurrent loads share one promise and a failed locale can retry", async (
         configFile: false,
         logLevel: "error",
         root,
-        server: { middlewareMode: true, watch: null },
+        server: { hmr: false, middlewareMode: true, watch: null, ws: false },
         optimizeDeps: { noDiscovery: true, include: [] },
         plugins: [
             {
@@ -77,7 +77,7 @@ test("every async locale equals its complete SSR dictionary and reuses its cache
         configFile: false,
         logLevel: "error",
         root,
-        server: { middlewareMode: true, watch: null },
+        server: { hmr: false, middlewareMode: true, watch: null, ws: false },
         optimizeDeps: { noDiscovery: true, include: [] },
     });
     try {

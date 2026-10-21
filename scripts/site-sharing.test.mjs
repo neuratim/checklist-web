@@ -22,7 +22,7 @@ before(async () => {
         logLevel: "error",
         optimizeDeps: { noDiscovery: true, include: [] },
         root,
-        server: { hmr: false, middlewareMode: true, watch: null },
+        server: { hmr: false, middlewareMode: true, watch: null, ws: false },
     });
     [sharing, config, services] = await Promise.all([
         server.ssrLoadModule("/src/lib/siteShare.ts"),
