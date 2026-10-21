@@ -214,6 +214,7 @@ const pl: LocaleDictionary = {
             "Kopie zapasowe są domyślnie szyfrowane wybraną przez Ciebie frazą hasłową",
             "Statystyki są obliczane na Twoim urządzeniu na podstawie Twoich list",
         ],
+        chips: ["Bez konta", "Bez śledzenia", "Bez synchronizacji w chmurze", "Szyfrowane kopie"],
         policyLink: "Przeczytaj pełną politykę prywatności",
     },
     privacyPolicy: {

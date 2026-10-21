@@ -167,6 +167,7 @@ export interface Dictionary {
     privacy: {
         badgeBody: string;
         badgeTitle: string;
+        chips: [string, string, string, string];
         eyebrow: string;
         heading: string;
         intro: string;

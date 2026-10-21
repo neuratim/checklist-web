@@ -214,6 +214,7 @@ const cs: LocaleDictionary = {
             "Zálohy jsou ve výchozím nastavení šifrované vámi zvolenou heslovou frází",
             "Statistiky se počítají z vašich seznamů ve vašem zařízení",
         ],
+        chips: ["Bez účtu", "Bez sledování", "Bez cloudové synchronizace", "Šifrované zálohy"],
         policyLink: "Přečíst celé zásady ochrany soukromí",
     },
     privacyPolicy: {

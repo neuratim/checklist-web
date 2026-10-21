@@ -233,6 +233,7 @@ const en: Dictionary = {
             "Backups are encrypted by default with a passphrase you choose",
             "Statistics are calculated on your device from your checklists",
         ],
+        chips: ["No account", "No tracking", "No cloud sync", "Encrypted backups"],
         policyLink: "Read the full privacy policy",
     },
     privacyPolicy: {

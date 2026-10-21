@@ -215,6 +215,7 @@ const tr: LocaleDictionary = {
             "Yedekler varsayılan olarak belirlediğiniz parolayla şifrelenir",
             "İstatistikler kontrol listelerinizden cihazınızda hesaplanır",
         ],
+        chips: ["Hesap yok", "İzleme yok", "Bulut eşitleme yok", "Şifreli yedekler"],
         policyLink: "Gizlilik politikasının tamamını okuyun",
     },
     privacyPolicy: {

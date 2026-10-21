@@ -215,6 +215,7 @@ const es: LocaleDictionary = {
             "Las copias de seguridad se cifran por defecto con una frase de contraseña que tú eliges",
             "Las estadísticas se calculan en tu dispositivo a partir de tus listas",
         ],
+        chips: ["Sin cuenta", "Sin rastreo", "Sin sincronización en la nube", "Copias cifradas"],
         policyLink: "Leer la política de privacidad completa",
     },
     privacyPolicy: {

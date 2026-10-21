@@ -214,6 +214,7 @@ const pt: LocaleDictionary = {
             "Backups são criptografados por padrão com uma frase-senha que você escolhe",
             "Estatísticas são calculadas no dispositivo a partir das suas listas",
         ],
+        chips: ["Sem conta", "Sem rastreamento", "Sem sincronização na nuvem", "Backups criptografados"],
         policyLink: "Leia a política de privacidade completa",
     },
     privacyPolicy: {
