@@ -141,6 +141,8 @@ This directory is the checklist-web Git root. Read [CODEMAP.md](CODEMAP.md) and
 [REPOSITORY.md](REPOSITORY.md) for standalone build, main-only CI and deployment
 settings; those repository boundaries supersede older parent-workflow descriptions.
 Run format checking, lint, type checking and the complete build before committing.
-Sibling app paths are for capture/refresh tasks, never ordinary CI build inputs.
+Nothing in this repository may use a path outside its root — no `../app`, workspace
+`scripts/` or `.tmp`, no absolute machine path; a tool that needs one takes it as an
+explicit argument or environment variable. `npm run check checklist/web` enforces this.
 
 The public app policy is served at `/privacy-policy/` (also accepts `/privacy-policy`); legacy `#privacy-policy` links remain compatible. The build includes `scripts/verify-privacy.mjs`; run `npm test` for route regressions. See [CODEMAP.md](CODEMAP.md) for content, rendering and navigation ownership.

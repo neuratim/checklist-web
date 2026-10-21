@@ -11,7 +11,6 @@
         "lint": "oxlint",
         "preview": "vite preview",
         "test": "node --test scripts/*.test.mjs",
-        "test:sharing:ui": "node scripts/site-sharing-roller.ui.mjs",
         "tsc": "tsc --noEmit",
         "verify:privacy": "node scripts/verify-privacy.mjs",
         "verify:seo": "node scripts/verify-seo.mjs"
