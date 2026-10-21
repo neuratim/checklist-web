@@ -6,6 +6,7 @@ on:
     workflow_dispatch:
 
 permissions:
+    checks: read
     contents: read
 
 concurrency:
@@ -39,3 +40,8 @@ jobs:
               run: npm test
             - name: Build and verify static output
               run: npm run build
+            - name: Confirm Cloudflare deployed this commit
+              timeout-minutes: 20
+              env:
+                  GITHUB_TOKEN: ${{ github.token }}
+              run: node scripts/verify-cloudflare-build.mjs

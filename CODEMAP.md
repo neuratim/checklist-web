@@ -3,16 +3,16 @@
 This repository is checked out at `packages/checklist/web/` in the NeuraTiM
 workspace and also builds on its own. Its Git root is this directory.
 
-| Path                                                                    | Responsibility                                              |
-| ----------------------------------------------------------------------- | ----------------------------------------------------------- |
-| `index.html`, `src/main.tsx`, `src/App.tsx`                             | HTML and React entry points                                 |
-| `site.config.ts`                                                        | Public URLs, product identity and support settings          |
-| `src/`                                                                  | Page components, styles, dictionaries and browser behavior  |
-| `public/`                                                               | Committed website media, crawler files and response headers |
-| `scripts/` (where present)                                              | Site generation and validation tools                        |
-| `package.json`, `package-lock.json`, `vite.config.ts`, `tsconfig*.json` | Reproducible install, build and strict TypeScript settings  |
-| `.github/workflows/verify.yml`                                          | Main-only website checks without the app checkout           |
-| `.gitattributes`, `.gitignore`                                          | Cross-platform line endings and generated/local exclusions  |
+| Path                                                                    | Responsibility                                                                                                  |
+| ----------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| `index.html`, `src/main.tsx`, `src/App.tsx`                             | HTML and React entry points                                                                                     |
+| `site.config.ts`                                                        | Public URLs, product identity and support settings                                                              |
+| `src/`                                                                  | Page components, styles, dictionaries and browser behavior                                                      |
+| `public/`                                                               | Committed website media, crawler files and response headers                                                     |
+| `scripts/` (where present)                                              | Site generation and validation tools                                                                            |
+| `package.json`, `package-lock.json`, `vite.config.ts`, `tsconfig*.json` | Reproducible install, build and strict TypeScript settings                                                      |
+| `.github/workflows/verify.yml`                                          | Main-only website checks without the app checkout, then confirmation that Cloudflare deployed the pushed commit |
+| `.gitattributes`, `.gitignore`                                          | Cross-platform line endings and generated/local exclusions                                                      |
 
 For page changes, start in `src/` and update every affected locale. For deployment
 or repository boundaries, read [REPOSITORY.md](REPOSITORY.md). For app captures,

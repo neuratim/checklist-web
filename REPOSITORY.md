@@ -51,3 +51,17 @@ root and `npm run build` build command. Its deploy command must be exactly
 serves `dist/` using `404-page`; do not fall back to automatic Vite SPA
 configuration. Changing dashboard settings or publishing requires separate approval.
 A local build verifies packaging and headers, not the deployed HTTP status.
+
+## Deployment confirmation
+
+Cloudflare builds this site only when GitHub's push webhook reaches its Workers
+Builds app; a lost delivery leaves no build, no failure and the previous
+deployment live. The last workflow step, **Confirm Cloudflare deployed this
+commit**, runs `scripts/verify-cloudflare-build.mjs`: it waits up to 15 minutes
+for the `Workers Builds: <worker>` check on the pushed commit and fails the run
+when that check is missing, failed or unfinished. A newer main commit hands the
+guarantee to its own run. To recover, retry the Worker's build in the Cloudflare
+dashboard, or, with deployment approval, build a clean checkout of that commit
+(`npm ci`, `npm run build`) and run the pinned deploy command above; then
+confirm the live asset hashes match `dist/index.html`. The script is a
+standalone copy of a workspace template; refresh it there rather than editing it.
