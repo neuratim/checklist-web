@@ -73,12 +73,12 @@ const tr: LocaleDictionary = {
                 body: "Uygulamayı kullanan birine QR kodu veya .ntchk dosyası, diğer kişilere ise düz metin gönderin. Paylaşılan kontrol listelerine ve şablonlara fotoğraflar dahil edilmez.",
             },
             {
-                title: "Şifreli yedekler",
-                body: "Fotoğraflar dahil verilerinizi, belirlediğiniz parolayla korunan tek bir dosyada yedekleyin. Şifreleme cihazınızda Argon2id ve AES-GCM kullanılarak yapılır.",
+                title: "Tek dosyada yedekler",
+                body: "Şablonlarınızı, kontrol listelerinizi, notlarınızı, hatırlatıcılarınızı ve fotoğraflarınızı okunabilir tek bir dosyada yedekleyin ve gerektiğinde geri yükleyin. Dosyaya sahip olan herkes onu okuyabilir; bu yüzden güvendiğiniz bir yerde saklayın.",
             },
             {
-                title: "Uygulama kilidi ve şifreleme",
-                body: "Uygulamayı parmak iziniz, yüz tanıma veya cihazınızın kilit koduyla açın. Android ve iOS'ta uygulamanın sakladığı verileri de şifreleyebilirsiniz.",
+                title: "Uygulama kilidi",
+                body: "Uygulamayı parmak iziniz, yüz tanıma veya cihazınızın kilit koduyla açın. Doğrulamayı işletim sistemi yapar.",
             },
             {
                 title: "Geçmişiniz, sizin kararınız",
@@ -212,7 +212,7 @@ const tr: LocaleDictionary = {
             "Uygulamada analiz, takip aracı veya reklam SDK'sı yoktur",
             "Kontrol listeleriniz geliştiricinin sunucularında saklanmaz",
             "Fotoğraflar yerel olarak saklanır ve paylaşımlara dahil edilmez; yedeklere dahil edilir",
-            "Yedekler varsayılan olarak belirlediğiniz parolayla şifrelenir",
+            "Yedekler okunabilir dosyalardır; onları güvendiğiniz bir yerde saklayın",
             "İstatistikler kontrol listelerinizden cihazınızda hesaplanır",
         ],
         policyLink: "Gizlilik politikasının tamamını okuyun",
@@ -259,7 +259,7 @@ const tr: LocaleDictionary = {
                     "Planladığınız hatırlatıcılar ve metinleri",
                     "Dil ve açık ya da koyu tema gibi ayarlar",
                     "Taradığınız barkodlar ve onlara verdiğiniz adlar; uygulama bunları çevrimiçi bir ürün veritabanında aramaz",
-                    "Geçmişi saklama, uygulama kilidi ve cihaz üzerinde şifreleme ayarları",
+                    "Geçmişi saklama ve uygulama kilidi ayarları",
                 ],
             },
             {
@@ -293,7 +293,7 @@ const tr: LocaleDictionary = {
                 ],
                 points: [
                     "Paylaşım, seçtiğiniz bir kanaldan gönderebilmeniz için QR kodu, .ntchk dosyası veya düz metin oluşturur. Paylaşılan şablon ve kontrol listelerine fotoğraflar dahil edilmez ve bunlar uygulama tarafından şifrelenmez.",
-                    "Yedek dışa aktarıldığında dosya seçtiğiniz konuma kaydedilir veya cihazınızın paylaşım menüsü açılır. Yedekler fotoğrafları içerir. Hedef konumun korunması, seçtiğiniz hizmete bağlıdır.",
+                    "Yedek dışa aktarıldığında şablonlarınızı, kontrol listelerinizi, notlarınızı, hatırlatıcılarınızı ve fotoğraflarınızı içeren okunabilir tek bir dosya oluşturulur; dosya seçtiğiniz konuma kaydedilir veya cihazınızın paylaşım menüsü açılır. Uygulama bu dosyayı şifrelemez. Hedef konumun korunması, seçtiğiniz hizmete bağlıdır.",
                     "İçe aktarma, sizin sağladığınız dosyayı veya kodu okur; kontrol listesi içeriği için internette arama yapmaz. Kullandığınız dosya sağlayıcısı, seçilen dosyayı indirebilir.",
                     "Mesajınız, isteğe bağlı e-posta adresiniz, uygulama sürümü, platform ve dil geliştiriciye gönderilir. Listeler ve fotoğraflar gönderilmez.",
                 ],
@@ -316,8 +316,8 @@ const tr: LocaleDictionary = {
                 paragraphs: [
                     "Yerel veriler, işletim sisteminizin güvenlik önlemlerinden yararlanır. Etkinleştirildiğinde cihaz ekran kilidi ve depolama şifrelemesi ek koruma sağlar.",
                     "Geliştiricinin sunucularında merkezi bir kontrol listesi veritabanı yoktur. Bu, riski azaltır; ancak cihazınızı veya dışa aktardığınız dosyaları yetkisiz erişime karşı tamamen korumaz.",
-                    "Yedekler varsayılan olarak seçtiğiniz parolayla, cihazınızda Argon2id anahtar türetme ve AES-GCM şifreleme kullanılarak şifrelenir. Uygulama kilidini de etkinleştirebilirsiniz. Android ve iOS'ta isteğe bağlı depolama şifrelemesi, Android Keystore veya iOS Keychain aracılığıyla güvenceye alınan anahtar malzemesiyle yerel verileri korur.",
-                    "Şifrelenmemiş dışa aktarma, açıkça etiketlenmiş ve onay gerektiren ayrı bir işlemdir. Dosyaya erişen herkes içeriğini okuyabilir. Paylaşılan dosyalar, QR kodları ve düz metin de uygulama tarafından şifrelenmez ve fotoğraf içermez. Bunları yalnızca güvendiğiniz kanallardan paylaşın.",
+                    "Uygulama verilerinizi kendisi şifrelemez; yukarıda açıklanan işletim sistemi korumalarına dayanır. Uygulama kilidini de etkinleştirebilirsiniz; kilit, uygulamayı kimin açabileceğini denetler ancak kayıtlı verileri şifrelemez.",
+                    "Yedekler, fotoğrafları içeren ve uygulama tarafından şifrelenmeyen okunabilir dosyalardır. Bir yedek dosyasına erişen herkes onu okuyabilir; bu yüzden güvendiğiniz bir yerde saklayın. Paylaşılan dosyalar, QR kodları ve düz metin de uygulama tarafından şifrelenmez ve fotoğraf içermez. Bunları yalnızca güvendiğiniz kanallardan paylaşın.",
                 ],
             },
             {
@@ -331,7 +331,7 @@ const tr: LocaleDictionary = {
                 paragraphs: [
                     "Uygulama; bildirim, tarama, fotoğraf ve dosya seçimi ile paylaşım için açık kaynaklı bileşenler kullanır. Bu özellikler, geliştiricinin işlettiği bir sunucu altyapısı yerine yerel işlemeyi ve sistem hizmetlerini kullanır.",
                     "Uygulama reklam, ilişkilendirme, analiz veya çökme raporlama SDK'sı içermez.",
-                    "Diğer bileşenler şifreleme, güvenli anahtar depolama, biyometrik kilit açma, dikte ve widget'ları destekler. Dikte, 5. bölümde açıklandığı gibi çevrimiçi işlem yapabilen cihaz konuşma hizmetine dayanır.",
+                    "Diğer bileşenler biyometrik kilit açma, dikte ve widget'ları destekler. Dikte, 5. bölümde açıklandığı gibi çevrimiçi işlem yapabilen cihaz konuşma hizmetine dayanır.",
                 ],
             },
             {
@@ -362,7 +362,7 @@ const tr: LocaleDictionary = {
                 ],
             },
         ],
-        lastUpdated: "Son güncelleme: 10 Ekim 2026",
+        lastUpdated: "Son güncelleme: 28 Ekim 2026",
     },
     screens: {
         checklists: {
@@ -444,12 +444,11 @@ const tr: LocaleDictionary = {
         },
         backup: {
             badgeBody:
-                "Şifreli yedek; şablonları, kontrol listelerini, notları, hatırlatıcıları ve fotoğrafları içerir ve parolanızla korunur. Şifrelenmemiş dışa aktarma ayrı bir seçenektir.",
+                "Her şey: şablonlar, listeler, notlar, hatırlatıcılar ve fotoğraflar — okunabilir metin olarak.",
             badgeNote:
                 "Hesap yok, bulut eşitlemesi yok. Yedeği nereye kaydedeceğinize veya nerede paylaşacağınıza siz karar verirsiniz.",
             badgeTitle: "Yedeğin içeriği",
-            exportEncrypted: "Şifreli yedeği dışa aktar",
-            exportPlain: "Şifrelemeden dışa aktar",
+            exportBackup: "Yedeği dışa aktar",
             intro: "Verileriniz bu cihazda saklanır. Ayrı bir kopya tutmak için yedek dışa aktarın veya daha önce kaydettiğiniz bir yedeği geri yükleyin.",
             restore: "Yedekten geri yükle",
             title: "Yedekleme ve geri yükleme",
@@ -542,25 +541,25 @@ const tr: LocaleDictionary = {
     },
     security: {
         eyebrow: "Güvenlik",
-        heading: "Ne paylaştığınızı bilin. Nasıl korunacağını seçin.",
-        intro: "Dışa aktarmadan veya paylaşmadan önce uygulama, nelerin dahil olduğunu ve şifreleme uygulanıp uygulanmadığını açıklar. Yedekler fotoğraf içerebilir; paylaşılan şablon ve kontrol listeleri içermez.",
-        note: "Uygulama kilidi, uygulamaya erişimi denetler. Depolama şifrelemesi, kayıtlı dosyaları korur. Bunlar farklı amaçlara hizmet eden ayrı ayarlardır.",
+        heading: "Ne paylaştığınızı bilin. Nereye gideceğine siz karar verin.",
+        intro: "Dışa aktarmadan veya paylaşmadan önce uygulama nelerin dahil olduğunu gösterir. Yedekler fotoğrafları içerir; paylaşılan şablon ve kontrol listeleri içermez.",
+        note: "Uygulama kilidi, uygulamayı kimin açabileceğini denetler. Verileri şifrelemez; kayıtlı verileri ekran kilidi gibi cihazınızın kendi güvenlik önlemleri korur.",
         points: [
             {
-                title: "Parolanızla korunan yedekler",
-                body: "Argon2id anahtarı türetir, AES-GCM yedeği şifreler; tüm işlem cihazınızda gerçekleşir. Güçlü bir parola seçin ve güvenli bir yerde saklayın. Geliştirici parolanızı kurtaramaz.",
+                title: "Okunabilir tek yedek dosyası",
+                body: "Yedek dışa aktarma; şablonları, kontrol listelerini, notları, hatırlatıcıları ve fotoğrafları okunabilir tek bir dosyaya kaydeder. Yedekten geri yükleyerek hepsini geri alırsınız.",
             },
             {
-                title: "Yalnızca siz seçerseniz şifrelenmemiş dışa aktarma",
-                body: "Şifrelenmemiş bir dosya mı gerekiyor? Ayrı ve açıkça etiketlenmiş dışa aktarma seçeneğini kullanın, kaydetmeden önce onaylayın. Dosyaya erişen herkes içeriğini okuyabilir.",
+                title: "Yedekleri güvendiğiniz bir yerde saklayın",
+                body: "Uygulama yedekleri şifrelemez; dosyaya erişen herkes içeriğini okuyabilir. Dosyayı yalnızca güvendiğiniz bir yere kaydedin ve artık ihtiyaç duymadığınız kopyaları silin.",
             },
             {
                 title: "Cihazınızın doğrulamasıyla açın",
                 body: "Uygulamayı parmak iziniz, yüz tanıma veya cihazınızın kilit koduyla açın. Kimlik doğrulamayı işletim sistemi yapar; uygulama parmak izinizi veya yüz verilerinizi hiçbir zaman almaz.",
             },
             {
-                title: "Android ve iOS'ta şifreli depolama",
-                body: "Kaydedilmiş kontrol listelerini, notları ve fotoğrafları isteğe bağlı olarak şifreleyin. Anahtar malzemesi Android Keystore veya iOS Keychain kullanılarak korunur.",
+                title: "Cihazınız tarafından korunur",
+                body: "Android ve iOS'ta kontrol listeleri, notlar ve fotoğraflar uygulamanın özel depolama alanında kalır; işletim sisteminin uygulama yalıtımı ve ekran kilidiniz tarafından korunur. Uygulama kendi şifrelemesini eklemez.",
             },
         ],
     },

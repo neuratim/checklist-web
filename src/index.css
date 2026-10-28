@@ -23,9 +23,9 @@
     /* A disabled filled button, and the label on it. */
     --app-disabled: #d8d9de;
     --app-on-disabled: #909196;
-    /* The app's error colour — what "2 required left" and an unencrypted
-       export are painted in. Measured, not guessed: the mockups previously
-       used #c0413b, which is not a colour the app paints anywhere. */
+    /* The app's error colour — what "2 required left" is painted in.
+       Measured, not guessed: the mockups previously used #c0413b, which
+       is not a colour the app paints anywhere. */
     --app-error: #ba1a1a;
     --app-on-surface: #191c20;
     --app-on-surface-variant: #6b6f78;

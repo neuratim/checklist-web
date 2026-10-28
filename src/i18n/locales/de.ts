@@ -73,12 +73,12 @@ const de: LocaleDictionary = {
                 body: "Schicke einen QR-Code oder eine .ntchk-Datei an jemanden mit der App – oder einfachen Text an alle anderen. Geteilte Checklisten und Vorlagen enthalten keine Fotos.",
             },
             {
-                title: "Verschlüsselte Backups",
-                body: "Sichere deine Daten samt Fotos in einer einzigen Datei, geschützt durch eine selbst gewählte Passphrase. Die Verschlüsselung mit Argon2id und AES-GCM erfolgt auf deinem Gerät.",
+                title: "Backups in einer Datei",
+                body: "Sichere Vorlagen, Checklisten, Notizen, Erinnerungen und Fotos in einer lesbaren Datei und stelle sie bei Bedarf wieder her. Wer die Datei hat, kann sie lesen – bewahre sie also an einem vertrauenswürdigen Ort auf.",
             },
             {
-                title: "App-Sperre und Verschlüsselung",
-                body: "Entsperre die App mit deinem Fingerabdruck, per Gesichtserkennung oder mit deinem Gerätecode. Auf Android und iOS kannst du auch die gespeicherten Daten verschlüsseln.",
+                title: "App-Sperre",
+                body: "Entsperre die App mit deinem Fingerabdruck, per Gesichtserkennung oder mit deinem Gerätecode. Die Prüfung übernimmt das Betriebssystem.",
             },
             {
                 title: "Dein Verlauf, deine Entscheidung",
@@ -211,7 +211,7 @@ const de: LocaleDictionary = {
             "Keine Analyse-, Tracking- oder Werbe-SDKs in der App",
             "Deine Checklisten werden nicht auf den Servern des Entwicklers gespeichert",
             "Fotos werden lokal gespeichert und beim Teilen nicht mitgesendet; Backups enthalten sie",
-            "Backups werden standardmäßig mit einer selbst gewählten Passphrase verschlüsselt",
+            "Backups sind lesbare Dateien – bewahre sie an einem vertrauenswürdigen Ort auf",
             "Die Statistik wird auf deinem Gerät aus deinen Checklisten berechnet",
         ],
         policyLink: "Die vollständige Datenschutzerklärung lesen",
@@ -257,7 +257,7 @@ const de: LocaleDictionary = {
                     "Geplante Erinnerungen und deren Text",
                     "Einstellungen wie Sprache und helles oder dunkles Design",
                     "Gescannte Barcodes und die von dir vergebenen Namen; die App schlägt sie nicht in einer Online-Produktdatenbank nach",
-                    "Einstellungen zur Aufbewahrungsdauer des Verlaufs, zur App-Sperre und zur Verschlüsselung auf dem Gerät",
+                    "Einstellungen zur Aufbewahrungsdauer des Verlaufs und zur App-Sperre",
                 ],
             },
             {
@@ -291,7 +291,7 @@ const de: LocaleDictionary = {
                 ],
                 points: [
                     "Beim Teilen entsteht ein QR-Code, eine .ntchk-Datei oder einfacher Text, den du über einen selbst gewählten Weg weitergibst. Geteilte Vorlagen und Checklisten enthalten keine Fotos und werden von der App nicht verschlüsselt.",
-                    "Ein Backup-Export speichert eine Datei am gewählten Ort oder öffnet das Teilen-Menü deines Geräts. Backups enthalten Fotos. Wie der Zielort geschützt ist, hängt vom gewählten Dienst ab.",
+                    "Ein Backup-Export erstellt eine lesbare Datei mit deinen Vorlagen, Checklisten, Notizen, Erinnerungen und Fotos und speichert sie am gewählten Ort oder öffnet das Teilen-Menü deines Geräts. Die App verschlüsselt sie nicht. Wie der Zielort geschützt ist, hängt vom gewählten Dienst ab.",
                     "Der Import liest eine von dir bereitgestellte Datei oder einen Code; er sucht nicht online nach Checklisteninhalten. Ein von dir verwendeter Dateidienst kann die ausgewählte Datei herunterladen.",
                     "Deine Nachricht, optionale E-Mail-Adresse, App-Version, Plattform und Sprache werden an den Entwickler gesendet. Checklisten und Fotos werden nicht gesendet.",
                 ],
@@ -314,8 +314,8 @@ const de: LocaleDictionary = {
                 paragraphs: [
                     "Lokale Daten profitieren von den Sicherheitsmechanismen deines Betriebssystems. Die Bildschirmsperre und Speicherverschlüsselung des Geräts bieten zusätzlichen Schutz, wenn sie aktiviert sind.",
                     "Auf den Servern des Entwicklers gibt es keine zentrale Checklistendatenbank. Das verringert Risiken, macht dein Gerät oder exportierte Dateien aber nicht unangreifbar.",
-                    "Backups werden standardmäßig auf deinem Gerät verschlüsselt: mit einer selbst gewählten Passphrase, Argon2id zur Schlüsselableitung und AES-GCM zur Verschlüsselung. Zusätzlich kannst du eine App-Sperre aktivieren. Auf Android und iOS schützt eine optionale Speicherverschlüsselung lokale Daten; das Schlüsselmaterial wird über Android Keystore oder iOS Keychain gesichert.",
-                    "Der unverschlüsselte Export ist eine separate, gekennzeichnete Aktion mit Bestätigung. Wer Zugriff auf die Datei hat, kann sie lesen. Auch geteilte Dateien, QR-Codes und einfacher Text werden von der App nicht verschlüsselt und enthalten keine Fotos. Gib sie nur über vertrauenswürdige Wege weiter.",
+                    "Die App verschlüsselt deine Daten nicht selbst; sie verlässt sich auf die oben beschriebenen Schutzmechanismen des Betriebssystems. Zusätzlich kannst du eine App-Sperre aktivieren. Sie legt fest, wer die App öffnen kann, verschlüsselt die gespeicherten Daten aber nicht.",
+                    "Backups sind lesbare Dateien, enthalten Fotos und werden von der App nicht verschlüsselt. Wer Zugriff auf eine Backup-Datei hat, kann sie lesen; bewahre sie daher an einem vertrauenswürdigen Ort auf. Auch geteilte Dateien, QR-Codes und einfacher Text werden von der App nicht verschlüsselt und enthalten keine Fotos. Gib sie nur über vertrauenswürdige Wege weiter.",
                 ],
             },
             {
@@ -329,7 +329,7 @@ const de: LocaleDictionary = {
                 paragraphs: [
                     "Die App nutzt Open-Source-Komponenten für Benachrichtigungen, Scannen, Foto- und Dateiauswahl sowie Teilen. Diese Funktionen verwenden lokale Verarbeitung und Systemdienste statt eines vom Entwickler betriebenen Backends.",
                     "Die App enthält keine SDKs für Werbung, Attribution, Analysen oder Absturzberichte.",
-                    "Weitere Komponenten unterstützen Verschlüsselung, sichere Schlüsselspeicherung, biometrisches Entsperren, Diktieren und Widgets. Die Diktierfunktion nutzt den Sprachdienst deines Geräts, der wie in Abschnitt 5 beschrieben auch online verarbeiten kann.",
+                    "Weitere Komponenten unterstützen biometrisches Entsperren, Diktieren und Widgets. Die Diktierfunktion nutzt den Sprachdienst deines Geräts, der wie in Abschnitt 5 beschrieben auch online verarbeiten kann.",
                 ],
             },
             {
@@ -360,7 +360,7 @@ const de: LocaleDictionary = {
                 ],
             },
         ],
-        lastUpdated: "Zuletzt aktualisiert: 10. Oktober 2026",
+        lastUpdated: "Zuletzt aktualisiert: 28. Oktober 2026",
     },
     screens: {
         checklists: {
@@ -441,13 +441,11 @@ const de: LocaleDictionary = {
             tagTravel: "Reisen",
         },
         backup: {
-            badgeBody:
-                "Ein verschlüsseltes Backup enthält Vorlagen, Checklisten, Notizen, Erinnerungen und Fotos, geschützt durch deine Passphrase. Der unverschlüsselte Export ist eine eigene Option.",
+            badgeBody: "Alles: Vorlagen, Checklisten, Notizen, Erinnerungen und Fotos — als lesbarer Text.",
             badgeNote:
                 "Kein Konto, keine Cloud-Synchronisierung. Du entscheidest, wo du das Backup speicherst oder teilst.",
             badgeTitle: "Das steckt im Backup",
-            exportEncrypted: "Verschlüsseltes Backup exportieren",
-            exportPlain: "Ohne Verschlüsselung exportieren",
+            exportBackup: "Sicherung exportieren",
             intro: "Deine Daten liegen hier auf diesem Gerät. Exportiere ein Backup als zusätzliche Kopie oder stelle ein zuvor gespeichertes Backup wieder her.",
             restore: "Aus Backup wiederherstellen",
             title: "Sichern und wiederherstellen",
@@ -538,25 +536,25 @@ const de: LocaleDictionary = {
     },
     security: {
         eyebrow: "Sicherheit",
-        heading: "Behalte im Blick, was du teilst. Entscheide, wie es geschützt wird.",
-        intro: "Vor dem Exportieren oder Teilen erklärt die App, was enthalten ist und ob es verschlüsselt wird. Backups können Fotos enthalten, geteilte Vorlagen und Checklisten nicht.",
-        note: "Die App-Sperre kontrolliert den Zugang zur App. Die Speicherverschlüsselung schützt gespeicherte Dateien. Das sind getrennte Einstellungen für unterschiedliche Zwecke.",
+        heading: "Behalte im Blick, was du teilst. Entscheide, wohin es geht.",
+        intro: "Vor dem Exportieren oder Teilen zeigt die App, was enthalten ist. Backups enthalten Fotos, geteilte Vorlagen und Checklisten nicht.",
+        note: "Die App-Sperre legt fest, wer die App öffnen kann. Sie verschlüsselt keine Daten; gespeicherte Daten schützt die Sicherheit deines Geräts, etwa die Displaysperre.",
         points: [
             {
-                title: "Backups mit deiner Passphrase schützen",
-                body: "Argon2id leitet den Schlüssel ab, AES-GCM verschlüsselt das Backup – alles auf deinem Gerät. Wähle eine starke Passphrase und bewahre sie sicher auf: Der Entwickler kann sie nicht für dich wiederherstellen.",
+                title: "Eine lesbare Backup-Datei",
+                body: "Der Backup-Export speichert Vorlagen, Checklisten, Notizen, Erinnerungen und Fotos in einer einzigen lesbaren Datei. Mit der Wiederherstellung holst du alles zurück.",
             },
             {
-                title: "Unverschlüsselter Export nur auf Wunsch",
-                body: "Du brauchst eine unverschlüsselte Datei? Nutze die separate, klar gekennzeichnete Exportoption und bestätige sie vor dem Speichern. Wer Zugriff auf die Datei hat, kann ihren Inhalt lesen.",
+                title: "Backups an einem vertrauenswürdigen Ort",
+                body: "Die App verschlüsselt Backups nicht. Wer Zugriff auf die Datei hat, kann ihren Inhalt lesen. Speichere sie nur an einem Ort, dem du vertraust, und lösche Kopien, die du nicht mehr brauchst.",
             },
             {
                 title: "Mit deinem Gerät entsperren",
                 body: "Öffne die App mit deinem Fingerabdruck, per Gesichtserkennung oder mit deinem Gerätecode. Das Betriebssystem übernimmt die Authentifizierung; die App erhält niemals deine Fingerabdruck- oder Gesichtsdaten.",
             },
             {
-                title: "Verschlüsselter Speicher auf Android und iOS",
-                body: "Verschlüssele gespeicherte Checklisten, Notizen und Fotos bei Bedarf. Das Schlüsselmaterial wird mit Android Keystore oder iOS Keychain geschützt.",
+                title: "Geschützt durch dein Gerät",
+                body: "Auf Android und iOS bleiben Checklisten, Notizen und Fotos im privaten Speicher der App, geschützt durch die App-Isolierung des Betriebssystems und deine Displaysperre. Eine eigene Verschlüsselung fügt die App nicht hinzu.",
             },
         ],
     },

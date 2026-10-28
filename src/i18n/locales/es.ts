@@ -73,12 +73,12 @@ const es: LocaleDictionary = {
                 body: "Envía un código QR o un archivo .ntchk a quien tenga la aplicación, o texto sin formato a cualquier otra persona. Las listas y plantillas compartidas no incluyen fotos.",
             },
             {
-                title: "Copias de seguridad cifradas",
-                body: "Guarda tus datos, incluidas las fotos, en un único archivo protegido con la frase de contraseña que elijas. El cifrado utiliza Argon2id y AES-GCM en tu dispositivo.",
+                title: "Copias de seguridad en un archivo",
+                body: "Guarda tus plantillas, listas, notas, recordatorios y fotos en un único archivo legible y restáuralos cuando lo necesites. Cualquiera que tenga el archivo puede leerlo, así que guárdalo en un lugar de confianza.",
             },
             {
-                title: "Bloqueo y cifrado de la aplicación",
-                body: "Desbloquea la aplicación con tu huella, el reconocimiento facial o el código de bloqueo de tu dispositivo. En Android e iOS también puedes cifrar los datos guardados.",
+                title: "Bloqueo de la aplicación",
+                body: "Desbloquea la aplicación con tu huella, el reconocimiento facial o el código de bloqueo de tu dispositivo. La comprobación la realiza el sistema operativo.",
             },
             {
                 title: "El historial, como tú decidas",
@@ -212,7 +212,7 @@ const es: LocaleDictionary = {
             "Sin analítica, rastreadores ni SDK publicitarios en la aplicación",
             "Tus listas no se guardan en los servidores del desarrollador",
             "Las fotos se guardan localmente y se excluyen al compartir; las copias de seguridad sí las incluyen",
-            "Las copias de seguridad se cifran por defecto con una frase de contraseña que tú eliges",
+            "Las copias de seguridad son archivos legibles: guárdalas en un lugar de confianza",
             "Las estadísticas se calculan en tu dispositivo a partir de tus listas",
         ],
         policyLink: "Leer la política de privacidad completa",
@@ -258,7 +258,7 @@ const es: LocaleDictionary = {
                     "Recordatorios programados y sus textos",
                     "Ajustes como el idioma y el tema claro u oscuro",
                     "Códigos de barras escaneados y los nombres que les asignas; la aplicación no los consulta en una base de datos de productos en línea",
-                    "Ajustes de conservación del historial, bloqueo de la aplicación y cifrado en el dispositivo",
+                    "Ajustes de conservación del historial y del bloqueo de la aplicación",
                 ],
             },
             {
@@ -292,7 +292,7 @@ const es: LocaleDictionary = {
                 ],
                 points: [
                     "Al compartir se genera un código QR, un archivo .ntchk o texto sin formato para enviarlo por el medio que elijas. Las plantillas y listas compartidas no incluyen fotos ni están cifradas por la aplicación.",
-                    "Al exportar una copia de seguridad se guarda un archivo en la ubicación elegida o se abre el menú para compartir del dispositivo. Las copias de seguridad incluyen fotos. La protección del destino depende del servicio que elijas.",
+                    "Al exportar una copia de seguridad se crea un único archivo legible con tus plantillas, listas, notas, recordatorios y fotos, y se guarda en la ubicación elegida o se abre el menú para compartir del dispositivo. La aplicación no lo cifra. La protección del destino depende del servicio que elijas.",
                     "La importación lee un archivo o código que proporciones; no busca contenido de listas en internet. El proveedor de archivos que utilices puede descargar el archivo seleccionado.",
                     "Se envían al desarrollador tu mensaje, correo opcional, versión de la app, plataforma e idioma. No se envían listas ni fotos.",
                 ],
@@ -315,8 +315,8 @@ const es: LocaleDictionary = {
                 paragraphs: [
                     "Los datos locales se benefician de las medidas de seguridad del sistema operativo. El bloqueo de pantalla y el cifrado del almacenamiento ofrecen protección adicional cuando están activados.",
                     "No hay una base de datos central de listas en los servidores del desarrollador. Esto reduce la exposición, pero no hace que tu dispositivo ni tus archivos exportados sean inmunes al acceso no autorizado.",
-                    "Las copias de seguridad se cifran por defecto en tu dispositivo con una frase de contraseña que eliges, derivación de claves Argon2id y cifrado AES-GCM. También puedes activar el bloqueo de la aplicación. En Android e iOS, el cifrado opcional del almacenamiento protege los datos locales con material de claves protegido mediante Android Keystore o iOS Keychain.",
-                    "La exportación sin cifrar es una acción independiente, identificada y sujeta a confirmación. Cualquier persona con acceso al archivo puede leerlo. Los archivos compartidos, códigos QR y textos sin formato tampoco están cifrados por la aplicación y no contienen fotos. Compártelos solo por medios de confianza.",
+                    "La aplicación no cifra tus datos por su cuenta; se basa en las protecciones del sistema operativo descritas arriba. También puedes activar el bloqueo de la aplicación, que controla quién puede abrirla pero no cifra los datos guardados.",
+                    "Las copias de seguridad son archivos legibles que incluyen fotos y la aplicación no las cifra. Cualquier persona con acceso a un archivo de copia de seguridad puede leerlo, así que guárdalo en un lugar de confianza. Los archivos compartidos, códigos QR y textos sin formato tampoco están cifrados por la aplicación y no contienen fotos. Compártelos solo por medios de confianza.",
                 ],
             },
             {
@@ -330,7 +330,7 @@ const es: LocaleDictionary = {
                 paragraphs: [
                     "La aplicación usa componentes de código abierto para notificaciones, escaneo, selección de fotos y archivos y funciones de compartir. Estas funciones utilizan procesamiento local y servicios del sistema, no un servidor gestionado por el desarrollador.",
                     "La aplicación no incluye SDK de publicidad, atribución, analítica ni informes de fallos.",
-                    "Otros componentes permiten el cifrado, el almacenamiento seguro de claves, el desbloqueo biométrico, el dictado y los widgets. El dictado depende del servicio de voz del dispositivo, que puede procesar datos en línea, como se explica en la sección 5.",
+                    "Otros componentes permiten el desbloqueo biométrico, el dictado y los widgets. El dictado depende del servicio de voz del dispositivo, que puede procesar datos en línea, como se explica en la sección 5.",
                 ],
             },
             {
@@ -361,7 +361,7 @@ const es: LocaleDictionary = {
                 ],
             },
         ],
-        lastUpdated: "Última actualización: 10 de octubre de 2026",
+        lastUpdated: "Última actualización: 28 de octubre de 2026",
     },
     screens: {
         checklists: {
@@ -443,13 +443,11 @@ const es: LocaleDictionary = {
             tagTravel: "Viajes",
         },
         backup: {
-            badgeBody:
-                "Una copia de seguridad cifrada protege con tu frase de contraseña las plantillas, listas, notas, recordatorios y fotos. Exportar sin cifrar es una opción independiente.",
+            badgeBody: "Todo: plantillas, listas, notas, recordatorios y fotos, como texto legible.",
             badgeNote:
                 "Sin cuenta ni sincronización en la nube. Tú eliges dónde guardar o compartir la copia de seguridad.",
             badgeTitle: "Qué incluye la copia de seguridad",
-            exportEncrypted: "Exportar copia cifrada",
-            exportPlain: "Exportar sin cifrar",
+            exportBackup: "Exportar copia de seguridad",
             intro: "Tus datos se guardan aquí, en este dispositivo. Exporta una copia de seguridad para conservar otra copia o restaura una que hayas guardado antes.",
             restore: "Restaurar copia de seguridad",
             title: "Copias de seguridad y restauración",
@@ -540,25 +538,25 @@ const es: LocaleDictionary = {
     },
     security: {
         eyebrow: "Seguridad",
-        heading: "Ten claro qué compartes. Decide cómo protegerlo.",
-        intro: "Antes de exportar o compartir, la aplicación explica qué se incluye y si está cifrado. Las copias de seguridad pueden contener fotos; las plantillas y listas compartidas, no.",
-        note: "El bloqueo controla el acceso a la aplicación. El cifrado del almacenamiento protege los archivos guardados. Son ajustes independientes con objetivos distintos.",
+        heading: "Ten claro qué compartes. Decide adónde va.",
+        intro: "Antes de exportar o compartir, la aplicación muestra qué se incluye. Las copias de seguridad contienen fotos; las plantillas y listas compartidas, no.",
+        note: "El bloqueo controla quién puede abrir la aplicación. No cifra tus datos: los datos guardados los protege la seguridad de tu dispositivo, como el bloqueo de pantalla.",
         points: [
             {
-                title: "Copias protegidas por tu frase de contraseña",
-                body: "Argon2id deriva la clave y AES-GCM cifra la copia de seguridad, todo en tu dispositivo. Elige una frase de contraseña robusta y guárdala bien: el desarrollador no puede recuperarla por ti.",
+                title: "Un único archivo de copia legible",
+                body: "Al exportar la copia de seguridad, tus plantillas, listas, notas, recordatorios y fotos se guardan en un único archivo legible. Al restaurarla, todo vuelve.",
             },
             {
-                title: "Exportación sin cifrar, solo si la eliges",
-                body: "¿Necesitas un archivo sin cifrar? Usa la opción independiente, claramente identificada, y confirma antes de guardar. Cualquiera con acceso al archivo puede leer su contenido.",
+                title: "Guarda las copias en un lugar de confianza",
+                body: "La aplicación no cifra las copias de seguridad, así que cualquiera con acceso al archivo puede leer su contenido. Guárdalo solo donde confíes y elimina las copias que ya no necesites.",
             },
             {
                 title: "Desbloquea con tu dispositivo",
                 body: "Abre la aplicación con tu huella, el reconocimiento facial o el código de bloqueo de tu dispositivo. El sistema operativo gestiona la autenticación; la aplicación nunca recibe tus datos de huella o rostro.",
             },
             {
-                title: "Almacenamiento cifrado en Android e iOS",
-                body: "Puedes cifrar las listas, notas y fotos guardadas. El material de claves se protege mediante Android Keystore o iOS Keychain.",
+                title: "Protegido por tu dispositivo",
+                body: "En Android e iOS, las listas, notas y fotos permanecen en el almacenamiento privado de la aplicación, protegidas por el aislamiento de aplicaciones del sistema operativo y tu bloqueo de pantalla. La aplicación no añade un cifrado propio.",
             },
         ],
     },

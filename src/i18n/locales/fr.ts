@@ -73,12 +73,12 @@ const fr: LocaleDictionary = {
                 body: "Envoyez un code QR ou un fichier .ntchk à une personne qui possède l'application, ou du texte brut aux autres. Les listes et modèles partagés ne contiennent pas de photos.",
             },
             {
-                title: "Des sauvegardes chiffrées",
-                body: "Sauvegardez vos données, photos comprises, dans un fichier protégé par la phrase secrète de votre choix. Le chiffrement utilise Argon2id et AES-GCM sur votre appareil.",
+                title: "Des sauvegardes en un seul fichier",
+                body: "Sauvegardez vos modèles, listes, notes, rappels et photos dans un fichier lisible, puis restaurez-les quand vous le souhaitez. Toute personne qui possède le fichier peut le lire : conservez-le dans un endroit de confiance.",
             },
             {
-                title: "Verrouillage et chiffrement",
-                body: "Déverrouillez l'application avec votre empreinte digitale, la reconnaissance faciale ou le code de verrouillage de votre appareil. Sur Android et iOS, vous pouvez aussi chiffrer les données enregistrées.",
+                title: "Verrouillage de l'application",
+                body: "Déverrouillez l'application avec votre empreinte digitale, la reconnaissance faciale ou le code de verrouillage de votre appareil. La vérification est assurée par le système d'exploitation.",
             },
             {
                 title: "Votre historique, vos règles",
@@ -212,7 +212,7 @@ const fr: LocaleDictionary = {
             "Aucun outil d'analyse, traceur ou SDK publicitaire dans l'application",
             "Vos listes ne sont pas stockées sur les serveurs du développeur",
             "Les photos sont stockées localement et exclues des partages ; les sauvegardes les incluent",
-            "Les sauvegardes sont chiffrées par défaut avec une phrase secrète que vous choisissez",
+            "Les sauvegardes sont des fichiers lisibles : conservez-les dans un endroit de confiance",
             "Les statistiques sont calculées sur votre appareil à partir de vos listes",
         ],
         policyLink: "Lire la politique de confidentialité complète",
@@ -259,7 +259,7 @@ const fr: LocaleDictionary = {
                     "Vos rappels programmés et leur texte",
                     "Les réglages, comme la langue et le thème clair ou sombre",
                     "Les codes-barres scannés et les noms que vous leur attribuez ; l'application ne les recherche pas dans une base de produits en ligne",
-                    "Les réglages de conservation de l'historique, de verrouillage de l'application et de chiffrement sur l'appareil",
+                    "Les réglages de conservation de l'historique et de verrouillage de l'application",
                 ],
             },
             {
@@ -293,7 +293,7 @@ const fr: LocaleDictionary = {
                 ],
                 points: [
                     "Le partage produit un code QR, un fichier .ntchk ou du texte brut que vous transmettez par le moyen de votre choix. Les modèles et listes partagés ne contiennent pas de photos et ne sont pas chiffrés par l'application.",
-                    "L'export d'une sauvegarde enregistre un fichier à l'emplacement choisi ou ouvre le menu de partage de l'appareil. Les sauvegardes contiennent les photos. La protection de la destination dépend du service choisi.",
+                    "L'export d'une sauvegarde crée un fichier lisible contenant vos modèles, listes, notes, rappels et photos, puis l'enregistre à l'emplacement choisi ou ouvre le menu de partage de l'appareil. L'application ne le chiffre pas. La protection de la destination dépend du service choisi.",
                     "L'import lit un fichier ou un code que vous fournissez ; il ne recherche pas de contenu de listes en ligne. Le service de fichiers que vous utilisez peut télécharger le fichier sélectionné.",
                     "Votre message, votre e-mail facultatif, la version de l’app, la plateforme et la langue sont envoyés au développeur. Les listes et les photos ne sont pas envoyées.",
                 ],
@@ -316,8 +316,8 @@ const fr: LocaleDictionary = {
                 paragraphs: [
                     "Les données locales bénéficient des protections du système d'exploitation. Le verrouillage de l'écran et le chiffrement du stockage apportent une protection supplémentaire lorsqu'ils sont activés.",
                     "Aucune base centrale de listes n'est hébergée sur les serveurs du développeur. Cela réduit l'exposition, sans mettre votre appareil ou vos fichiers exportés à l'abri de tout accès non autorisé.",
-                    "Les sauvegardes sont chiffrées par défaut sur votre appareil avec une phrase secrète de votre choix, la dérivation de clé Argon2id et le chiffrement AES-GCM. Vous pouvez aussi activer un verrouillage de l'application. Sur Android et iOS, le chiffrement facultatif du stockage protège les données locales à l'aide de clés sécurisées via Android Keystore ou iOS Keychain.",
-                    "L'export non chiffré est une action distincte, clairement indiquée et soumise à confirmation. Toute personne ayant accès au fichier peut le lire. Les fichiers partagés, codes QR et textes bruts ne sont pas non plus chiffrés par l'application et ne contiennent pas de photos. Ne les transmettez que par des moyens de confiance.",
+                    "L'application ne chiffre pas elle-même vos données ; elle s'appuie sur les protections du système d'exploitation décrites ci-dessus. Vous pouvez aussi activer un verrouillage de l'application, qui contrôle qui peut l'ouvrir mais ne chiffre pas les données enregistrées.",
+                    "Les sauvegardes sont des fichiers lisibles qui contiennent les photos et ne sont pas chiffrées par l'application. Toute personne ayant accès à un fichier de sauvegarde peut le lire : conservez-le dans un endroit de confiance. Les fichiers partagés, codes QR et textes bruts ne sont pas non plus chiffrés par l'application et ne contiennent pas de photos. Ne les transmettez que par des moyens de confiance.",
                 ],
             },
             {
@@ -331,7 +331,7 @@ const fr: LocaleDictionary = {
                 paragraphs: [
                     "L'application utilise des composants open source pour les notifications, le scan, la sélection de photos et de fichiers et le partage. Ces fonctions reposent sur un traitement local et des services système, pas sur un serveur exploité par le développeur.",
                     "L'application ne contient aucun SDK publicitaire, d'attribution, d'analyse ou de rapports de plantage.",
-                    "D'autres composants assurent le chiffrement, le stockage sécurisé des clés, le déverrouillage biométrique, la dictée et les widgets. La dictée utilise le service vocal de votre appareil, qui peut traiter les données en ligne comme expliqué à la section 5.",
+                    "D'autres composants assurent le déverrouillage biométrique, la dictée et les widgets. La dictée utilise le service vocal de votre appareil, qui peut traiter les données en ligne comme expliqué à la section 5.",
                 ],
             },
             {
@@ -362,7 +362,7 @@ const fr: LocaleDictionary = {
                 ],
             },
         ],
-        lastUpdated: "Dernière mise à jour : 10 octobre 2026",
+        lastUpdated: "Dernière mise à jour : 28 octobre 2026",
     },
     screens: {
         checklists: {
@@ -443,13 +443,11 @@ const fr: LocaleDictionary = {
             tagTravel: "Voyage",
         },
         backup: {
-            badgeBody:
-                "Une sauvegarde chiffrée inclut les modèles, listes, notes, rappels et photos, protégés par votre phrase secrète. L'export sans chiffrement est une option distincte.",
+            badgeBody: "Tout : modèles, listes, notes, rappels et photos — en texte lisible.",
             badgeNote:
                 "Sans compte ni synchronisation cloud. Vous choisissez où enregistrer ou partager la sauvegarde.",
             badgeTitle: "Contenu de la sauvegarde",
-            exportEncrypted: "Exporter une sauvegarde chiffrée",
-            exportPlain: "Exporter sans chiffrement",
+            exportBackup: "Exporter la sauvegarde",
             intro: "Vos données sont enregistrées ici, sur cet appareil. Exportez une sauvegarde pour garder une autre copie, ou restaurez-en une enregistrée auparavant.",
             restore: "Restaurer une sauvegarde",
             title: "Sauvegarde et restauration",
@@ -542,25 +540,25 @@ const fr: LocaleDictionary = {
     },
     security: {
         eyebrow: "Sécurité",
-        heading: "Sachez ce que vous partagez. Choisissez comment le protéger.",
-        intro: "Avant tout export ou partage, l'application indique ce qui est inclus et si les données sont chiffrées. Les sauvegardes peuvent contenir des photos ; les modèles et listes partagés, non.",
-        note: "Le verrouillage contrôle l'accès à l'application. Le chiffrement du stockage protège les fichiers enregistrés. Ce sont deux réglages distincts, aux rôles différents.",
+        heading: "Sachez ce que vous partagez. Décidez où cela va.",
+        intro: "Avant tout export ou partage, l'application indique ce qui est inclus. Les sauvegardes contiennent les photos ; les modèles et listes partagés, non.",
+        note: "Le verrouillage contrôle qui peut ouvrir l'application. Il ne chiffre pas vos données : les données enregistrées sont protégées par la sécurité de votre appareil, comme le verrouillage de l'écran.",
         points: [
             {
-                title: "Des sauvegardes protégées par votre phrase secrète",
-                body: "Argon2id dérive la clé et AES-GCM chiffre la sauvegarde, entièrement sur votre appareil. Choisissez une phrase secrète solide et gardez-la en lieu sûr : le développeur ne peut pas la récupérer pour vous.",
+                title: "Un seul fichier de sauvegarde lisible",
+                body: "L'export de sauvegarde enregistre vos modèles, listes, notes, rappels et photos dans un fichier lisible unique. La restauration à partir de la sauvegarde les récupère.",
             },
             {
-                title: "Un export non chiffré, seulement si vous le choisissez",
-                body: "Besoin d'un fichier non chiffré ? Utilisez l'option d'export distincte et clairement indiquée, puis confirmez avant l'enregistrement. Toute personne ayant accès au fichier peut en lire le contenu.",
+                title: "Des sauvegardes rangées en lieu sûr",
+                body: "L'application ne chiffre pas les sauvegardes : toute personne ayant accès au fichier peut en lire le contenu. Enregistrez-le uniquement dans un endroit de confiance et supprimez les copies devenues inutiles.",
             },
             {
                 title: "Déverrouillez avec votre appareil",
                 body: "Ouvrez l'application avec votre empreinte digitale, la reconnaissance faciale ou le code de verrouillage de votre appareil. Le système d'exploitation gère l'authentification ; l'application ne reçoit jamais vos données d'empreinte ou de visage.",
             },
             {
-                title: "Stockage chiffré sur Android et iOS",
-                body: "Vous pouvez chiffrer les listes, notes et photos enregistrées. Les clés sont protégées à l'aide d'Android Keystore ou d'iOS Keychain.",
+                title: "Protégé par votre appareil",
+                body: "Sur Android et iOS, les listes, notes et photos restent dans le stockage privé de l'application, protégées par l'isolation des applications du système d'exploitation et le verrouillage de votre écran. L'application n'ajoute pas de chiffrement propre.",
             },
         ],
     },

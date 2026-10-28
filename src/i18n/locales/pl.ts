@@ -73,12 +73,12 @@ const pl: LocaleDictionary = {
                 body: "Wyślij kod QR lub plik .ntchk osobie z aplikacją, a pozostałym — zwykły tekst. Udostępniane listy i szablony nie zawierają zdjęć.",
             },
             {
-                title: "Szyfrowane kopie zapasowe",
-                body: "Zapisz dane, w tym zdjęcia, w jednym pliku chronionym wybraną przez Ciebie frazą hasłową. Szyfrowanie z użyciem Argon2id i AES-GCM odbywa się na Twoim urządzeniu.",
+                title: "Kopie zapasowe w jednym pliku",
+                body: "Zapisz szablony, listy, notatki, przypomnienia i zdjęcia w jednym czytelnym pliku i przywróć je, kiedy zechcesz. Każdy, kto ma ten plik, może go odczytać, więc przechowuj go w zaufanym miejscu.",
             },
             {
-                title: "Blokada aplikacji i szyfrowanie",
-                body: "Odblokowuj aplikację odciskiem palca, rozpoznawaniem twarzy lub kodem urządzenia. Na Androidzie i iOS możesz też zaszyfrować zapisane dane.",
+                title: "Blokada aplikacji",
+                body: "Odblokowuj aplikację odciskiem palca, rozpoznawaniem twarzy lub kodem urządzenia. Weryfikację przeprowadza system operacyjny.",
             },
             {
                 title: "Historia na Twoich zasadach",
@@ -211,7 +211,7 @@ const pl: LocaleDictionary = {
             "Bez analityki, narzędzi śledzących i reklamowych SDK w aplikacji",
             "Twoje listy nie są przechowywane na serwerach twórcy",
             "Zdjęcia są przechowywane lokalnie i pomijane przy udostępnianiu; kopie zapasowe je zawierają",
-            "Kopie zapasowe są domyślnie szyfrowane wybraną przez Ciebie frazą hasłową",
+            "Kopie zapasowe to czytelne pliki – przechowuj je w zaufanym miejscu",
             "Statystyki są obliczane na Twoim urządzeniu na podstawie Twoich list",
         ],
         policyLink: "Przeczytaj pełną politykę prywatności",
@@ -255,7 +255,7 @@ const pl: LocaleDictionary = {
                     "Zaplanowane przypomnienia i ich treść",
                     "Ustawienia, takie jak język i jasny lub ciemny motyw",
                     "Zeskanowane kody kreskowe i przypisane im nazwy; aplikacja nie wyszukuje ich w internetowej bazie produktów",
-                    "Ustawienia przechowywania historii, blokady aplikacji i szyfrowania na urządzeniu",
+                    "Ustawienia przechowywania historii i blokady aplikacji",
                 ],
             },
             {
@@ -289,7 +289,7 @@ const pl: LocaleDictionary = {
                 ],
                 points: [
                     "Udostępnianie tworzy kod QR, plik .ntchk lub zwykły tekst, które przekazujesz wybranym kanałem. Udostępniane szablony i listy nie zawierają zdjęć i nie są szyfrowane przez aplikację.",
-                    "Eksport kopii zapasowej zapisuje plik we wskazanym miejscu lub otwiera systemowe menu udostępniania. Kopie zapasowe zawierają zdjęcia. Ochrona miejsca docelowego zależy od wybranej usługi.",
+                    "Eksport kopii zapasowej tworzy jeden czytelny plik z szablonami, listami, notatkami, przypomnieniami i zdjęciami, a następnie zapisuje go we wskazanym miejscu lub otwiera systemowe menu udostępniania. Aplikacja go nie szyfruje. Ochrona miejsca docelowego zależy od wybranej usługi.",
                     "Import odczytuje wskazany plik lub kod; nie szuka treści list w internecie. Używany dostawca plików może pobrać wybrany plik.",
                     "Do dewelopera wysyłane są wiadomość, opcjonalny e-mail, wersja aplikacji, platforma i język. Listy i zdjęcia nie są wysyłane.",
                 ],
@@ -312,8 +312,8 @@ const pl: LocaleDictionary = {
                 paragraphs: [
                     "Lokalne dane korzystają z zabezpieczeń systemu operacyjnego. Blokada ekranu i szyfrowanie pamięci urządzenia zapewniają dodatkową ochronę, gdy są włączone.",
                     "Na serwerach twórcy nie ma centralnej bazy list. Ogranicza to ryzyko, ale nie zapewnia odporności urządzenia i wyeksportowanych plików na nieuprawniony dostęp.",
-                    "Kopie zapasowe są domyślnie szyfrowane na urządzeniu przy użyciu wybranej frazy hasłowej, wyprowadzania klucza Argon2id i szyfrowania AES-GCM. Możesz też włączyć blokadę aplikacji. Na Androidzie i iOS opcjonalne szyfrowanie pamięci chroni lokalne dane, a materiał kluczowy jest zabezpieczany przez Android Keystore lub iOS Keychain.",
-                    "Eksport bez szyfrowania jest osobną, oznaczoną czynnością wymagającą potwierdzenia. Każdy, kto uzyska dostęp do pliku, może go odczytać. Udostępniane pliki, kody QR i zwykły tekst również nie są szyfrowane przez aplikację i nie zawierają zdjęć. Przekazuj je tylko zaufanymi kanałami.",
+                    "Aplikacja sama nie szyfruje Twoich danych; polega na opisanych wyżej zabezpieczeniach systemu operacyjnego. Możesz też włączyć blokadę aplikacji, która decyduje, kto może ją otworzyć, ale nie szyfruje zapisanych danych.",
+                    "Kopie zapasowe to czytelne pliki, które zawierają zdjęcia i nie są szyfrowane przez aplikację. Każdy, kto ma dostęp do pliku kopii zapasowej, może go odczytać, więc przechowuj go w zaufanym miejscu. Udostępniane pliki, kody QR i zwykły tekst również nie są szyfrowane przez aplikację i nie zawierają zdjęć. Przekazuj je tylko zaufanymi kanałami.",
                 ],
             },
             {
@@ -327,7 +327,7 @@ const pl: LocaleDictionary = {
                 paragraphs: [
                     "Aplikacja używa komponentów open source do powiadomień, skanowania, wyboru zdjęć i plików oraz udostępniania. Funkcje te korzystają z przetwarzania lokalnego i usług systemowych zamiast zaplecza serwerowego twórcy.",
                     "Aplikacja nie zawiera SDK do reklam, atrybucji, analityki ani raportowania awarii.",
-                    "Inne komponenty obsługują szyfrowanie, bezpieczne przechowywanie kluczy, odblokowanie biometryczne, dyktowanie i widżety. Dyktowanie korzysta z usługi rozpoznawania mowy urządzenia, która może przetwarzać dane online, jak wyjaśniono w sekcji 5.",
+                    "Inne komponenty obsługują odblokowanie biometryczne, dyktowanie i widżety. Dyktowanie korzysta z usługi rozpoznawania mowy urządzenia, która może przetwarzać dane online, jak wyjaśniono w sekcji 5.",
                 ],
             },
             {
@@ -358,7 +358,7 @@ const pl: LocaleDictionary = {
                 ],
             },
         ],
-        lastUpdated: "Ostatnia aktualizacja: 10 października 2026",
+        lastUpdated: "Ostatnia aktualizacja: 28 października 2026",
     },
     screens: {
         checklists: {
@@ -439,13 +439,11 @@ const pl: LocaleDictionary = {
             tagTravel: "Podróże",
         },
         backup: {
-            badgeBody:
-                "Szyfrowana kopia zapasowa zawiera szablony, listy, notatki, przypomnienia i zdjęcia chronione Twoją frazą hasłową. Eksport bez szyfrowania jest osobną opcją.",
+            badgeBody: "Wszystko: szablony, listy, notatki, przypomnienia i zdjęcia — jako czytelny tekst.",
             badgeNote:
                 "Bez konta i synchronizacji z chmurą. Ty wybierasz, gdzie zapisać lub udostępnić kopię zapasową.",
             badgeTitle: "Co zawiera kopia zapasowa",
-            exportEncrypted: "Eksportuj szyfrowaną kopię",
-            exportPlain: "Eksportuj bez szyfrowania",
+            exportBackup: "Eksportuj kopię zapasową",
             intro: "Twoje dane są zapisane tutaj, na tym urządzeniu. Wyeksportuj kopię zapasową, aby zachować dodatkową kopię, lub przywróć wcześniej zapisaną kopię.",
             restore: "Przywróć z kopii zapasowej",
             title: "Kopie zapasowe i przywracanie",
@@ -538,25 +536,25 @@ const pl: LocaleDictionary = {
     },
     security: {
         eyebrow: "Bezpieczeństwo",
-        heading: "Wiesz, co udostępniasz. Wybierasz, jak to chronić.",
-        intro: "Przed eksportem lub udostępnieniem aplikacja wyjaśnia, co zostanie dołączone i czy będzie zaszyfrowane. Kopie zapasowe mogą zawierać zdjęcia; udostępniane szablony i listy ich nie zawierają.",
-        note: "Blokada kontroluje dostęp do aplikacji. Szyfrowanie pamięci chroni zapisane pliki. To osobne ustawienia o różnych zadaniach.",
+        heading: "Wiesz, co udostępniasz. Decydujesz, dokąd trafia.",
+        intro: "Przed eksportem lub udostępnieniem aplikacja pokazuje, co zostanie dołączone. Kopie zapasowe zawierają zdjęcia; udostępniane szablony i listy ich nie zawierają.",
+        note: "Blokada decyduje, kto może otworzyć aplikację. Nie szyfruje danych: zapisane dane chronią zabezpieczenia Twojego urządzenia, np. blokada ekranu.",
         points: [
             {
-                title: "Kopie chronione Twoją frazą hasłową",
-                body: "Argon2id wyprowadza klucz, a AES-GCM szyfruje kopię — wszystko na Twoim urządzeniu. Wybierz silną frazę hasłową i przechowuj ją bezpiecznie: twórca nie może jej za Ciebie odzyskać.",
+                title: "Jeden czytelny plik kopii",
+                body: "Eksport kopii zapasowej zapisuje szablony, listy, notatki, przypomnienia i zdjęcia w jednym czytelnym pliku. Przywrócenie z kopii zapasowej odzyskuje je wszystkie.",
             },
             {
-                title: "Eksport bez szyfrowania tylko z Twojego wyboru",
-                body: "Potrzebujesz nieszyfrowanego pliku? Użyj osobnej, wyraźnie oznaczonej opcji eksportu i potwierdź przed zapisem. Każdy, kto ma dostęp do pliku, może odczytać jego treść.",
+                title: "Kopie przechowuj w zaufanym miejscu",
+                body: "Aplikacja nie szyfruje kopii zapasowych, więc każdy, kto ma dostęp do pliku, może odczytać jego treść. Zapisuj go tylko w zaufanym miejscu i usuwaj niepotrzebne kopie.",
             },
             {
                 title: "Odblokuj za pomocą urządzenia",
                 body: "Otwieraj aplikację odciskiem palca, rozpoznawaniem twarzy lub kodem urządzenia. Uwierzytelnianiem zajmuje się system operacyjny; aplikacja nigdy nie otrzymuje danych odcisku palca ani twarzy.",
             },
             {
-                title: "Szyfrowana pamięć na Androidzie i iOS",
-                body: "Możesz zaszyfrować zapisane listy, notatki i zdjęcia. Materiał kluczowy jest chroniony przez Android Keystore lub iOS Keychain.",
+                title: "Chronione przez Twoje urządzenie",
+                body: "Na Androidzie i iOS listy, notatki i zdjęcia pozostają w prywatnej pamięci aplikacji, chronione przez izolację aplikacji w systemie operacyjnym i blokadę ekranu. Aplikacja nie dodaje własnego szyfrowania.",
             },
         ],
     },

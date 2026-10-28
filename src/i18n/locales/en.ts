@@ -73,12 +73,12 @@ const en: Dictionary = {
                 body: "Send a QR code or .ntchk file to someone with the app, or plain text to anyone else. Shared checklists and templates do not include photos.",
             },
             {
-                title: "Encrypted backups",
-                body: "Back up your data, including photos, in one file protected by a passphrase you choose. Encryption uses Argon2id and AES-GCM on your device.",
+                title: "Backups in one file",
+                body: "Back up your templates, checklists, notes, reminders, and photos in one readable file and restore them when you need to. Anyone with the file can read it, so keep it somewhere you trust.",
             },
             {
-                title: "App lock and encryption",
-                body: "Unlock the app with your fingerprint, face recognition, or your device's passcode. On Android and iOS, you can also encrypt its stored data.",
+                title: "App lock",
+                body: "Unlock the app with your fingerprint, face recognition, or your device's passcode. The operating system performs the check.",
             },
             {
                 title: "History on your terms",
@@ -230,7 +230,7 @@ const en: Dictionary = {
             "No analytics, trackers, or advertising SDKs in the app",
             "Your checklists are not stored on the developer's servers",
             "Photos are stored locally and excluded from shares; backups include them",
-            "Backups are encrypted by default with a passphrase you choose",
+            "Backups are readable files—keep them somewhere you trust",
             "Statistics are calculated on your device from your checklists",
         ],
         policyLink: "Read the full privacy policy",
@@ -241,7 +241,7 @@ const en: Dictionary = {
         contactIntro: "For questions about this policy or privacy in NeuraTiM Checklist, write to:",
         eyebrow: "NeuraTiM Checklist",
         intro: "NeuraTiM Checklist stores your checklist data on your device. There is no app account, cloud sync, or analytics service. This policy explains local storage, sharing and exports you initiate, optional device services, and the separate handling of data on this website.",
-        lastUpdated: "Last updated: October 10, 2026",
+        lastUpdated: "Last updated: October 28, 2026",
         title: "Privacy policy",
         sections: [
             {
@@ -275,7 +275,7 @@ const en: Dictionary = {
                     "Your scheduled reminders and their text",
                     "Settings such as language and light or dark theme",
                     "Scanned barcodes and the names you assign to them; the app does not look them up in an online product database",
-                    "History retention settings, app lock settings, and on-device encryption settings",
+                    "History retention settings and app lock settings",
                 ],
             },
             {
@@ -309,7 +309,7 @@ const en: Dictionary = {
                 ],
                 points: [
                     "Sharing creates a QR code, .ntchk file, or plain text for you to pass on through a channel you choose. Shared templates and checklists exclude photos and are not encrypted by the app.",
-                    "Exporting a backup saves a file to your chosen location or opens your device's share menu. Backups include photos. The protection of the destination depends on the service you choose.",
+                    "Exporting a backup creates one readable file containing your templates, checklists, notes, reminders, and photos, and saves it to your chosen location or opens your device's share menu. The app does not encrypt it. The protection of the destination depends on the service you choose.",
                     "Importing reads a file or code you supply; it does not search online for checklist content. A file provider you use may download the selected file.",
                     "Your message, optional email, app version, platform and language are sent to the developer. Checklists and photos are not sent.",
                 ],
@@ -332,8 +332,8 @@ const en: Dictionary = {
                 paragraphs: [
                     "Local data benefits from your operating system's security protections. Your device's screen lock and storage encryption provide additional protection when enabled.",
                     "There is no central checklist database on the developer's servers. This reduces exposure but does not make your device or exported files immune to unauthorized access.",
-                    "Backups are encrypted by default using a passphrase you choose, Argon2id key derivation, and AES-GCM encryption on your device. You can also enable an app lock. On Android and iOS, optional storage encryption protects local data with key material secured through Android Keystore or iOS Keychain.",
-                    "Unencrypted export is a separate, labelled action that requires confirmation. Anyone with access to that file can read it. Shared files, QR codes, and plain text are also unencrypted by the app and exclude photos. Share them only through channels you trust.",
+                    "The app does not add its own encryption to your data; it relies on the operating system protections described above. You can also enable an app lock, which controls who can open the app but does not encrypt the stored data.",
+                    "Backups are readable files that include photos and are not encrypted by the app. Anyone with access to a backup file can read it, so keep it somewhere you trust. Shared files, QR codes, and plain text are also unencrypted by the app and exclude photos. Share them only through channels you trust.",
                 ],
             },
             {
@@ -347,7 +347,7 @@ const en: Dictionary = {
                 paragraphs: [
                     "The app uses open-source components for notifications, scanning, photo and file selection, and sharing. These features use local processing and system services rather than a developer-operated backend.",
                     "The app includes no advertising, attribution, analytics, or crash-reporting SDKs.",
-                    "Other components support encryption, secure key storage, biometric unlocking, dictation, and widgets. Dictation relies on your device's speech service, which may use online processing as explained in section 5.",
+                    "Other components support biometric unlocking, dictation, and widgets. Dictation relies on your device's speech service, which may use online processing as explained in section 5.",
                 ],
             },
             {
@@ -404,12 +404,10 @@ const en: Dictionary = {
     },
     screens: {
         backup: {
-            badgeBody:
-                "An encrypted backup includes templates, checklists, notes, reminders, and photos, protected by your passphrase. Unencrypted export is a separate option.",
+            badgeBody: "Everything: templates, checklists, notes, reminders and photos — as readable text.",
             badgeNote: "No account, no cloud sync. You choose where to save or share the backup.",
             badgeTitle: "What's in the backup",
-            exportEncrypted: "Export encrypted backup",
-            exportPlain: "Export without encryption",
+            exportBackup: "Export backup",
             intro: "Your data is stored here on this device. Export a backup to keep a separate copy, or restore one you saved earlier.",
             restore: "Restore from backup",
             title: "Backup and restore",
@@ -517,25 +515,25 @@ const en: Dictionary = {
     },
     security: {
         eyebrow: "Security",
-        heading: "Know what you're sharing. Choose how it's protected.",
-        intro: "Before you export or share, the app explains what's included and whether it's encrypted. Backups can include photos; shared templates and checklists do not.",
-        note: "The app lock controls access to the app. Storage encryption protects the saved files. They are separate settings with different purposes.",
+        heading: "Know what you're sharing. Decide where it goes.",
+        intro: "Before you export or share, the app shows what's included. Backups include photos; shared templates and checklists do not.",
+        note: "The app lock controls who can open the app. It does not encrypt your data; saved data is protected by your device's own security, such as its screen lock.",
         points: [
             {
-                title: "Backups protected by your passphrase",
-                body: "Argon2id derives the key and AES-GCM encrypts the backup, all on your device. Choose a strong passphrase and keep it safe: the developer cannot recover it for you.",
+                title: "One readable backup file",
+                body: "Export backup saves your templates, checklists, notes, reminders, and photos in a single readable file. Restore from backup brings them back.",
             },
             {
-                title: "Unencrypted export, only by choice",
-                body: "Need an unencrypted file? Use the separate, clearly labelled export option and confirm before saving. Anyone with access to that file can read its contents.",
+                title: "Keep backups somewhere you trust",
+                body: "The app does not encrypt backups, so anyone with access to the file can read its contents. Save it only to a place you trust, and delete copies you no longer need.",
             },
             {
                 title: "Unlock with your device",
                 body: "Open the app with your fingerprint, face recognition, or your device's passcode. The operating system handles authentication; the app never receives your fingerprint or face data.",
             },
             {
-                title: "Encrypted storage on Android and iOS",
-                body: "Optionally encrypt saved checklists, notes, and photos. Key material is protected using Android Keystore or iOS Keychain.",
+                title: "Protected by your device",
+                body: "On Android and iOS, checklists, notes, and photos stay in the app's private storage, protected by the operating system's app isolation and your screen lock. The app does not add encryption of its own.",
             },
         ],
     },

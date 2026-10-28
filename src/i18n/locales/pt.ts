@@ -73,12 +73,12 @@ const pt: LocaleDictionary = {
                 body: "Envie um código QR ou arquivo .ntchk para quem tem o app, ou texto simples para qualquer outra pessoa. Listas e modelos compartilhados não incluem fotos.",
             },
             {
-                title: "Backups criptografados",
-                body: "Salve seus dados, incluindo fotos, em um único arquivo protegido por uma frase-senha que você escolhe. A criptografia usa Argon2id e AES-GCM no seu dispositivo.",
+                title: "Backups em um único arquivo",
+                body: "Salve seus modelos, listas, notas, lembretes e fotos em um único arquivo legível e restaure tudo quando precisar. Qualquer pessoa com o arquivo pode lê-lo, então guarde-o em um lugar de confiança.",
             },
             {
-                title: "Bloqueio do app e criptografia",
-                body: "Desbloqueie o app com sua impressão digital, o reconhecimento facial ou o código do dispositivo. No Android e no iOS, você também pode criptografar os dados salvos.",
+                title: "Bloqueio do app",
+                body: "Desbloqueie o app com sua impressão digital, o reconhecimento facial ou o código do dispositivo. A verificação é feita pelo sistema operacional.",
             },
             {
                 title: "Seu histórico, suas regras",
@@ -211,7 +211,7 @@ const pt: LocaleDictionary = {
             "Sem análise de uso, rastreadores ou SDKs de publicidade no app",
             "Suas listas não são armazenadas nos servidores do desenvolvedor",
             "Fotos são salvas localmente e excluídas dos compartilhamentos; os backups as incluem",
-            "Backups são criptografados por padrão com uma frase-senha que você escolhe",
+            "Backups são arquivos legíveis: guarde-os em um lugar de confiança",
             "Estatísticas são calculadas no dispositivo a partir das suas listas",
         ],
         policyLink: "Leia a política de privacidade completa",
@@ -256,7 +256,7 @@ const pt: LocaleDictionary = {
                     "Lembretes agendados e seus textos",
                     "Configurações como idioma e tema claro ou escuro",
                     "Códigos de barras escaneados e os nomes que você atribui a eles; o app não os consulta em uma base de produtos online",
-                    "Configurações de retenção do histórico, bloqueio do app e criptografia no dispositivo",
+                    "Configurações de retenção do histórico e do bloqueio do app",
                 ],
             },
             {
@@ -290,7 +290,7 @@ const pt: LocaleDictionary = {
                 ],
                 points: [
                     "O compartilhamento cria um código QR, arquivo .ntchk ou texto simples para você enviar pelo canal que escolher. Modelos e listas compartilhados não incluem fotos e não são criptografados pelo app.",
-                    "A exportação de um backup salva um arquivo no local escolhido ou abre o menu de compartilhamento do dispositivo. Backups incluem fotos. A proteção do destino depende do serviço escolhido.",
+                    "A exportação de um backup cria um único arquivo legível com seus modelos, listas, notas, lembretes e fotos e o salva no local escolhido ou abre o menu de compartilhamento do dispositivo. O app não o criptografa. A proteção do destino depende do serviço escolhido.",
                     "A importação lê um arquivo ou código fornecido por você; não busca conteúdo de listas na internet. O provedor de arquivos que você usar pode baixar o arquivo selecionado.",
                     "Sua mensagem, e-mail opcional, versão do app, plataforma e idioma são enviados ao desenvolvedor. Listas e fotos não são enviadas.",
                 ],
@@ -313,8 +313,8 @@ const pt: LocaleDictionary = {
                 paragraphs: [
                     "Os dados locais se beneficiam das proteções de segurança do sistema operacional. O bloqueio de tela e a criptografia do armazenamento oferecem proteção adicional quando ativados.",
                     "Não há uma base central de listas nos servidores do desenvolvedor. Isso reduz a exposição, mas não torna seu dispositivo ou arquivos exportados imunes a acessos não autorizados.",
-                    "Os backups são criptografados por padrão no dispositivo com uma frase-senha à sua escolha, derivação de chave Argon2id e criptografia AES-GCM. Você também pode ativar o bloqueio do app. No Android e no iOS, a criptografia opcional do armazenamento protege os dados locais, com o material de chave protegido por Android Keystore ou iOS Keychain.",
-                    "A exportação sem criptografia é uma ação separada, identificada e sujeita a confirmação. Qualquer pessoa com acesso ao arquivo pode lê-lo. Arquivos compartilhados, códigos QR e texto simples também não são criptografados pelo app e não incluem fotos. Compartilhe apenas por canais de confiança.",
+                    "O app não criptografa seus dados por conta própria; ele depende das proteções do sistema operacional descritas acima. Você também pode ativar o bloqueio do app, que controla quem pode abri-lo, mas não criptografa os dados salvos.",
+                    "Os backups são arquivos legíveis que incluem fotos e não são criptografados pelo app. Qualquer pessoa com acesso a um arquivo de backup pode lê-lo, então guarde-o em um lugar de confiança. Arquivos compartilhados, códigos QR e texto simples também não são criptografados pelo app e não incluem fotos. Compartilhe apenas por canais de confiança.",
                 ],
             },
             {
@@ -328,7 +328,7 @@ const pt: LocaleDictionary = {
                 paragraphs: [
                     "O app usa componentes de código aberto para notificações, escaneamento, seleção de fotos e arquivos e compartilhamento. Esses recursos usam processamento local e serviços do sistema, não um servidor operado pelo desenvolvedor.",
                     "O app não inclui SDKs de publicidade, atribuição, análise ou relatórios de falhas.",
-                    "Outros componentes oferecem criptografia, armazenamento seguro de chaves, desbloqueio biométrico, ditado e widgets. O ditado depende do serviço de voz do dispositivo, que pode processar dados online, como explicado na seção 5.",
+                    "Outros componentes oferecem desbloqueio biométrico, ditado e widgets. O ditado depende do serviço de voz do dispositivo, que pode processar dados online, como explicado na seção 5.",
                 ],
             },
             {
@@ -359,7 +359,7 @@ const pt: LocaleDictionary = {
                 ],
             },
         ],
-        lastUpdated: "Última atualização: 10 de outubro de 2026",
+        lastUpdated: "Última atualização: 28 de outubro de 2026",
     },
     screens: {
         checklists: {
@@ -440,13 +440,11 @@ const pt: LocaleDictionary = {
             tagTravel: "Viagem",
         },
         backup: {
-            badgeBody:
-                "Um backup criptografado inclui modelos, listas, notas, lembretes e fotos, protegidos pela sua frase-senha. Exportar sem criptografia é uma opção separada.",
+            badgeBody: "Tudo: modelos, listas, notas, lembretes e fotos — como texto legível.",
             badgeNote:
                 "Sem conta e sem sincronização com a nuvem. Você escolhe onde salvar ou compartilhar o backup.",
             badgeTitle: "O que vai no backup",
-            exportEncrypted: "Exportar backup criptografado",
-            exportPlain: "Exportar sem criptografia",
+            exportBackup: "Exportar backup",
             intro: "Seus dados estão salvos aqui, neste dispositivo. Exporte um backup para manter outra cópia ou restaure um que salvou antes.",
             restore: "Restaurar backup",
             title: "Backup e restauração",
@@ -537,25 +535,25 @@ const pt: LocaleDictionary = {
     },
     security: {
         eyebrow: "Segurança",
-        heading: "Saiba o que está compartilhando. Escolha como proteger.",
-        intro: "Antes de exportar ou compartilhar, o app explica o que está incluído e se está criptografado. Backups podem incluir fotos; modelos e listas compartilhados não.",
-        note: "O bloqueio controla o acesso ao app. A criptografia do armazenamento protege os arquivos salvos. São configurações separadas, com funções diferentes.",
+        heading: "Saiba o que está compartilhando. Decida para onde vai.",
+        intro: "Antes de exportar ou compartilhar, o app mostra o que está incluído. Backups incluem fotos; modelos e listas compartilhados não.",
+        note: "O bloqueio controla quem pode abrir o app. Ele não criptografa seus dados: os dados salvos são protegidos pela segurança do seu dispositivo, como o bloqueio de tela.",
         points: [
             {
-                title: "Backups protegidos pela sua frase-senha",
-                body: "Argon2id deriva a chave e AES-GCM criptografa o backup, tudo no seu dispositivo. Escolha uma frase-senha forte e guarde com segurança: o desenvolvedor não pode recuperá-la para você.",
+                title: "Um único arquivo de backup legível",
+                body: "Exportar backup salva seus modelos, listas, notas, lembretes e fotos em um único arquivo legível. Restaurar do backup traz tudo de volta.",
             },
             {
-                title: "Exportação sem criptografia, só por escolha",
-                body: "Precisa de um arquivo sem criptografia? Use a opção separada e claramente identificada e confirme antes de salvar. Qualquer pessoa com acesso ao arquivo pode ler o conteúdo.",
+                title: "Guarde os backups em um lugar de confiança",
+                body: "O app não criptografa backups, então qualquer pessoa com acesso ao arquivo pode ler o conteúdo. Salve-o apenas em um lugar de confiança e apague as cópias de que não precisa mais.",
             },
             {
                 title: "Desbloqueie com seu dispositivo",
                 body: "Abra o app com sua impressão digital, o reconhecimento facial ou o código do dispositivo. O sistema operacional cuida da autenticação; o app nunca recebe dados da sua impressão digital ou do seu rosto.",
             },
             {
-                title: "Armazenamento criptografado no Android e no iOS",
-                body: "Você pode criptografar listas, notas e fotos salvas. O material de chave é protegido usando Android Keystore ou iOS Keychain.",
+                title: "Protegido pelo seu dispositivo",
+                body: "No Android e no iOS, listas, notas e fotos ficam no armazenamento privado do app, protegidas pelo isolamento de apps do sistema operacional e pelo bloqueio de tela. O app não adiciona criptografia própria.",
             },
         ],
     },

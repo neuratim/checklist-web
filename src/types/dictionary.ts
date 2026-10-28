@@ -195,8 +195,7 @@ export interface Dictionary {
             badgeBody: string;
             badgeNote: string;
             badgeTitle: string;
-            exportEncrypted: string;
-            exportPlain: string;
+            exportBackup: string;
             intro: string;
             restore: string;
             title: string;
