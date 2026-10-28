@@ -73,8 +73,8 @@ const tr: LocaleDictionary = {
                 body: "Uygulamayı kullanan birine QR kodu veya .ntchk dosyası, diğer kişilere ise düz metin gönderin. Paylaşılan kontrol listelerine ve şablonlara fotoğraflar dahil edilmez.",
             },
             {
-                title: "Tek dosyada yedekler",
-                body: "Şablonlarınızı, kontrol listelerinizi, notlarınızı, hatırlatıcılarınızı ve fotoğraflarınızı okunabilir tek bir dosyada yedekleyin ve gerektiğinde geri yükleyin. Dosyaya sahip olan herkes onu okuyabilir; bu yüzden güvendiğiniz bir yerde saklayın.",
+                title: "Şifreli yedekler",
+                body: "Fotoğraflar dahil verilerinizi, belirlediğiniz parolayla korunan tek bir dosyada yedekleyin. Şifreleme cihazınızda Argon2id ve AES-GCM kullanılarak yapılır.",
             },
             {
                 title: "Uygulama kilidi",
@@ -212,7 +212,7 @@ const tr: LocaleDictionary = {
             "Uygulamada analiz, takip aracı veya reklam SDK'sı yoktur",
             "Kontrol listeleriniz geliştiricinin sunucularında saklanmaz",
             "Fotoğraflar yerel olarak saklanır ve paylaşımlara dahil edilmez; yedeklere dahil edilir",
-            "Yedekler okunabilir dosyalardır; onları güvendiğiniz bir yerde saklayın",
+            "Yedekler varsayılan olarak belirlediğiniz parolayla şifrelenir",
             "İstatistikler kontrol listelerinizden cihazınızda hesaplanır",
         ],
         policyLink: "Gizlilik politikasının tamamını okuyun",
@@ -293,7 +293,7 @@ const tr: LocaleDictionary = {
                 ],
                 points: [
                     "Paylaşım, seçtiğiniz bir kanaldan gönderebilmeniz için QR kodu, .ntchk dosyası veya düz metin oluşturur. Paylaşılan şablon ve kontrol listelerine fotoğraflar dahil edilmez ve bunlar uygulama tarafından şifrelenmez.",
-                    "Yedek dışa aktarıldığında şablonlarınızı, kontrol listelerinizi, notlarınızı, hatırlatıcılarınızı ve fotoğraflarınızı içeren okunabilir tek bir dosya oluşturulur; dosya seçtiğiniz konuma kaydedilir veya cihazınızın paylaşım menüsü açılır. Uygulama bu dosyayı şifrelemez. Hedef konumun korunması, seçtiğiniz hizmete bağlıdır.",
+                    "Yedek dışa aktarıldığında dosya seçtiğiniz konuma kaydedilir veya cihazınızın paylaşım menüsü açılır. Yedekler fotoğrafları içerir. Hedef konumun korunması, seçtiğiniz hizmete bağlıdır.",
                     "İçe aktarma, sizin sağladığınız dosyayı veya kodu okur; kontrol listesi içeriği için internette arama yapmaz. Kullandığınız dosya sağlayıcısı, seçilen dosyayı indirebilir.",
                     "Mesajınız, isteğe bağlı e-posta adresiniz, uygulama sürümü, platform ve dil geliştiriciye gönderilir. Listeler ve fotoğraflar gönderilmez.",
                 ],
@@ -316,8 +316,8 @@ const tr: LocaleDictionary = {
                 paragraphs: [
                     "Yerel veriler, işletim sisteminizin güvenlik önlemlerinden yararlanır. Etkinleştirildiğinde cihaz ekran kilidi ve depolama şifrelemesi ek koruma sağlar.",
                     "Geliştiricinin sunucularında merkezi bir kontrol listesi veritabanı yoktur. Bu, riski azaltır; ancak cihazınızı veya dışa aktardığınız dosyaları yetkisiz erişime karşı tamamen korumaz.",
-                    "Uygulama verilerinizi kendisi şifrelemez; yukarıda açıklanan işletim sistemi korumalarına dayanır. Uygulama kilidini de etkinleştirebilirsiniz; kilit, uygulamayı kimin açabileceğini denetler ancak kayıtlı verileri şifrelemez.",
-                    "Yedekler, fotoğrafları içeren ve uygulama tarafından şifrelenmeyen okunabilir dosyalardır. Bir yedek dosyasına erişen herkes onu okuyabilir; bu yüzden güvendiğiniz bir yerde saklayın. Paylaşılan dosyalar, QR kodları ve düz metin de uygulama tarafından şifrelenmez ve fotoğraf içermez. Bunları yalnızca güvendiğiniz kanallardan paylaşın.",
+                    "Yedekler varsayılan olarak seçtiğiniz parolayla, cihazınızda Argon2id anahtar türetme ve AES-GCM şifreleme kullanılarak şifrelenir. Uygulama, cihazda saklanan verileri kendisi şifrelemez; yukarıda açıklanan işletim sistemi korumalarına dayanır. Uygulama kilidini de etkinleştirebilirsiniz; kilit, uygulamayı kimin açabileceğini denetler ancak kayıtlı verileri şifrelemez.",
+                    "Şifrelenmemiş dışa aktarma, açıkça etiketlenmiş ve onay gerektiren ayrı bir işlemdir. Dosyaya erişen herkes içeriğini okuyabilir. Paylaşılan dosyalar, QR kodları ve düz metin de uygulama tarafından şifrelenmez ve fotoğraf içermez. Bunları yalnızca güvendiğiniz kanallardan paylaşın.",
                 ],
             },
             {
@@ -331,7 +331,7 @@ const tr: LocaleDictionary = {
                 paragraphs: [
                     "Uygulama; bildirim, tarama, fotoğraf ve dosya seçimi ile paylaşım için açık kaynaklı bileşenler kullanır. Bu özellikler, geliştiricinin işlettiği bir sunucu altyapısı yerine yerel işlemeyi ve sistem hizmetlerini kullanır.",
                     "Uygulama reklam, ilişkilendirme, analiz veya çökme raporlama SDK'sı içermez.",
-                    "Diğer bileşenler biyometrik kilit açma, dikte ve widget'ları destekler. Dikte, 5. bölümde açıklandığı gibi çevrimiçi işlem yapabilen cihaz konuşma hizmetine dayanır.",
+                    "Diğer bileşenler yedek şifreleme, biyometrik kilit açma, dikte ve widget'ları destekler. Dikte, 5. bölümde açıklandığı gibi çevrimiçi işlem yapabilen cihaz konuşma hizmetine dayanır.",
                 ],
             },
             {
@@ -444,11 +444,12 @@ const tr: LocaleDictionary = {
         },
         backup: {
             badgeBody:
-                "Her şey: şablonlar, listeler, notlar, hatırlatıcılar ve fotoğraflar — okunabilir metin olarak.",
+                "Şifreli yedek; şablonları, kontrol listelerini, notları, hatırlatıcıları ve fotoğrafları içerir ve parolanızla korunur. Şifrelenmemiş dışa aktarma ayrı bir seçenektir.",
             badgeNote:
                 "Hesap yok, bulut eşitlemesi yok. Yedeği nereye kaydedeceğinize veya nerede paylaşacağınıza siz karar verirsiniz.",
             badgeTitle: "Yedeğin içeriği",
-            exportBackup: "Yedeği dışa aktar",
+            exportEncrypted: "Şifreli yedeği dışa aktar",
+            exportPlain: "Şifrelemeden dışa aktar",
             intro: "Verileriniz bu cihazda saklanır. Ayrı bir kopya tutmak için yedek dışa aktarın veya daha önce kaydettiğiniz bir yedeği geri yükleyin.",
             restore: "Yedekten geri yükle",
             title: "Yedekleme ve geri yükleme",
@@ -541,17 +542,17 @@ const tr: LocaleDictionary = {
     },
     security: {
         eyebrow: "Güvenlik",
-        heading: "Ne paylaştığınızı bilin. Nereye gideceğine siz karar verin.",
-        intro: "Dışa aktarmadan veya paylaşmadan önce uygulama nelerin dahil olduğunu gösterir. Yedekler fotoğrafları içerir; paylaşılan şablon ve kontrol listeleri içermez.",
+        heading: "Ne paylaştığınızı bilin. Nasıl korunacağını seçin.",
+        intro: "Dışa aktarmadan veya paylaşmadan önce uygulama, nelerin dahil olduğunu ve şifreleme uygulanıp uygulanmadığını açıklar. Yedekler fotoğraf içerebilir; paylaşılan şablon ve kontrol listeleri içermez.",
         note: "Uygulama kilidi, uygulamayı kimin açabileceğini denetler. Verileri şifrelemez; kayıtlı verileri ekran kilidi gibi cihazınızın kendi güvenlik önlemleri korur.",
         points: [
             {
-                title: "Okunabilir tek yedek dosyası",
-                body: "Yedek dışa aktarma; şablonları, kontrol listelerini, notları, hatırlatıcıları ve fotoğrafları okunabilir tek bir dosyaya kaydeder. Yedekten geri yükleyerek hepsini geri alırsınız.",
+                title: "Parolanızla korunan yedekler",
+                body: "Argon2id anahtarı türetir, AES-GCM yedeği şifreler; tüm işlem cihazınızda gerçekleşir. Güçlü bir parola seçin ve güvenli bir yerde saklayın. Geliştirici parolanızı kurtaramaz.",
             },
             {
-                title: "Yedekleri güvendiğiniz bir yerde saklayın",
-                body: "Uygulama yedekleri şifrelemez; dosyaya erişen herkes içeriğini okuyabilir. Dosyayı yalnızca güvendiğiniz bir yere kaydedin ve artık ihtiyaç duymadığınız kopyaları silin.",
+                title: "Yalnızca siz seçerseniz şifrelenmemiş dışa aktarma",
+                body: "Şifrelenmemiş bir dosya mı gerekiyor? Ayrı ve açıkça etiketlenmiş dışa aktarma seçeneğini kullanın, kaydetmeden önce onaylayın. Dosyaya erişen herkes içeriğini okuyabilir.",
             },
             {
                 title: "Cihazınızın doğrulamasıyla açın",

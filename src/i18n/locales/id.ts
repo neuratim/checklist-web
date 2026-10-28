@@ -73,8 +73,8 @@ const id: LocaleDictionary = {
                 body: "Kirim kode QR atau file .ntchk kepada pengguna aplikasi, atau teks biasa kepada siapa saja. Daftar periksa dan templat yang dibagikan tidak menyertakan foto.",
             },
             {
-                title: "Cadangan dalam satu file",
-                body: "Cadangkan templat, daftar periksa, catatan, pengingat, dan foto dalam satu file yang dapat dibaca, lalu pulihkan kapan pun diperlukan. Siapa pun yang memiliki file itu dapat membacanya, jadi simpan di tempat yang kamu percayai.",
+                title: "Cadangan terenkripsi",
+                body: "Cadangkan data, termasuk foto, dalam satu file yang dilindungi frasa sandi pilihanmu. Enkripsi dilakukan di perangkatmu dengan Argon2id dan AES-GCM.",
             },
             {
                 title: "Kunci aplikasi",
@@ -212,7 +212,7 @@ const id: LocaleDictionary = {
             "Tanpa analitik, pelacak, atau SDK iklan di dalam aplikasi",
             "Daftar periksamu tidak disimpan di server pengembang",
             "Foto disimpan secara lokal dan tidak ikut dibagikan; cadangan menyertakannya",
-            "Cadangan berupa file yang dapat dibaca—simpan di tempat yang kamu percayai",
+            "Secara default, cadangan dienkripsi dengan frasa sandi pilihanmu",
             "Statistik dihitung dari daftar periksa di perangkatmu",
         ],
         policyLink: "Baca kebijakan privasi lengkap",
@@ -292,7 +292,7 @@ const id: LocaleDictionary = {
                 ],
                 points: [
                     "Berbagi menghasilkan kode QR, file .ntchk, atau teks biasa untuk dikirim melalui saluran pilihanmu. Templat dan daftar periksa yang dibagikan tidak menyertakan foto dan tidak dienkripsi oleh aplikasi.",
-                    "Ekspor cadangan membuat satu file yang dapat dibaca berisi templat, daftar periksa, catatan, pengingat, dan fotomu, lalu menyimpannya ke lokasi pilihanmu atau membuka menu berbagi perangkat. Aplikasi tidak mengenkripsinya. Perlindungan di tempat tujuan bergantung pada layanan yang kamu pilih.",
+                    "Ekspor cadangan menyimpan file ke lokasi pilihanmu atau membuka menu berbagi perangkat. Cadangan menyertakan foto. Perlindungan di tempat tujuan bergantung pada layanan yang kamu pilih.",
                     "Impor membaca file atau kode yang kamu berikan; tidak mencari isi daftar periksa di internet. Penyedia file yang kamu gunakan dapat mengunduh file yang dipilih.",
                     "Pesan, email opsional, versi aplikasi, platform, dan bahasa dikirim ke pengembang. Daftar periksa dan foto tidak dikirim.",
                 ],
@@ -315,8 +315,8 @@ const id: LocaleDictionary = {
                 paragraphs: [
                     "Data lokal mendapat perlindungan keamanan dari sistem operasi. Kunci layar dan enkripsi penyimpanan perangkat memberikan perlindungan tambahan saat diaktifkan.",
                     "Tidak ada basis data daftar periksa terpusat di server pengembang. Ini mengurangi risiko, tetapi tidak membuat perangkat atau file hasil ekspormu kebal terhadap akses tanpa izin.",
-                    "Aplikasi tidak mengenkripsi datamu sendiri; aplikasi mengandalkan perlindungan sistem operasi yang dijelaskan di atas. Kamu juga dapat mengaktifkan kunci aplikasi, yang mengatur siapa yang dapat membuka aplikasi tetapi tidak mengenkripsi data yang tersimpan.",
-                    "Cadangan adalah file yang dapat dibaca, menyertakan foto, dan tidak dienkripsi oleh aplikasi. Siapa pun yang dapat mengakses file cadangan dapat membacanya, jadi simpan di tempat yang kamu percayai. File berbagi, kode QR, dan teks biasa juga tidak dienkripsi oleh aplikasi serta tidak menyertakan foto. Bagikan hanya melalui saluran yang kamu percayai.",
+                    "Secara default, cadangan dienkripsi di perangkatmu menggunakan frasa sandi pilihanmu, derivasi kunci Argon2id, dan enkripsi AES-GCM. Aplikasi tidak mengenkripsi sendiri data yang tersimpan di perangkatmu; aplikasi mengandalkan perlindungan sistem operasi yang dijelaskan di atas. Kamu juga dapat mengaktifkan kunci aplikasi, yang mengatur siapa yang dapat membuka aplikasi tetapi tidak mengenkripsi data yang tersimpan.",
+                    "Ekspor tanpa enkripsi adalah tindakan terpisah dengan label yang jelas dan memerlukan konfirmasi. Siapa pun yang dapat mengakses file itu dapat membacanya. File berbagi, kode QR, dan teks biasa juga tidak dienkripsi oleh aplikasi serta tidak menyertakan foto. Bagikan hanya melalui saluran yang kamu percayai.",
                 ],
             },
             {
@@ -330,7 +330,7 @@ const id: LocaleDictionary = {
                 paragraphs: [
                     "Aplikasi menggunakan komponen sumber terbuka untuk notifikasi, pemindaian, pemilihan foto dan file, serta berbagi. Fitur ini memakai pemrosesan lokal dan layanan sistem, bukan backend yang dikelola pengembang.",
                     "Aplikasi tidak menyertakan SDK iklan, atribusi, analitik, atau pelaporan crash.",
-                    "Komponen lain mendukung pembukaan kunci biometrik, dikte, dan widget. Dikte bergantung pada layanan pengenalan suara perangkat, yang mungkin menggunakan pemrosesan online seperti dijelaskan pada bagian 5.",
+                    "Komponen lain mendukung enkripsi cadangan, pembukaan kunci biometrik, dikte, dan widget. Dikte bergantung pada layanan pengenalan suara perangkat, yang mungkin menggunakan pemrosesan online seperti dijelaskan pada bagian 5.",
                 ],
             },
             {
@@ -442,11 +442,13 @@ const id: LocaleDictionary = {
             tagTravel: "Perjalanan",
         },
         backup: {
-            badgeBody: "Semuanya: templat, daftar, catatan, pengingat, dan foto — sebagai teks yang terbaca.",
+            badgeBody:
+                "Cadangan terenkripsi mencakup templat, daftar periksa, catatan, pengingat, dan foto, yang dilindungi frasa sandimu. Ekspor tanpa enkripsi tersedia sebagai pilihan terpisah.",
             badgeNote:
                 "Tanpa akun, tanpa sinkronisasi cloud. Kamu memilih tempat menyimpan atau membagikan cadangan.",
             badgeTitle: "Isi cadangan",
-            exportBackup: "Ekspor cadangan",
+            exportEncrypted: "Ekspor cadangan terenkripsi",
+            exportPlain: "Ekspor tanpa enkripsi",
             intro: "Datamu disimpan di perangkat ini. Ekspor cadangan untuk menyimpan salinan terpisah, atau pulihkan cadangan yang sebelumnya kamu simpan.",
             restore: "Pulihkan dari cadangan",
             title: "Cadangkan dan pulihkan",
@@ -537,17 +539,17 @@ const id: LocaleDictionary = {
     },
     security: {
         eyebrow: "Keamanan",
-        heading: "Ketahui yang kamu bagikan. Tentukan ke mana perginya.",
-        intro: "Sebelum mengekspor atau berbagi, aplikasi menunjukkan isi yang disertakan. Cadangan menyertakan foto; templat dan daftar periksa yang dibagikan tidak.",
+        heading: "Ketahui yang kamu bagikan. Pilih cara melindunginya.",
+        intro: "Sebelum mengekspor atau berbagi, aplikasi menjelaskan isi yang disertakan dan apakah isinya dienkripsi. Cadangan dapat menyertakan foto; templat dan daftar periksa yang dibagikan tidak.",
         note: "Kunci aplikasi mengatur siapa yang dapat membuka aplikasi. Kunci ini tidak mengenkripsi data; data tersimpan dilindungi oleh keamanan perangkatmu sendiri, seperti kunci layar.",
         points: [
             {
-                title: "Satu file cadangan yang dapat dibaca",
-                body: "Ekspor cadangan menyimpan templat, daftar periksa, catatan, pengingat, dan foto dalam satu file yang dapat dibaca. Pulihkan dari cadangan untuk mengembalikan semuanya.",
+                title: "Cadangan dilindungi frasa sandimu",
+                body: "Argon2id menghasilkan kunci dari frasa sandi dan AES-GCM mengenkripsi cadangan, semuanya di perangkatmu. Pilih frasa sandi yang kuat dan simpan dengan aman; pengembang tidak dapat memulihkannya untukmu.",
             },
             {
-                title: "Simpan cadangan di tempat tepercaya",
-                body: "Aplikasi tidak mengenkripsi cadangan, jadi siapa pun yang dapat mengakses file itu dapat membaca isinya. Simpan hanya di tempat yang kamu percayai dan hapus salinan yang tidak lagi diperlukan.",
+                title: "Ekspor tanpa enkripsi hanya atas pilihanmu",
+                body: "Perlu file tanpa enkripsi? Gunakan pilihan ekspor terpisah yang berlabel jelas dan konfirmasikan sebelum menyimpan. Siapa pun yang dapat mengakses file itu dapat membaca isinya.",
             },
             {
                 title: "Buka dengan autentikasi perangkat",

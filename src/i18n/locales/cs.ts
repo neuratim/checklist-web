@@ -73,8 +73,8 @@ const cs: LocaleDictionary = {
                 body: "Lidem s aplikací pošlete QR kód nebo soubor .ntchk, ostatním prostý text. Sdílené seznamy ani šablony neobsahují fotky.",
             },
             {
-                title: "Zálohy v jednom souboru",
-                body: "Zálohujte šablony, seznamy, poznámky, připomenutí i fotky do jednoho čitelného souboru a kdykoli je obnovte. Soubor přečte kdokoli, kdo ho má, proto ho uchovávejte na místě, kterému důvěřujete.",
+                title: "Šifrované zálohy",
+                body: "Zálohujte data včetně fotek do jediného souboru chráněného heslovou frází, kterou si zvolíte. Šifrování pomocí Argon2id a AES-GCM probíhá ve vašem zařízení.",
             },
             {
                 title: "Zámek aplikace",
@@ -211,7 +211,7 @@ const cs: LocaleDictionary = {
             "Žádná analytika, sledování ani reklamní SDK v aplikaci",
             "Vaše seznamy se neukládají na servery vývojáře",
             "Fotky se ukládají místně; sdílení je nezahrnuje, zálohy ano",
-            "Zálohy jsou čitelné soubory – uchovávejte je na důvěryhodném místě",
+            "Zálohy jsou ve výchozím nastavení šifrované vámi zvolenou heslovou frází",
             "Statistiky se počítají z vašich seznamů ve vašem zařízení",
         ],
         policyLink: "Přečíst celé zásady ochrany soukromí",
@@ -289,7 +289,7 @@ const cs: LocaleDictionary = {
                 ],
                 points: [
                     "Při sdílení vznikne QR kód, soubor .ntchk nebo prostý text, který předáte zvoleným způsobem. Sdílené šablony a seznamy neobsahují fotky a aplikace je nešifruje.",
-                    "Export zálohy vytvoří jeden čitelný soubor se šablonami, seznamy, poznámkami, připomenutími a fotkami a uloží ho do zvoleného umístění nebo otevře systémovou nabídku sdílení. Aplikace ho nešifruje. Ochrana cílového umístění závisí na vybrané službě.",
+                    "Export zálohy uloží soubor do zvoleného umístění nebo otevře systémovou nabídku sdílení. Zálohy obsahují fotky. Ochrana cílového umístění závisí na vybrané službě.",
                     "Import načte vámi vybraný soubor nebo kód; obsah seznamů nevyhledává na internetu. Poskytovatel souborů, kterého používáte, může vybraný soubor stáhnout.",
                     "Vývojáři se odešle vaše zpráva, volitelný e-mail, verze aplikace, platforma a jazyk. Seznamy ani fotografie se neodesílají.",
                 ],
@@ -312,8 +312,8 @@ const cs: LocaleDictionary = {
                 paragraphs: [
                     "Místní data chrání bezpečnostní mechanismy operačního systému. Další ochranu poskytují zámek obrazovky a šifrování úložiště zařízení, pokud jsou zapnuté.",
                     "Na serverech vývojáře není centrální databáze seznamů. Tím se snižuje riziko, nikoli však vylučuje neoprávněný přístup k vašemu zařízení nebo exportovaným souborům.",
-                    "Aplikace vaše data sama nešifruje; spoléhá na výše popsané ochranné mechanismy operačního systému. Můžete také zapnout zámek aplikace, který určuje, kdo aplikaci otevře, ale uložená data nešifruje.",
-                    "Zálohy jsou čitelné soubory, obsahují fotky a aplikace je nešifruje. Kdokoli má k souboru zálohy přístup, může ho přečíst, proto ho uchovávejte na důvěryhodném místě. Aplikace nešifruje ani sdílené soubory, QR kódy a prostý text; tyto způsoby sdílení neobsahují fotky. Používejte k jejich předávání pouze důvěryhodné kanály.",
+                    "Zálohy jsou ve výchozím nastavení šifrované ve vašem zařízení pomocí zvolené heslové fráze, odvození klíče Argon2id a šifrování AES-GCM. Data uložená v zařízení aplikace sama nešifruje; spoléhá na výše popsané ochranné mechanismy operačního systému. Můžete také zapnout zámek aplikace, který určuje, kdo aplikaci otevře, ale uložená data nešifruje.",
+                    "Nešifrovaný export je samostatná, označená akce vyžadující potvrzení. Kdokoli má k souboru přístup, může ho přečíst. Aplikace nešifruje ani sdílené soubory, QR kódy a prostý text; tyto způsoby sdílení neobsahují fotky. Používejte k jejich předávání pouze důvěryhodné kanály.",
                 ],
             },
             {
@@ -327,7 +327,7 @@ const cs: LocaleDictionary = {
                 paragraphs: [
                     "Aplikace využívá open-source komponenty pro oznámení, skenování, výběr fotek a souborů a sdílení. Tyto funkce používají místní zpracování a systémové služby, nikoli serverovou část provozovanou vývojářem.",
                     "Aplikace neobsahuje SDK pro reklamu, atribuci, analytiku ani hlášení pádů.",
-                    "Další komponenty zajišťují biometrické odemykání, diktování a widgety. Diktování využívá službu rozpoznávání řeči v zařízení, která může zpracovávat data online, jak je uvedeno v části 5.",
+                    "Další komponenty zajišťují šifrování záloh, biometrické odemykání, diktování a widgety. Diktování využívá službu rozpoznávání řeči v zařízení, která může zpracovávat data online, jak je uvedeno v části 5.",
                 ],
             },
             {
@@ -439,10 +439,12 @@ const cs: LocaleDictionary = {
             tagTravel: "Cestování",
         },
         backup: {
-            badgeBody: "Vše: šablony, seznamy, poznámky, připomenutí a fotky — jako čitelný text.",
+            badgeBody:
+                "Šifrovaná záloha obsahuje šablony, seznamy, poznámky, připomenutí i fotky a chrání ji vaše heslová fráze. Nešifrovaný export je samostatná možnost.",
             badgeNote: "Bez účtu a synchronizace s cloudem. Kam zálohu uložíte nebo pošlete, rozhodujete vy.",
             badgeTitle: "Co záloha obsahuje",
-            exportBackup: "Exportovat zálohu",
+            exportEncrypted: "Exportovat šifrovanou zálohu",
+            exportPlain: "Exportovat bez šifrování",
             intro: "Vaše data jsou uložená zde v zařízení. Exportujte zálohu pro uchování další kopie nebo obnovte dříve uloženou zálohu.",
             restore: "Obnovit ze zálohy",
             title: "Zálohování a obnova",
@@ -533,17 +535,17 @@ const cs: LocaleDictionary = {
     },
     security: {
         eyebrow: "Zabezpečení",
-        heading: "Mějte přehled, co sdílíte. Rozhodněte, kam to půjde.",
-        intro: "Před exportem či sdílením aplikace ukáže, co bude součástí. Zálohy obsahují fotky, sdílené šablony a seznamy nikoli.",
+        heading: "Mějte přehled, co sdílíte. O ochraně rozhodujete vy.",
+        intro: "Před exportem či sdílením aplikace vysvětlí, co bude součástí a zda jsou data šifrovaná. Zálohy mohou obsahovat fotky, sdílené šablony a seznamy nikoli.",
         note: "Zámek řídí, kdo aplikaci otevře. Data nešifruje; uložená data chrání zabezpečení vašeho zařízení, například zámek obrazovky.",
         points: [
             {
-                title: "Jeden čitelný soubor se zálohou",
-                body: "Export zálohy uloží šablony, seznamy, poznámky, připomenutí i fotky do jediného čitelného souboru. Obnovení ze zálohy je vrátí zpět.",
+                title: "Zálohy chráněné vaší heslovou frází",
+                body: "Argon2id odvodí klíč a AES-GCM zašifruje zálohu, vše přímo v zařízení. Zvolte silnou heslovou frázi a bezpečně si ji uchovejte: vývojář vám ji nedokáže obnovit.",
             },
             {
-                title: "Zálohy uchovávejte na důvěryhodném místě",
-                body: "Aplikace zálohy nešifruje, takže jejich obsah přečte kdokoli, kdo k souboru získá přístup. Ukládejte je jen tam, kde jim důvěřujete, a nepotřebné kopie smažte.",
+                title: "Nešifrovaný export jen na váš pokyn",
+                body: "Potřebujete nešifrovaný soubor? Použijte samostatnou, jasně označenou možnost exportu a před uložením ji potvrďte. Obsah přečte kdokoli, kdo k souboru získá přístup.",
             },
             {
                 title: "Odemykání pomocí zařízení",

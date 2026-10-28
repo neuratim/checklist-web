@@ -73,8 +73,8 @@ const vi: LocaleDictionary = {
                 body: "Gửi mã QR hoặc tệp .ntchk cho người có ứng dụng, hoặc văn bản thuần túy cho bất kỳ ai. Danh sách kiểm tra và mẫu được chia sẻ không kèm ảnh.",
             },
             {
-                title: "Sao lưu trong một tệp",
-                body: "Sao lưu mẫu, danh sách kiểm tra, ghi chú, lời nhắc và ảnh vào một tệp đọc được, rồi khôi phục khi cần. Ai có tệp này cũng đọc được, vì vậy hãy cất giữ ở nơi bạn tin cậy.",
+                title: "Bản sao lưu được mã hóa",
+                body: "Sao lưu dữ liệu, kể cả ảnh, vào một tệp được bảo vệ bằng cụm mật khẩu do bạn chọn. Việc mã hóa dùng Argon2id và AES-GCM, diễn ra ngay trên thiết bị.",
             },
             {
                 title: "Khóa ứng dụng",
@@ -216,7 +216,7 @@ const vi: LocaleDictionary = {
             "Không có công cụ phân tích, trình theo dõi hoặc SDK quảng cáo trong ứng dụng",
             "Danh sách kiểm tra của bạn không được lưu trên máy chủ của nhà phát triển",
             "Ảnh được lưu cục bộ và không đi kèm khi chia sẻ; bản sao lưu có chứa ảnh",
-            "Bản sao lưu là tệp đọc được—hãy cất giữ ở nơi bạn tin cậy",
+            "Bản sao lưu được mã hóa mặc định bằng cụm mật khẩu do bạn chọn",
             "Thống kê được tính trên thiết bị từ các danh sách của bạn",
         ],
         policyLink: "Đọc toàn bộ chính sách quyền riêng tư",
@@ -297,7 +297,7 @@ const vi: LocaleDictionary = {
                 ],
                 points: [
                     "Chia sẻ sẽ tạo mã QR, tệp .ntchk hoặc văn bản thuần túy để bạn gửi qua kênh tự chọn. Mẫu và danh sách kiểm tra được chia sẻ không chứa ảnh và không được ứng dụng mã hóa.",
-                    "Xuất bản sao lưu sẽ tạo một tệp đọc được chứa mẫu, danh sách kiểm tra, ghi chú, lời nhắc và ảnh của bạn, rồi lưu vào nơi bạn chọn hoặc mở trình đơn chia sẻ của thiết bị. Ứng dụng không mã hóa tệp này. Mức độ bảo vệ ở nơi nhận phụ thuộc vào dịch vụ bạn chọn.",
+                    "Xuất bản sao lưu sẽ lưu tệp vào nơi bạn chọn hoặc mở trình đơn chia sẻ của thiết bị. Bản sao lưu có chứa ảnh. Mức độ bảo vệ ở nơi nhận phụ thuộc vào dịch vụ bạn chọn.",
                     "Nhập dữ liệu chỉ đọc tệp hoặc mã do bạn cung cấp, không tìm nội dung danh sách kiểm tra trên mạng. Nhà cung cấp tệp bạn dùng có thể tải tệp đã chọn xuống.",
                     "Tin nhắn, email tùy chọn, phiên bản ứng dụng, nền tảng và ngôn ngữ được gửi cho nhà phát triển. Danh sách và ảnh không được gửi.",
                 ],
@@ -320,8 +320,8 @@ const vi: LocaleDictionary = {
                 paragraphs: [
                     "Dữ liệu cục bộ được hưởng các cơ chế bảo vệ của hệ điều hành. Khóa màn hình và mã hóa bộ nhớ thiết bị tăng thêm khả năng bảo vệ khi được bật.",
                     "Không có cơ sở dữ liệu danh sách kiểm tra tập trung trên máy chủ của nhà phát triển. Điều này giúp giảm rủi ro nhưng không khiến thiết bị hoặc tệp đã xuất hoàn toàn tránh được truy cập trái phép.",
-                    "Ứng dụng không tự mã hóa dữ liệu của bạn mà dựa vào các cơ chế bảo vệ của hệ điều hành nêu trên. Bạn cũng có thể bật khóa ứng dụng; khóa này kiểm soát ai có thể mở ứng dụng nhưng không mã hóa dữ liệu đã lưu.",
-                    "Bản sao lưu là tệp đọc được, có chứa ảnh và không được ứng dụng mã hóa. Bất kỳ ai truy cập được tệp sao lưu đều có thể đọc nó, vì vậy hãy cất giữ ở nơi bạn tin cậy. Tệp chia sẻ, mã QR và văn bản thuần túy cũng không được ứng dụng mã hóa và không chứa ảnh. Chỉ chia sẻ chúng qua kênh bạn tin cậy.",
+                    "Bản sao lưu được mã hóa mặc định trên thiết bị bằng cụm mật khẩu bạn chọn, cơ chế dẫn xuất khóa Argon2id và mã hóa AES-GCM. Ứng dụng không tự mã hóa dữ liệu lưu trên thiết bị mà dựa vào các cơ chế bảo vệ của hệ điều hành nêu trên. Bạn cũng có thể bật khóa ứng dụng; khóa này kiểm soát ai có thể mở ứng dụng nhưng không mã hóa dữ liệu đã lưu.",
+                    "Xuất không mã hóa là một thao tác riêng, được ghi nhãn rõ và cần xác nhận. Bất kỳ ai truy cập được tệp đều có thể đọc tệp đó. Tệp chia sẻ, mã QR và văn bản thuần túy cũng không được ứng dụng mã hóa và không chứa ảnh. Chỉ chia sẻ chúng qua kênh bạn tin cậy.",
                 ],
             },
             {
@@ -335,7 +335,7 @@ const vi: LocaleDictionary = {
                 paragraphs: [
                     "Ứng dụng dùng các thành phần mã nguồn mở cho thông báo, quét mã, chọn ảnh và tệp, cũng như chia sẻ. Các tính năng này dùng xử lý cục bộ và dịch vụ hệ thống thay vì máy chủ do nhà phát triển vận hành.",
                     "Ứng dụng không chứa SDK quảng cáo, phân bổ nguồn người dùng, phân tích hoặc báo cáo sự cố.",
-                    "Các thành phần khác hỗ trợ mở khóa sinh trắc học, nhập bằng giọng nói và tiện ích. Nhập bằng giọng nói dựa vào dịch vụ giọng nói của thiết bị, có thể xử lý trực tuyến như giải thích ở phần 5.",
+                    "Các thành phần khác hỗ trợ mã hóa bản sao lưu, mở khóa sinh trắc học, nhập bằng giọng nói và tiện ích. Nhập bằng giọng nói dựa vào dịch vụ giọng nói của thiết bị, có thể xử lý trực tuyến như giải thích ở phần 5.",
                 ],
             },
             {
@@ -447,11 +447,13 @@ const vi: LocaleDictionary = {
             tagTravel: "Du lịch",
         },
         backup: {
-            badgeBody: "Mọi thứ: mẫu, danh sách, ghi chú, lời nhắc và ảnh — dưới dạng văn bản đọc được.",
+            badgeBody:
+                "Bản sao lưu được mã hóa gồm mẫu, danh sách kiểm tra, ghi chú, lời nhắc và ảnh, được bảo vệ bằng cụm mật khẩu của bạn. Xuất không mã hóa là một lựa chọn riêng.",
             badgeNote:
                 "Không cần tài khoản, không đồng bộ đám mây. Bạn chọn nơi lưu hoặc chia sẻ bản sao lưu.",
             badgeTitle: "Nội dung bản sao lưu",
-            exportBackup: "Xuất bản sao lưu",
+            exportEncrypted: "Xuất bản sao lưu được mã hóa",
+            exportPlain: "Xuất không mã hóa",
             intro: "Dữ liệu được lưu ngay trên thiết bị này. Xuất bản sao lưu để giữ một bản riêng hoặc khôi phục bản bạn đã lưu trước đó.",
             restore: "Khôi phục từ bản sao lưu",
             title: "Sao lưu và khôi phục",
@@ -542,17 +544,17 @@ const vi: LocaleDictionary = {
     },
     security: {
         eyebrow: "Bảo mật",
-        heading: "Biết mình chia sẻ gì. Tự quyết định nơi dữ liệu đến.",
-        intro: "Trước khi xuất hoặc chia sẻ, ứng dụng cho biết dữ liệu nào được bao gồm. Bản sao lưu có chứa ảnh; mẫu và danh sách kiểm tra được chia sẻ thì không.",
+        heading: "Biết mình chia sẻ gì. Chọn cách bảo vệ dữ liệu.",
+        intro: "Trước khi xuất hoặc chia sẻ, ứng dụng giải thích dữ liệu được bao gồm và có được mã hóa hay không. Bản sao lưu có thể chứa ảnh; mẫu và danh sách kiểm tra được chia sẻ thì không.",
         note: "Khóa ứng dụng kiểm soát ai có thể mở ứng dụng. Khóa này không mã hóa dữ liệu; dữ liệu đã lưu được bảo vệ bởi các biện pháp bảo mật của thiết bị, chẳng hạn khóa màn hình.",
         points: [
             {
-                title: "Một tệp sao lưu đọc được",
-                body: "Xuất bản sao lưu sẽ lưu mẫu, danh sách kiểm tra, ghi chú, lời nhắc và ảnh vào một tệp duy nhất đọc được. Khôi phục từ bản sao lưu sẽ đưa tất cả trở lại.",
+                title: "Bản sao lưu được bảo vệ bằng cụm mật khẩu",
+                body: "Argon2id dẫn xuất khóa và AES-GCM mã hóa bản sao lưu, tất cả ngay trên thiết bị. Hãy chọn cụm mật khẩu mạnh và cất giữ an toàn: nhà phát triển không thể khôi phục giúp bạn.",
             },
             {
-                title: "Cất bản sao lưu ở nơi bạn tin cậy",
-                body: "Ứng dụng không mã hóa bản sao lưu, nên bất kỳ ai truy cập được tệp đều có thể đọc nội dung. Chỉ lưu tệp ở nơi bạn tin cậy và xóa các bản không còn cần đến.",
+                title: "Chỉ xuất không mã hóa khi bạn chủ động chọn",
+                body: "Cần một tệp không mã hóa? Dùng lựa chọn xuất riêng có nhãn rõ ràng và xác nhận trước khi lưu. Bất kỳ ai truy cập được tệp đều có thể đọc nội dung.",
             },
             {
                 title: "Mở khóa bằng xác thực của thiết bị",

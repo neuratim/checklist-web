@@ -4,7 +4,7 @@ import { BackupScreen } from "./screens/BackupScreen";
 import { PhoneFrame } from "./screens/PhoneFrame";
 import { Showcase } from "./Showcase";
 
-/** What backups and shares contain, the app lock, and device-level protection. */
+/** Encrypted backups, plaintext export by choice, the app lock, and OS protection of stored data. */
 export function Security() {
     const { dictionary } = useLanguage();
     const { security } = dictionary;

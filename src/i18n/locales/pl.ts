@@ -73,8 +73,8 @@ const pl: LocaleDictionary = {
                 body: "Wyślij kod QR lub plik .ntchk osobie z aplikacją, a pozostałym — zwykły tekst. Udostępniane listy i szablony nie zawierają zdjęć.",
             },
             {
-                title: "Kopie zapasowe w jednym pliku",
-                body: "Zapisz szablony, listy, notatki, przypomnienia i zdjęcia w jednym czytelnym pliku i przywróć je, kiedy zechcesz. Każdy, kto ma ten plik, może go odczytać, więc przechowuj go w zaufanym miejscu.",
+                title: "Szyfrowane kopie zapasowe",
+                body: "Zapisz dane, w tym zdjęcia, w jednym pliku chronionym wybraną przez Ciebie frazą hasłową. Szyfrowanie z użyciem Argon2id i AES-GCM odbywa się na Twoim urządzeniu.",
             },
             {
                 title: "Blokada aplikacji",
@@ -211,7 +211,7 @@ const pl: LocaleDictionary = {
             "Bez analityki, narzędzi śledzących i reklamowych SDK w aplikacji",
             "Twoje listy nie są przechowywane na serwerach twórcy",
             "Zdjęcia są przechowywane lokalnie i pomijane przy udostępnianiu; kopie zapasowe je zawierają",
-            "Kopie zapasowe to czytelne pliki – przechowuj je w zaufanym miejscu",
+            "Kopie zapasowe są domyślnie szyfrowane wybraną przez Ciebie frazą hasłową",
             "Statystyki są obliczane na Twoim urządzeniu na podstawie Twoich list",
         ],
         policyLink: "Przeczytaj pełną politykę prywatności",
@@ -289,7 +289,7 @@ const pl: LocaleDictionary = {
                 ],
                 points: [
                     "Udostępnianie tworzy kod QR, plik .ntchk lub zwykły tekst, które przekazujesz wybranym kanałem. Udostępniane szablony i listy nie zawierają zdjęć i nie są szyfrowane przez aplikację.",
-                    "Eksport kopii zapasowej tworzy jeden czytelny plik z szablonami, listami, notatkami, przypomnieniami i zdjęciami, a następnie zapisuje go we wskazanym miejscu lub otwiera systemowe menu udostępniania. Aplikacja go nie szyfruje. Ochrona miejsca docelowego zależy od wybranej usługi.",
+                    "Eksport kopii zapasowej zapisuje plik we wskazanym miejscu lub otwiera systemowe menu udostępniania. Kopie zapasowe zawierają zdjęcia. Ochrona miejsca docelowego zależy od wybranej usługi.",
                     "Import odczytuje wskazany plik lub kod; nie szuka treści list w internecie. Używany dostawca plików może pobrać wybrany plik.",
                     "Do dewelopera wysyłane są wiadomość, opcjonalny e-mail, wersja aplikacji, platforma i język. Listy i zdjęcia nie są wysyłane.",
                 ],
@@ -312,8 +312,8 @@ const pl: LocaleDictionary = {
                 paragraphs: [
                     "Lokalne dane korzystają z zabezpieczeń systemu operacyjnego. Blokada ekranu i szyfrowanie pamięci urządzenia zapewniają dodatkową ochronę, gdy są włączone.",
                     "Na serwerach twórcy nie ma centralnej bazy list. Ogranicza to ryzyko, ale nie zapewnia odporności urządzenia i wyeksportowanych plików na nieuprawniony dostęp.",
-                    "Aplikacja sama nie szyfruje Twoich danych; polega na opisanych wyżej zabezpieczeniach systemu operacyjnego. Możesz też włączyć blokadę aplikacji, która decyduje, kto może ją otworzyć, ale nie szyfruje zapisanych danych.",
-                    "Kopie zapasowe to czytelne pliki, które zawierają zdjęcia i nie są szyfrowane przez aplikację. Każdy, kto ma dostęp do pliku kopii zapasowej, może go odczytać, więc przechowuj go w zaufanym miejscu. Udostępniane pliki, kody QR i zwykły tekst również nie są szyfrowane przez aplikację i nie zawierają zdjęć. Przekazuj je tylko zaufanymi kanałami.",
+                    "Kopie zapasowe są domyślnie szyfrowane na urządzeniu przy użyciu wybranej frazy hasłowej, wyprowadzania klucza Argon2id i szyfrowania AES-GCM. Danych zapisanych na urządzeniu aplikacja sama nie szyfruje; polega na opisanych wyżej zabezpieczeniach systemu operacyjnego. Możesz też włączyć blokadę aplikacji, która decyduje, kto może ją otworzyć, ale nie szyfruje zapisanych danych.",
+                    "Eksport bez szyfrowania jest osobną, oznaczoną czynnością wymagającą potwierdzenia. Każdy, kto uzyska dostęp do pliku, może go odczytać. Udostępniane pliki, kody QR i zwykły tekst również nie są szyfrowane przez aplikację i nie zawierają zdjęć. Przekazuj je tylko zaufanymi kanałami.",
                 ],
             },
             {
@@ -327,7 +327,7 @@ const pl: LocaleDictionary = {
                 paragraphs: [
                     "Aplikacja używa komponentów open source do powiadomień, skanowania, wyboru zdjęć i plików oraz udostępniania. Funkcje te korzystają z przetwarzania lokalnego i usług systemowych zamiast zaplecza serwerowego twórcy.",
                     "Aplikacja nie zawiera SDK do reklam, atrybucji, analityki ani raportowania awarii.",
-                    "Inne komponenty obsługują odblokowanie biometryczne, dyktowanie i widżety. Dyktowanie korzysta z usługi rozpoznawania mowy urządzenia, która może przetwarzać dane online, jak wyjaśniono w sekcji 5.",
+                    "Inne komponenty obsługują szyfrowanie kopii zapasowych, odblokowanie biometryczne, dyktowanie i widżety. Dyktowanie korzysta z usługi rozpoznawania mowy urządzenia, która może przetwarzać dane online, jak wyjaśniono w sekcji 5.",
                 ],
             },
             {
@@ -439,11 +439,13 @@ const pl: LocaleDictionary = {
             tagTravel: "Podróże",
         },
         backup: {
-            badgeBody: "Wszystko: szablony, listy, notatki, przypomnienia i zdjęcia — jako czytelny tekst.",
+            badgeBody:
+                "Szyfrowana kopia zapasowa zawiera szablony, listy, notatki, przypomnienia i zdjęcia chronione Twoją frazą hasłową. Eksport bez szyfrowania jest osobną opcją.",
             badgeNote:
                 "Bez konta i synchronizacji z chmurą. Ty wybierasz, gdzie zapisać lub udostępnić kopię zapasową.",
             badgeTitle: "Co zawiera kopia zapasowa",
-            exportBackup: "Eksportuj kopię zapasową",
+            exportEncrypted: "Eksportuj szyfrowaną kopię",
+            exportPlain: "Eksportuj bez szyfrowania",
             intro: "Twoje dane są zapisane tutaj, na tym urządzeniu. Wyeksportuj kopię zapasową, aby zachować dodatkową kopię, lub przywróć wcześniej zapisaną kopię.",
             restore: "Przywróć z kopii zapasowej",
             title: "Kopie zapasowe i przywracanie",
@@ -536,17 +538,17 @@ const pl: LocaleDictionary = {
     },
     security: {
         eyebrow: "Bezpieczeństwo",
-        heading: "Wiesz, co udostępniasz. Decydujesz, dokąd trafia.",
-        intro: "Przed eksportem lub udostępnieniem aplikacja pokazuje, co zostanie dołączone. Kopie zapasowe zawierają zdjęcia; udostępniane szablony i listy ich nie zawierają.",
+        heading: "Wiesz, co udostępniasz. Wybierasz, jak to chronić.",
+        intro: "Przed eksportem lub udostępnieniem aplikacja wyjaśnia, co zostanie dołączone i czy będzie zaszyfrowane. Kopie zapasowe mogą zawierać zdjęcia; udostępniane szablony i listy ich nie zawierają.",
         note: "Blokada decyduje, kto może otworzyć aplikację. Nie szyfruje danych: zapisane dane chronią zabezpieczenia Twojego urządzenia, np. blokada ekranu.",
         points: [
             {
-                title: "Jeden czytelny plik kopii",
-                body: "Eksport kopii zapasowej zapisuje szablony, listy, notatki, przypomnienia i zdjęcia w jednym czytelnym pliku. Przywrócenie z kopii zapasowej odzyskuje je wszystkie.",
+                title: "Kopie chronione Twoją frazą hasłową",
+                body: "Argon2id wyprowadza klucz, a AES-GCM szyfruje kopię — wszystko na Twoim urządzeniu. Wybierz silną frazę hasłową i przechowuj ją bezpiecznie: twórca nie może jej za Ciebie odzyskać.",
             },
             {
-                title: "Kopie przechowuj w zaufanym miejscu",
-                body: "Aplikacja nie szyfruje kopii zapasowych, więc każdy, kto ma dostęp do pliku, może odczytać jego treść. Zapisuj go tylko w zaufanym miejscu i usuwaj niepotrzebne kopie.",
+                title: "Eksport bez szyfrowania tylko z Twojego wyboru",
+                body: "Potrzebujesz nieszyfrowanego pliku? Użyj osobnej, wyraźnie oznaczonej opcji eksportu i potwierdź przed zapisem. Każdy, kto ma dostęp do pliku, może odczytać jego treść.",
             },
             {
                 title: "Odblokuj za pomocą urządzenia",
