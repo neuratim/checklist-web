@@ -97,7 +97,7 @@ const fr: LocaleDictionary = {
         githubSponsorsNote: "Nécessite un compte GitHub",
         heading: "100 % gratuite. Sans mauvaise surprise.",
         intro: "Toutes les fonctionnalités sont gratuites. Votre soutien est apprécié, jamais obligatoire.",
-        notHere: ["Sans publicité", "Sans abonnement", "Sans achats intégrés", "Sans version premium"],
+        notHere: ["Sans publicité", "Sans abonnement obligatoire", "Sans suivi", "Sans version premium"],
         pledge: {
             body: "Si ces applications vous sont utiles, envisagez un don. Si chaque personne qui les utilise envoyait un euro par mois, le projet survivrait sans peine — et vous pourriez continuer à utiliser toutes les applications NeuraTiM gratuitement et la conscience tranquille, en sachant que votre part paie leur mise à jour et finance la suite.",
             heading: "Un euro par mois suffit",
@@ -230,7 +230,7 @@ const fr: LocaleDictionary = {
                 heading: "1. Champ d'application",
                 paragraphs: [
                     "Cette politique couvre NeuraTiM Checklist sur Android, iOS et le web, ainsi que ce site. NeuraTiM est le développeur indépendant et le responsable du traitement des données personnelles liées à ce site ou aux échanges directs.",
-                    "L'application est gratuite, sans publicité et sans version payante.",
+                    "L'application est gratuite, sans publicité et sans version payante. Le soutien facultatif dans l'application, décrit à la section 6, ne débloque aucune fonctionnalité.",
                 ],
             },
             {
@@ -244,7 +244,7 @@ const fr: LocaleDictionary = {
                     "Votre position précise ou approximative",
                     "Contacts, calendriers, journaux d'appels, SMS ou listes d'applications installées",
                     "Analyses d'utilisation, diagnostics ou rapports de plantage envoyés au développeur ; les statistiques des listes sont calculées localement",
-                    "Informations financières ou de paiement dans l'application ; les contributions facultatives sur le site sont traitées séparément ci-dessous",
+                    "Informations financières ou de paiement ; le soutien facultatif dans l'application est payé via l'App Store ou Google Play, et les contributions facultatives sur le site sont traitées séparément ci-dessous",
                 ],
             },
             {
@@ -296,6 +296,7 @@ const fr: LocaleDictionary = {
                     "L'export d'une sauvegarde enregistre un fichier à l'emplacement choisi ou ouvre le menu de partage de l'appareil. Les sauvegardes contiennent les photos. La protection de la destination dépend du service choisi.",
                     "L'import lit un fichier ou un code que vous fournissez ; il ne recherche pas de contenu de listes en ligne. Le service de fichiers que vous utilisez peut télécharger le fichier sélectionné.",
                     "Votre message, votre e-mail facultatif, la version de l’app, la plateforme et la langue sont envoyés au développeur. Les listes et les photos ne sont pas envoyées.",
+                    "Soutien dans l'application : les contributions ponctuelles facultatives et le soutien mensuel s'achètent via l'App Store ou Google Play, qui traitent le paiement selon leurs propres politiques de confidentialité. L'application apprend seulement quel produit de soutien vous avez et l'enregistre sur l'appareil, afin que les autres applications NeuraTiM du même appareil puissent indiquer que vous soutenez déjà le projet. Cet enregistrement ne quitte jamais l'appareil.",
                 ],
             },
             {
@@ -329,7 +330,7 @@ const fr: LocaleDictionary = {
             {
                 heading: "10. Composants et services tiers",
                 paragraphs: [
-                    "L'application utilise des composants open source pour les notifications, le scan, la sélection de photos et de fichiers et le partage. Ces fonctions reposent sur un traitement local et des services système, pas sur un serveur exploité par le développeur.",
+                    "L'application utilise des composants open source pour les notifications, le scan, la sélection de photos et de fichiers, le partage et les achats intégrés. Ces fonctions reposent sur un traitement local et des services système, pas sur un serveur exploité par le développeur ; les achats intégrés sont traités par l'App Store ou Google Play.",
                     "L'application ne contient aucun SDK publicitaire, d'attribution, d'analyse ou de rapports de plantage.",
                     "D'autres composants assurent le chiffrement des sauvegardes, le déverrouillage biométrique, la dictée et les widgets. La dictée utilise le service vocal de votre appareil, qui peut traiter les données en ligne comme expliqué à la section 5.",
                 ],

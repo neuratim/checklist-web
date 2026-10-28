@@ -97,7 +97,7 @@ const pt: LocaleDictionary = {
         githubSponsorsNote: "Exige uma conta no GitHub",
         heading: "100% grátis. Sem pegadinhas.",
         intro: "Todos os recursos são gratuitos. Contribuições são bem-vindas, nunca obrigatórias.",
-        notHere: ["Sem anúncios", "Sem assinatura", "Sem compras no app", "Sem versão premium"],
+        notHere: ["Sem anúncios", "Sem assinatura obrigatória", "Sem rastreamento", "Sem versão premium"],
         pledge: {
             body: "Se estes aplicativos são úteis para você, considere fazer uma doação. Se cada pessoa que os usa enviasse um euro por mês, o projeto sobreviveria tranquilamente — e você poderia continuar usando qualquer aplicativo da NeuraTiM de graça e com a consciência limpa, sabendo que a sua parte paga para mantê-los atualizados e financia o que vem a seguir.",
             heading: "Um euro por mês é suficiente",
@@ -229,7 +229,7 @@ const pt: LocaleDictionary = {
                 heading: "1. A que esta política se aplica",
                 paragraphs: [
                     "Esta política abrange o NeuraTiM Checklist no Android, no iOS e na web, além deste site. NeuraTiM é o desenvolvedor independente e o controlador responsável pelos dados pessoais tratados em conexão com este site ou com contatos diretos.",
-                    "O app é gratuito, não contém anúncios e não tem versão paga.",
+                    "O app é gratuito, não contém anúncios e não tem versão paga. O apoio opcional no app, descrito na seção 6, não desbloqueia nenhum recurso.",
                 ],
             },
             {
@@ -243,7 +243,7 @@ const pt: LocaleDictionary = {
                     "Sua localização precisa ou aproximada",
                     "Contatos, calendários, registros de chamadas, mensagens de texto ou listas de apps instalados",
                     "Análises de uso, diagnósticos ou relatórios de falhas enviados ao desenvolvedor; as estatísticas das listas são calculadas localmente",
-                    "Informações financeiras ou de pagamento dentro do app; as contribuições opcionais no site são explicadas separadamente abaixo",
+                    "Informações financeiras ou de pagamento; o apoio opcional no app é pago pela App Store ou pelo Google Play, e as contribuições opcionais no site são explicadas separadamente abaixo",
                 ],
             },
             {
@@ -293,6 +293,7 @@ const pt: LocaleDictionary = {
                     "A exportação de um backup salva um arquivo no local escolhido ou abre o menu de compartilhamento do dispositivo. Backups incluem fotos. A proteção do destino depende do serviço escolhido.",
                     "A importação lê um arquivo ou código fornecido por você; não busca conteúdo de listas na internet. O provedor de arquivos que você usar pode baixar o arquivo selecionado.",
                     "Sua mensagem, e-mail opcional, versão do app, plataforma e idioma são enviados ao desenvolvedor. Listas e fotos não são enviadas.",
+                    "Apoio no app: contribuições avulsas opcionais e o apoio mensal são comprados pela App Store ou pelo Google Play, que processam o pagamento conforme as próprias políticas de privacidade. O app só fica sabendo qual produto de apoio você tem e registra isso no dispositivo, para que outros apps da NeuraTiM no mesmo dispositivo possam mostrar que você já apoia o projeto. Esse registro nunca sai do dispositivo.",
                 ],
             },
             {
@@ -326,7 +327,7 @@ const pt: LocaleDictionary = {
             {
                 heading: "10. Componentes e serviços de terceiros",
                 paragraphs: [
-                    "O app usa componentes de código aberto para notificações, escaneamento, seleção de fotos e arquivos e compartilhamento. Esses recursos usam processamento local e serviços do sistema, não um servidor operado pelo desenvolvedor.",
+                    "O app usa componentes de código aberto para notificações, escaneamento, seleção de fotos e arquivos, compartilhamento e compras no app. Esses recursos usam processamento local e serviços do sistema, não um servidor operado pelo desenvolvedor; as compras no app são processadas pela App Store ou pelo Google Play.",
                     "O app não inclui SDKs de publicidade, atribuição, análise ou relatórios de falhas.",
                     "Outros componentes oferecem criptografia de backups, desbloqueio biométrico, ditado e widgets. O ditado depende do serviço de voz do dispositivo, que pode processar dados online, como explicado na seção 5.",
                 ],

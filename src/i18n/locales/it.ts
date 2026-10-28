@@ -99,8 +99,8 @@ const it: LocaleDictionary = {
         intro: "Tutte le funzioni sono gratuite. Un contributo è gradito, mai obbligatorio.",
         notHere: [
             "Niente pubblicità",
-            "Nessun abbonamento",
-            "Nessun acquisto in-app",
+            "Nessun abbonamento obbligatorio",
+            "Nessun tracciamento",
             "Nessuna versione premium",
         ],
         pledge: {
@@ -233,7 +233,7 @@ const it: LocaleDictionary = {
                 heading: "1. Ambito dell'informativa",
                 paragraphs: [
                     "Questa informativa riguarda NeuraTiM Checklist su Android, iOS e web, oltre a questo sito. NeuraTiM è lo sviluppatore indipendente e il titolare del trattamento dei dati personali connessi al sito o ai contatti diretti.",
-                    "L'app è gratuita, non contiene pubblicità e non ha una versione a pagamento.",
+                    "L'app è gratuita, non contiene pubblicità e non ha una versione a pagamento. Il sostegno facoltativo nell'app, descritto nella sezione 6, non sblocca alcuna funzione.",
                 ],
             },
             {
@@ -247,7 +247,7 @@ const it: LocaleDictionary = {
                     "La tua posizione precisa o approssimativa",
                     "Contatti, calendari, registri chiamate, SMS o elenchi delle app installate",
                     "Analisi di utilizzo, diagnostica o segnalazioni di arresti anomali inviate allo sviluppatore; le statistiche delle liste sono calcolate localmente",
-                    "Dati finanziari o di pagamento nell'app; i contributi facoltativi sul sito sono descritti separatamente più avanti",
+                    "Dati finanziari o di pagamento; il sostegno facoltativo nell'app si paga tramite App Store o Google Play, e i contributi facoltativi sul sito sono descritti separatamente più avanti",
                 ],
             },
             {
@@ -297,6 +297,7 @@ const it: LocaleDictionary = {
                     "L'esportazione di un backup salva un file nella posizione scelta o apre il menu di condivisione del dispositivo. I backup includono le foto. La protezione della destinazione dipende dal servizio scelto.",
                     "L'importazione legge un file o un codice fornito da te; non cerca contenuti delle liste online. Il servizio di gestione file che usi potrebbe scaricare il file selezionato.",
                     "Il messaggio, l’email facoltativa, la versione dell’app, la piattaforma e la lingua vengono inviati allo sviluppatore. Liste e foto non vengono inviate.",
+                    "Sostegno nell'app: i contributi una tantum facoltativi e il sostegno mensile si acquistano tramite App Store o Google Play, che gestiscono il pagamento secondo le proprie informative sulla privacy. L'app sa solo quale prodotto di sostegno hai e lo registra sul dispositivo, così che le altre app NeuraTiM sullo stesso dispositivo possano mostrare che sostieni già il progetto. Questo dato non lascia mai il dispositivo.",
                 ],
             },
             {
@@ -330,7 +331,7 @@ const it: LocaleDictionary = {
             {
                 heading: "10. Componenti e servizi di terze parti",
                 paragraphs: [
-                    "L'app usa componenti open source per notifiche, scansione, selezione di foto e file e condivisione. Queste funzioni si basano su elaborazione locale e servizi di sistema, non su un backend gestito dallo sviluppatore.",
+                    "L'app usa componenti open source per notifiche, scansione, selezione di foto e file, condivisione e acquisti in-app. Queste funzioni si basano su elaborazione locale e servizi di sistema, non su un backend gestito dallo sviluppatore; gli acquisti in-app sono gestiti da App Store o Google Play.",
                     "L'app non include SDK pubblicitari, di attribuzione, di analisi o di segnalazione degli arresti anomali.",
                     "Altri componenti supportano crittografia dei backup, sblocco biometrico, dettatura e widget. La dettatura si affida al servizio vocale del dispositivo, che può elaborare dati online come spiegato nella sezione 5.",
                 ],

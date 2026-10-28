@@ -97,7 +97,7 @@ const pl: LocaleDictionary = {
         githubSponsorsNote: "Wymaga konta GitHub",
         heading: "W 100% za darmo. Bez haczyków.",
         intro: "Wszystkie funkcje są bezpłatne. Wsparcie jest mile widziane, nigdy obowiązkowe.",
-        notHere: ["Bez reklam", "Bez abonamentu", "Bez zakupów w aplikacji", "Bez wersji premium"],
+        notHere: ["Bez reklam", "Bez obowiązkowego abonamentu", "Bez śledzenia", "Bez wersji premium"],
         pledge: {
             body: "Jeśli te aplikacje są dla Ciebie przydatne, rozważ wsparcie. Gdyby każdy, kto z nich korzysta, wysyłał jedno euro miesięcznie, projekt spokojnie by przetrwał — a z każdej aplikacji NeuraTiM można by dalej korzystać za darmo i z czystym sumieniem, ze świadomością, że Twój udział opłaca ich aktualizowanie i finansuje to, co dopiero powstanie.",
             heading: "Wystarczy euro miesięcznie",
@@ -228,7 +228,7 @@ const pl: LocaleDictionary = {
                 heading: "1. Zakres tej polityki",
                 paragraphs: [
                     "Ta polityka obejmuje NeuraTiM Checklist na Androidzie, iOS i w przeglądarce oraz tę stronę internetową. NeuraTiM jest niezależnym twórcą i administratorem danych osobowych przetwarzanych w związku ze stroną lub bezpośrednim kontaktem.",
-                    "Aplikacja jest bezpłatna, nie zawiera reklam i nie ma płatnej wersji.",
+                    "Aplikacja jest bezpłatna, nie zawiera reklam i nie ma płatnej wersji. Dobrowolne wsparcie w aplikacji, opisane w sekcji 6, nie odblokowuje żadnych funkcji.",
                 ],
             },
             {
@@ -242,7 +242,7 @@ const pl: LocaleDictionary = {
                     "Twoja dokładna ani przybliżona lokalizacja",
                     "Kontakty, kalendarze, historia połączeń, SMS-y ani listy zainstalowanych aplikacji",
                     "Analityka użycia, diagnostyka ani raporty awarii wysyłane twórcy; statystyki list są obliczane lokalnie",
-                    "Dane płatnicze ani finansowe w aplikacji; dobrowolne wpłaty na stronie opisano osobno poniżej",
+                    "Dane płatnicze ani finansowe; dobrowolne wsparcie w aplikacji opłaca się przez App Store lub Google Play, a dobrowolne wpłaty na stronie opisano osobno poniżej",
                 ],
             },
             {
@@ -292,6 +292,7 @@ const pl: LocaleDictionary = {
                     "Eksport kopii zapasowej zapisuje plik we wskazanym miejscu lub otwiera systemowe menu udostępniania. Kopie zapasowe zawierają zdjęcia. Ochrona miejsca docelowego zależy od wybranej usługi.",
                     "Import odczytuje wskazany plik lub kod; nie szuka treści list w internecie. Używany dostawca plików może pobrać wybrany plik.",
                     "Do dewelopera wysyłane są wiadomość, opcjonalny e-mail, wersja aplikacji, platforma i język. Listy i zdjęcia nie są wysyłane.",
+                    "Wsparcie w aplikacji: dobrowolne jednorazowe wpłaty i comiesięczne wsparcie kupuje się przez App Store lub Google Play, które obsługują płatność zgodnie z własnymi zasadami prywatności. Aplikacja dowiaduje się tylko, jaki produkt wsparcia masz, i zapisuje to na urządzeniu, aby inne aplikacje NeuraTiM na tym samym urządzeniu mogły pokazać, że już wspierasz projekt. Ten zapis nigdy nie opuszcza urządzenia.",
                 ],
             },
             {
@@ -325,7 +326,7 @@ const pl: LocaleDictionary = {
             {
                 heading: "10. Komponenty i usługi podmiotów trzecich",
                 paragraphs: [
-                    "Aplikacja używa komponentów open source do powiadomień, skanowania, wyboru zdjęć i plików oraz udostępniania. Funkcje te korzystają z przetwarzania lokalnego i usług systemowych zamiast zaplecza serwerowego twórcy.",
+                    "Aplikacja używa komponentów open source do powiadomień, skanowania, wyboru zdjęć i plików, udostępniania oraz zakupów w aplikacji. Funkcje te korzystają z przetwarzania lokalnego i usług systemowych zamiast zaplecza serwerowego twórcy; zakupy w aplikacji obsługuje App Store lub Google Play.",
                     "Aplikacja nie zawiera SDK do reklam, atrybucji, analityki ani raportowania awarii.",
                     "Inne komponenty obsługują szyfrowanie kopii zapasowych, odblokowanie biometryczne, dyktowanie i widżety. Dyktowanie korzysta z usługi rozpoznawania mowy urządzenia, która może przetwarzać dane online, jak wyjaśniono w sekcji 5.",
                 ],

@@ -97,7 +97,7 @@ const de: LocaleDictionary = {
         githubSponsorsNote: "Erfordert ein GitHub-Konto",
         heading: "100 % kostenlos. Ohne Haken.",
         intro: "Alle Funktionen sind kostenlos. Unterstützung ist willkommen, aber niemals Voraussetzung.",
-        notHere: ["Keine Werbung", "Kein Abo", "Keine In-App-Käufe", "Keine Premiumversion"],
+        notHere: ["Keine Werbung", "Kein Abo erforderlich", "Kein Tracking", "Keine Premiumversion"],
         pledge: {
             body: "Wenn dir diese Apps nützlich sind, denk bitte über eine Spende nach. Würde jeder, der sie nutzt, einen Euro im Monat schicken, käme das Projekt bequem über die Runden — und du könntest jede NeuraTiM-App weiterhin kostenlos und mit gutem Gewissen nutzen, im Wissen, dass dein Anteil sie aktuell hält und finanziert, was als Nächstes kommt.",
             heading: "Ein Euro im Monat genügt",
@@ -228,7 +228,7 @@ const de: LocaleDictionary = {
                 heading: "1. Geltungsbereich",
                 paragraphs: [
                     "Diese Erklärung gilt für NeuraTiM Checklist auf Android, iOS und im Web sowie für diese Website. NeuraTiM ist der unabhängige Entwickler und der Verantwortliche für personenbezogene Daten, die im Zusammenhang mit dieser Website oder einer direkten Kontaktaufnahme verarbeitet werden.",
-                    "Die App ist kostenlos, enthält keine Werbung und hat keine kostenpflichtige Version.",
+                    "Die App ist kostenlos, enthält keine Werbung und hat keine kostenpflichtige Version. Freiwillige Unterstützung in der App, beschrieben in Abschnitt 6, schaltet keine Funktionen frei.",
                 ],
             },
             {
@@ -242,7 +242,7 @@ const de: LocaleDictionary = {
                     "Dein genauer oder ungefährer Standort",
                     "Kontakte, Kalender, Anruflisten, SMS oder Listen installierter Apps",
                     "Nutzungsanalysen, Diagnosedaten oder Absturzberichte an den Entwickler; die Checklistenstatistik wird lokal berechnet",
-                    "Zahlungs- oder Finanzinformationen innerhalb der App; freiwillige Beiträge auf der Website werden weiter unten gesondert behandelt",
+                    "Zahlungs- oder Finanzinformationen; freiwillige Unterstützung in der App wird über den App Store oder Google Play bezahlt, freiwillige Beiträge auf der Website werden weiter unten gesondert behandelt",
                 ],
             },
             {
@@ -294,6 +294,7 @@ const de: LocaleDictionary = {
                     "Ein Backup-Export speichert eine Datei am gewählten Ort oder öffnet das Teilen-Menü deines Geräts. Backups enthalten Fotos. Wie der Zielort geschützt ist, hängt vom gewählten Dienst ab.",
                     "Der Import liest eine von dir bereitgestellte Datei oder einen Code; er sucht nicht online nach Checklisteninhalten. Ein von dir verwendeter Dateidienst kann die ausgewählte Datei herunterladen.",
                     "Deine Nachricht, optionale E-Mail-Adresse, App-Version, Plattform und Sprache werden an den Entwickler gesendet. Checklisten und Fotos werden nicht gesendet.",
+                    "Unterstützung in der App: Freiwillige einmalige Beiträge und monatliche Unterstützung werden über den App Store oder Google Play gekauft, die die Zahlung nach ihren eigenen Datenschutzrichtlinien abwickeln. Die App erfährt nur, welches Unterstützungsprodukt du hast, und speichert das auf dem Gerät, damit andere NeuraTiM-Apps auf demselben Gerät zeigen können, dass du das Projekt bereits unterstützt. Dieser Eintrag verlässt das Gerät nie.",
                 ],
             },
             {
@@ -327,7 +328,7 @@ const de: LocaleDictionary = {
             {
                 heading: "10. Komponenten und Dienste Dritter",
                 paragraphs: [
-                    "Die App nutzt Open-Source-Komponenten für Benachrichtigungen, Scannen, Foto- und Dateiauswahl sowie Teilen. Diese Funktionen verwenden lokale Verarbeitung und Systemdienste statt eines vom Entwickler betriebenen Backends.",
+                    "Die App nutzt Open-Source-Komponenten für Benachrichtigungen, Scannen, Foto- und Dateiauswahl, Teilen sowie In-App-Käufe. Diese Funktionen verwenden lokale Verarbeitung und Systemdienste statt eines vom Entwickler betriebenen Backends; In-App-Käufe wickeln der App Store oder Google Play ab.",
                     "Die App enthält keine SDKs für Werbung, Attribution, Analysen oder Absturzberichte.",
                     "Weitere Komponenten unterstützen Backup-Verschlüsselung, biometrisches Entsperren, Diktieren und Widgets. Die Diktierfunktion nutzt den Sprachdienst deines Geräts, der wie in Abschnitt 5 beschrieben auch online verarbeiten kann.",
                 ],

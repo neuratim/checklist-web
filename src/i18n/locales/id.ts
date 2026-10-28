@@ -97,7 +97,7 @@ const id: LocaleDictionary = {
         githubSponsorsNote: "Memerlukan akun GitHub",
         heading: "100% gratis. Tanpa syarat tersembunyi.",
         intro: "Semua fitur gratis. Dukungan dana sangat dihargai, tetapi tidak pernah diwajibkan.",
-        notHere: ["Tanpa iklan", "Tanpa langganan", "Tanpa pembelian dalam aplikasi", "Tanpa paket premium"],
+        notHere: ["Tanpa iklan", "Tidak perlu berlangganan", "Tanpa pelacakan", "Tanpa paket premium"],
         pledge: {
             body: "Kalau aplikasi-aplikasi ini berguna bagi Anda, pertimbangkan untuk berdonasi. Andai setiap orang yang memakainya mengirim satu dolar sebulan, proyek ini akan bertahan dengan nyaman — dan Anda bisa terus memakai setiap aplikasi NeuraTiM secara gratis dengan hati nurani yang tenang, tahu bahwa bagian Anda membayar biaya menjaganya tetap mutakhir dan mendanai apa pun yang menyusul.",
             heading: "Satu dolar sebulan sudah cukup",
@@ -229,7 +229,7 @@ const id: LocaleDictionary = {
                 heading: "1. Cakupan kebijakan ini",
                 paragraphs: [
                     "Kebijakan ini berlaku untuk NeuraTiM Checklist di Android, iOS, dan web, serta situs ini. NeuraTiM adalah pengembang independen dan pengendali yang bertanggung jawab atas data pribadi yang diproses terkait situs ini atau komunikasi langsung.",
-                    "Aplikasi ini gratis, tidak memuat iklan, dan tidak memiliki paket berbayar.",
+                    "Aplikasi ini gratis, tidak memuat iklan, dan tidak memiliki paket berbayar. Dukungan opsional dalam aplikasi, yang dijelaskan di bagian 6, tidak membuka fitur apa pun.",
                 ],
             },
             {
@@ -243,7 +243,7 @@ const id: LocaleDictionary = {
                     "Lokasi tepat atau perkiraan lokasimu",
                     "Kontak, kalender, riwayat panggilan, SMS, atau daftar aplikasi yang terpasang",
                     "Analitik penggunaan, diagnostik, atau laporan crash yang dikirim kepada pengembang; statistik daftar periksa dihitung secara lokal",
-                    "Informasi pembayaran atau keuangan di dalam aplikasi; dukungan dana opsional melalui situs dijelaskan secara terpisah di bawah",
+                    "Informasi pembayaran atau keuangan; dukungan opsional dalam aplikasi dibayar melalui App Store atau Google Play, dan dukungan dana opsional melalui situs dijelaskan secara terpisah di bawah",
                 ],
             },
             {
@@ -295,6 +295,7 @@ const id: LocaleDictionary = {
                     "Ekspor cadangan menyimpan file ke lokasi pilihanmu atau membuka menu berbagi perangkat. Cadangan menyertakan foto. Perlindungan di tempat tujuan bergantung pada layanan yang kamu pilih.",
                     "Impor membaca file atau kode yang kamu berikan; tidak mencari isi daftar periksa di internet. Penyedia file yang kamu gunakan dapat mengunduh file yang dipilih.",
                     "Pesan, email opsional, versi aplikasi, platform, dan bahasa dikirim ke pengembang. Daftar periksa dan foto tidak dikirim.",
+                    "Dukungan dalam aplikasi: dukungan dana sekali bayar yang opsional dan dukungan bulanan dibeli melalui App Store atau Google Play, yang memproses pembayaran sesuai kebijakan privasi mereka sendiri. Aplikasi hanya mengetahui produk dukungan yang kamu miliki dan mencatatnya di perangkat, agar aplikasi NeuraTiM lain di perangkat yang sama dapat menunjukkan bahwa kamu sudah mendukung proyek ini. Catatan ini tidak pernah meninggalkan perangkat.",
                 ],
             },
             {
@@ -328,7 +329,7 @@ const id: LocaleDictionary = {
             {
                 heading: "10. Komponen dan layanan pihak ketiga",
                 paragraphs: [
-                    "Aplikasi menggunakan komponen sumber terbuka untuk notifikasi, pemindaian, pemilihan foto dan file, serta berbagi. Fitur ini memakai pemrosesan lokal dan layanan sistem, bukan backend yang dikelola pengembang.",
+                    "Aplikasi menggunakan komponen sumber terbuka untuk notifikasi, pemindaian, pemilihan foto dan file, berbagi, serta pembelian dalam aplikasi. Fitur ini memakai pemrosesan lokal dan layanan sistem, bukan backend yang dikelola pengembang; pembelian dalam aplikasi diproses oleh App Store atau Google Play.",
                     "Aplikasi tidak menyertakan SDK iklan, atribusi, analitik, atau pelaporan crash.",
                     "Komponen lain mendukung enkripsi cadangan, pembukaan kunci biometrik, dikte, dan widget. Dikte bergantung pada layanan pengenalan suara perangkat, yang mungkin menggunakan pemrosesan online seperti dijelaskan pada bagian 5.",
                 ],

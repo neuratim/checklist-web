@@ -97,7 +97,7 @@ const es: LocaleDictionary = {
         githubSponsorsNote: "Requiere una cuenta de GitHub",
         heading: "100 % gratis. Sin letra pequeña.",
         intro: "Todas las funciones son gratuitas. Las aportaciones se agradecen, pero nunca son obligatorias.",
-        notHere: ["Sin anuncios", "Sin suscripción", "Sin compras en la aplicación", "Sin versión prémium"],
+        notHere: ["Sin anuncios", "Sin suscripción obligatoria", "Sin seguimiento", "Sin versión prémium"],
         pledge: {
             body: "Si estas aplicaciones te resultan útiles, plantéate hacer una donación. Si todo el que las usa enviara un euro al mes, el proyecto sobreviviría sin problemas: podrías seguir usando cualquier aplicación de NeuraTiM gratis y con la conciencia tranquila, sabiendo que tu parte paga que se mantengan al día y financia lo que venga después.",
             heading: "Con un euro al mes basta",
@@ -229,7 +229,7 @@ const es: LocaleDictionary = {
                 heading: "1. Alcance de esta política",
                 paragraphs: [
                     "Esta política se aplica a NeuraTiM Checklist en Android, iOS y la web, y a este sitio web. NeuraTiM es el desarrollador independiente y el responsable de los datos personales tratados en relación con este sitio o con comunicaciones directas.",
-                    "La aplicación es gratuita, no contiene anuncios y no tiene una versión de pago.",
+                    "La aplicación es gratuita, no contiene anuncios y no tiene una versión de pago. El apoyo opcional dentro de la aplicación, descrito en la sección 6, no desbloquea ninguna función.",
                 ],
             },
             {
@@ -243,7 +243,7 @@ const es: LocaleDictionary = {
                     "Tu ubicación precisa o aproximada",
                     "Contactos, calendarios, registros de llamadas, mensajes de texto o listas de aplicaciones instaladas",
                     "Analítica de uso, diagnósticos o informes de fallos enviados al desarrollador; las estadísticas de listas se calculan localmente",
-                    "Información financiera o de pago dentro de la aplicación; las aportaciones opcionales del sitio web se explican por separado más abajo",
+                    "Información financiera o de pago; el apoyo opcional dentro de la aplicación se paga a través de App Store o Google Play, y las aportaciones opcionales del sitio web se explican por separado más abajo",
                 ],
             },
             {
@@ -295,6 +295,7 @@ const es: LocaleDictionary = {
                     "Al exportar una copia de seguridad se guarda un archivo en la ubicación elegida o se abre el menú para compartir del dispositivo. Las copias de seguridad incluyen fotos. La protección del destino depende del servicio que elijas.",
                     "La importación lee un archivo o código que proporciones; no busca contenido de listas en internet. El proveedor de archivos que utilices puede descargar el archivo seleccionado.",
                     "Se envían al desarrollador tu mensaje, correo opcional, versión de la app, plataforma e idioma. No se envían listas ni fotos.",
+                    "Apoyo en la aplicación: las aportaciones puntuales opcionales y el apoyo mensual se compran a través de App Store o Google Play, que procesan el pago según sus propias políticas de privacidad. La aplicación solo sabe qué producto de apoyo tienes y lo registra en el dispositivo, para que otras aplicaciones de NeuraTiM del mismo dispositivo puedan mostrar que ya apoyas el proyecto. Este registro nunca sale del dispositivo.",
                 ],
             },
             {
@@ -328,7 +329,7 @@ const es: LocaleDictionary = {
             {
                 heading: "10. Componentes y servicios de terceros",
                 paragraphs: [
-                    "La aplicación usa componentes de código abierto para notificaciones, escaneo, selección de fotos y archivos y funciones de compartir. Estas funciones utilizan procesamiento local y servicios del sistema, no un servidor gestionado por el desarrollador.",
+                    "La aplicación usa componentes de código abierto para notificaciones, escaneo, selección de fotos y archivos, funciones de compartir y compras dentro de la aplicación. Estas funciones utilizan procesamiento local y servicios del sistema, no un servidor gestionado por el desarrollador; las compras dentro de la aplicación las procesan App Store o Google Play.",
                     "La aplicación no incluye SDK de publicidad, atribución, analítica ni informes de fallos.",
                     "Otros componentes permiten el cifrado de las copias de seguridad, el desbloqueo biométrico, el dictado y los widgets. El dictado depende del servicio de voz del dispositivo, que puede procesar datos en línea, como se explica en la sección 5.",
                 ],

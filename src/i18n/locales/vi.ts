@@ -97,12 +97,7 @@ const vi: LocaleDictionary = {
         githubSponsorsNote: "Cần có tài khoản GitHub",
         heading: "Miễn phí 100%. Không điều kiện ẩn.",
         intro: "Mọi tính năng đều miễn phí. Sự ủng hộ luôn đáng quý, nhưng không bao giờ là bắt buộc.",
-        notHere: [
-            "Không quảng cáo",
-            "Không phí thuê bao",
-            "Không mua hàng trong ứng dụng",
-            "Không gói cao cấp trả phí",
-        ],
+        notHere: ["Không quảng cáo", "Không cần gói thuê bao", "Không theo dõi", "Không gói cao cấp trả phí"],
         pledge: {
             body: "Nếu những ứng dụng này có ích cho bạn, hãy cân nhắc quyên góp. Nếu mọi người dùng đều gửi một đô la mỗi tháng, dự án sẽ tồn tại thoải mái — và bạn có thể tiếp tục dùng mọi ứng dụng của NeuraTiM miễn phí với lương tâm thanh thản, biết rằng phần đóng góp của mình trả cho việc giữ chúng luôn được cập nhật và tài trợ cho những gì sắp tới.",
             heading: "Một đô la mỗi tháng là đủ",
@@ -234,7 +229,7 @@ const vi: LocaleDictionary = {
                 heading: "1. Phạm vi của chính sách",
                 paragraphs: [
                     "Chính sách này áp dụng cho NeuraTiM Checklist trên Android, iOS và web, cũng như trang web này. NeuraTiM là nhà phát triển độc lập và bên kiểm soát chịu trách nhiệm về dữ liệu cá nhân được xử lý liên quan đến trang web hoặc liên hệ trực tiếp.",
-                    "Ứng dụng miễn phí, không có quảng cáo và không có gói trả phí.",
+                    "Ứng dụng miễn phí, không có quảng cáo và không có gói trả phí. Khoản ủng hộ tự nguyện trong ứng dụng, được mô tả ở phần 6, không mở khóa tính năng nào.",
                 ],
             },
             {
@@ -248,7 +243,7 @@ const vi: LocaleDictionary = {
                     "Vị trí chính xác hoặc gần đúng của bạn",
                     "Danh bạ, lịch, nhật ký cuộc gọi, tin nhắn văn bản hoặc danh sách ứng dụng đã cài",
                     "Dữ liệu phân tích sử dụng, chẩn đoán hoặc báo cáo sự cố gửi cho nhà phát triển; thống kê danh sách được tính cục bộ",
-                    "Thông tin thanh toán hoặc tài chính trong ứng dụng; các khoản ủng hộ tự nguyện trên trang web được trình bày riêng bên dưới",
+                    "Thông tin thanh toán hoặc tài chính; khoản ủng hộ tự nguyện trong ứng dụng được thanh toán qua App Store hoặc Google Play, còn các khoản ủng hộ tự nguyện trên trang web được trình bày riêng bên dưới",
                 ],
             },
             {
@@ -300,6 +295,7 @@ const vi: LocaleDictionary = {
                     "Xuất bản sao lưu sẽ lưu tệp vào nơi bạn chọn hoặc mở trình đơn chia sẻ của thiết bị. Bản sao lưu có chứa ảnh. Mức độ bảo vệ ở nơi nhận phụ thuộc vào dịch vụ bạn chọn.",
                     "Nhập dữ liệu chỉ đọc tệp hoặc mã do bạn cung cấp, không tìm nội dung danh sách kiểm tra trên mạng. Nhà cung cấp tệp bạn dùng có thể tải tệp đã chọn xuống.",
                     "Tin nhắn, email tùy chọn, phiên bản ứng dụng, nền tảng và ngôn ngữ được gửi cho nhà phát triển. Danh sách và ảnh không được gửi.",
+                    "Ủng hộ trong ứng dụng: khoản ủng hộ một lần và khoản ủng hộ hằng tháng, đều tự nguyện, được mua qua App Store hoặc Google Play, nơi xử lý thanh toán theo chính sách quyền riêng tư của họ. Ứng dụng chỉ biết bạn có gói ủng hộ nào và ghi lại điều đó trên thiết bị, để các ứng dụng NeuraTiM khác trên cùng thiết bị có thể cho thấy bạn đã ủng hộ dự án. Bản ghi này không bao giờ rời khỏi thiết bị.",
                 ],
             },
             {
@@ -333,7 +329,7 @@ const vi: LocaleDictionary = {
             {
                 heading: "10. Thành phần và dịch vụ bên thứ ba",
                 paragraphs: [
-                    "Ứng dụng dùng các thành phần mã nguồn mở cho thông báo, quét mã, chọn ảnh và tệp, cũng như chia sẻ. Các tính năng này dùng xử lý cục bộ và dịch vụ hệ thống thay vì máy chủ do nhà phát triển vận hành.",
+                    "Ứng dụng dùng các thành phần mã nguồn mở cho thông báo, quét mã, chọn ảnh và tệp, chia sẻ, cũng như mua hàng trong ứng dụng. Các tính năng này dùng xử lý cục bộ và dịch vụ hệ thống thay vì máy chủ do nhà phát triển vận hành; việc mua hàng trong ứng dụng do App Store hoặc Google Play xử lý.",
                     "Ứng dụng không chứa SDK quảng cáo, phân bổ nguồn người dùng, phân tích hoặc báo cáo sự cố.",
                     "Các thành phần khác hỗ trợ mã hóa bản sao lưu, mở khóa sinh trắc học, nhập bằng giọng nói và tiện ích. Nhập bằng giọng nói dựa vào dịch vụ giọng nói của thiết bị, có thể xử lý trực tuyến như giải thích ở phần 5.",
                 ],

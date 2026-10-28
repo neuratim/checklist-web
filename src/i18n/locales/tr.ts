@@ -97,7 +97,7 @@ const tr: LocaleDictionary = {
         githubSponsorsNote: "GitHub hesabı gerekir",
         heading: "%100 ücretsiz. Gizli koşul yok.",
         intro: "Tüm özellikler ücretsizdir. Destek ödemeleri memnuniyetle karşılanır, hiçbir zaman zorunlu değildir.",
-        notHere: ["Reklam yok", "Abonelik yok", "Uygulama içi satın alma yok", "Ücretli paket yok"],
+        notHere: ["Reklam yok", "Abonelik gerekmez", "Takip yok", "Ücretli paket yok"],
         pledge: {
             body: "Bu uygulamalar işinize yarıyorsa, bağış yapmayı düşünün. Kullanan herkes ayda bir dolar gönderse proje rahatlıkla ayakta kalır — ve her NeuraTiM uygulamasını ücretsiz, vicdanınız rahat kullanmaya devam edebilirsiniz; payınızın onları güncel tuttuğunu ve sıradakini finanse ettiğini bilerek.",
             heading: "Ayda bir dolar yeter",
@@ -230,7 +230,7 @@ const tr: LocaleDictionary = {
                 heading: "1. Bu politikanın kapsamı",
                 paragraphs: [
                     "Bu politika, Android, iOS ve web üzerindeki NeuraTiM Checklist'i ve bu web sitesini kapsar. NeuraTiM, bağımsız geliştiricidir ve bu web sitesiyle veya doğrudan iletişimle bağlantılı olarak işlenen kişisel verilerden sorumlu veri sorumlusudur.",
-                    "Uygulama ücretsizdir, reklam içermez ve ücretli paketi yoktur.",
+                    "Uygulama ücretsizdir, reklam içermez ve ücretli paketi yoktur. 6. bölümde açıklanan isteğe bağlı uygulama içi destek hiçbir özelliğin kilidini açmaz.",
                 ],
             },
             {
@@ -244,7 +244,7 @@ const tr: LocaleDictionary = {
                     "Kesin veya yaklaşık konumunuz",
                     "Kişiler, takvimler, arama kayıtları, kısa mesajlar veya yüklü uygulamaların listesi",
                     "Geliştiriciye gönderilen kullanım analizleri, tanılama verileri veya çökme raporları; kontrol listesi istatistikleri yerel olarak hesaplanır",
-                    "Uygulama içinde ödeme veya finans bilgileri; web sitesindeki isteğe bağlı destek ödemeleri aşağıda ayrıca açıklanır",
+                    "Ödeme veya finans bilgileri; isteğe bağlı uygulama içi destek App Store veya Google Play üzerinden ödenir, web sitesindeki isteğe bağlı destek ödemeleri aşağıda ayrıca açıklanır",
                 ],
             },
             {
@@ -296,6 +296,7 @@ const tr: LocaleDictionary = {
                     "Yedek dışa aktarıldığında dosya seçtiğiniz konuma kaydedilir veya cihazınızın paylaşım menüsü açılır. Yedekler fotoğrafları içerir. Hedef konumun korunması, seçtiğiniz hizmete bağlıdır.",
                     "İçe aktarma, sizin sağladığınız dosyayı veya kodu okur; kontrol listesi içeriği için internette arama yapmaz. Kullandığınız dosya sağlayıcısı, seçilen dosyayı indirebilir.",
                     "Mesajınız, isteğe bağlı e-posta adresiniz, uygulama sürümü, platform ve dil geliştiriciye gönderilir. Listeler ve fotoğraflar gönderilmez.",
+                    "Uygulama içi destek: isteğe bağlı tek seferlik destek ödemeleri ve aylık destek, ödemeyi kendi gizlilik politikalarına göre işleyen App Store veya Google Play üzerinden satın alınır. Uygulama yalnızca sahip olduğunuz destek ürününü öğrenir ve bunu cihazda kaydeder; böylece aynı cihazdaki diğer NeuraTiM uygulamaları projeyi zaten desteklediğinizi gösterebilir. Bu kayıt cihazdan hiçbir zaman çıkmaz.",
                 ],
             },
             {
@@ -329,7 +330,7 @@ const tr: LocaleDictionary = {
             {
                 heading: "10. Üçüncü taraf bileşenler ve hizmetler",
                 paragraphs: [
-                    "Uygulama; bildirim, tarama, fotoğraf ve dosya seçimi ile paylaşım için açık kaynaklı bileşenler kullanır. Bu özellikler, geliştiricinin işlettiği bir sunucu altyapısı yerine yerel işlemeyi ve sistem hizmetlerini kullanır.",
+                    "Uygulama; bildirim, tarama, fotoğraf ve dosya seçimi, paylaşım ve uygulama içi satın alımlar için açık kaynaklı bileşenler kullanır. Bu özellikler, geliştiricinin işlettiği bir sunucu altyapısı yerine yerel işlemeyi ve sistem hizmetlerini kullanır; uygulama içi satın alımları App Store veya Google Play işler.",
                     "Uygulama reklam, ilişkilendirme, analiz veya çökme raporlama SDK'sı içermez.",
                     "Diğer bileşenler yedek şifreleme, biyometrik kilit açma, dikte ve widget'ları destekler. Dikte, 5. bölümde açıklandığı gibi çevrimiçi işlem yapabilen cihaz konuşma hizmetine dayanır.",
                 ],

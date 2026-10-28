@@ -97,7 +97,7 @@ const cs: LocaleDictionary = {
         githubSponsorsNote: "Vyžaduje účet na GitHubu",
         heading: "100% zdarma. Bez háčků.",
         intro: "Všechny funkce jsou zdarma. Příspěvek potěší, ale nikdy není podmínkou.",
-        notHere: ["Bez reklam", "Bez předplatného", "Bez nákupů v aplikaci", "Bez prémiové verze"],
+        notHere: ["Bez reklam", "Bez povinného předplatného", "Bez sledování", "Bez prémiové verze"],
         pledge: {
             body: "Pokud jsou pro vás tyto aplikace užitečné, zvažte prosím příspěvek. Kdyby každý, kdo je používá, poslal jedno euro měsíčně, projekt by v klidu přežil – a vy byste mohli dál používat každou aplikaci NeuraTiM zdarma a s čistým svědomím, s vědomím, že váš díl platí jejich udržování v aktuální podobě a financuje i to, co teprve vznikne.",
             heading: "Jedno euro měsíčně stačí",
@@ -228,7 +228,7 @@ const cs: LocaleDictionary = {
                 heading: "1. Na co se tyto zásady vztahují",
                 paragraphs: [
                     "Tyto zásady se vztahují na NeuraTiM Checklist pro Android, iOS a web i na tyto webové stránky. NeuraTiM je nezávislý vývojář a správce osobních údajů zpracovávaných v souvislosti s tímto webem nebo přímou komunikací.",
-                    "Aplikace je zdarma, neobsahuje reklamy a nemá placenou verzi.",
+                    "Aplikace je zdarma, neobsahuje reklamy a nemá placenou verzi. Dobrovolná podpora v aplikaci, popsaná v části 6, neodemyká žádné funkce.",
                 ],
             },
             {
@@ -242,7 +242,7 @@ const cs: LocaleDictionary = {
                     "Vaše přesná ani přibližná poloha",
                     "Kontakty, kalendáře, historie hovorů, SMS ani seznamy nainstalovaných aplikací",
                     "Analytika používání, diagnostika ani hlášení pádů odesílané vývojáři; statistiky seznamů se počítají místně",
-                    "Platební ani finanční údaje v aplikaci; dobrovolné příspěvky na webu jsou popsány samostatně níže",
+                    "Platební ani finanční údaje; dobrovolná podpora v aplikaci se platí přes App Store nebo Google Play a dobrovolné příspěvky na webu jsou popsány samostatně níže",
                 ],
             },
             {
@@ -292,6 +292,7 @@ const cs: LocaleDictionary = {
                     "Export zálohy uloží soubor do zvoleného umístění nebo otevře systémovou nabídku sdílení. Zálohy obsahují fotky. Ochrana cílového umístění závisí na vybrané službě.",
                     "Import načte vámi vybraný soubor nebo kód; obsah seznamů nevyhledává na internetu. Poskytovatel souborů, kterého používáte, může vybraný soubor stáhnout.",
                     "Vývojáři se odešle vaše zpráva, volitelný e-mail, verze aplikace, platforma a jazyk. Seznamy ani fotografie se neodesílají.",
+                    "Podpora v aplikaci: dobrovolné jednorázové příspěvky a měsíční podpora se kupují přes App Store nebo Google Play, které platbu zpracují podle svých vlastních zásad ochrany soukromí. Aplikace se dozví jen to, jaký produkt podpory máte, a uloží si to v zařízení, aby ostatní aplikace NeuraTiM ve stejném zařízení mohly ukázat, že projekt už podporujete. Tento záznam zařízení nikdy neopouští.",
                 ],
             },
             {
@@ -325,7 +326,7 @@ const cs: LocaleDictionary = {
             {
                 heading: "10. Komponenty a služby třetích stran",
                 paragraphs: [
-                    "Aplikace využívá open-source komponenty pro oznámení, skenování, výběr fotek a souborů a sdílení. Tyto funkce používají místní zpracování a systémové služby, nikoli serverovou část provozovanou vývojářem.",
+                    "Aplikace využívá open-source komponenty pro oznámení, skenování, výběr fotek a souborů, sdílení a nákupy v aplikaci. Tyto funkce používají místní zpracování a systémové služby, nikoli serverovou část provozovanou vývojářem; nákupy v aplikaci zpracovává App Store nebo Google Play.",
                     "Aplikace neobsahuje SDK pro reklamu, atribuci, analytiku ani hlášení pádů.",
                     "Další komponenty zajišťují šifrování záloh, biometrické odemykání, diktování a widgety. Diktování využívá službu rozpoznávání řeči v zařízení, která může zpracovávat data online, jak je uvedeno v části 5.",
                 ],

@@ -97,7 +97,7 @@ const en: Dictionary = {
         githubSponsorsNote: "Requires a GitHub account",
         heading: "100% free. No catch.",
         intro: "Every feature is free. Tips are welcome, never required.",
-        notHere: ["No ads", "No subscription", "No in-app purchases", "No premium tier"],
+        notHere: ["No ads", "No subscription required", "No tracking", "No premium tier"],
         pledge: {
             body: "If these apps are useful to you, please consider donating. One dollar a month from everyone who uses them would be enough to keep the project alive — and you could go on using every NeuraTiM app for free with a clear conscience, knowing that your share pays to keep them up to date and funds what comes next.",
             heading: "One dollar a month is enough",
@@ -248,7 +248,7 @@ const en: Dictionary = {
                 heading: "1. What this policy covers",
                 paragraphs: [
                     "This policy covers NeuraTiM Checklist on Android, iOS, and the web, and this website. NeuraTiM is the independent developer and the controller responsible for personal data processed in connection with this website or direct contact.",
-                    "The app is free, contains no ads, and has no paid tier.",
+                    "The app is free, contains no ads, and has no paid tier. Optional in-app support, described in section 6, unlocks no features.",
                 ],
             },
             {
@@ -262,7 +262,7 @@ const en: Dictionary = {
                     "Your precise or approximate location",
                     "Contacts, calendars, call logs, text messages, or lists of installed apps",
                     "Usage analytics, diagnostics, or crash reports sent to the developer; checklist statistics are calculated locally",
-                    "Payment or financial information in the app; optional website tips are covered separately below",
+                    "Payment or financial information; optional in-app support is paid through the App Store or Google Play, and website tips are covered separately below",
                 ],
             },
             {
@@ -312,6 +312,7 @@ const en: Dictionary = {
                     "Exporting a backup saves a file to your chosen location or opens your device's share menu. Backups include photos. The protection of the destination depends on the service you choose.",
                     "Importing reads a file or code you supply; it does not search online for checklist content. A file provider you use may download the selected file.",
                     "Your message, optional email, app version, platform and language are sent to the developer. Checklists and photos are not sent.",
+                    "In-app support: optional tips and monthly support are bought through the App Store or Google Play, which process the payment under their own privacy policies. The app learns only which support product you have and records it on the device, so that other NeuraTiM apps on the same device can show that you already support the project. This record never leaves the device.",
                 ],
             },
             {
@@ -345,7 +346,7 @@ const en: Dictionary = {
             {
                 heading: "10. Third-party components and services",
                 paragraphs: [
-                    "The app uses open-source components for notifications, scanning, photo and file selection, and sharing. These features use local processing and system services rather than a developer-operated backend.",
+                    "The app uses open-source components for notifications, scanning, photo and file selection, sharing, and in-app purchases. These features use local processing and system services rather than a developer-operated backend; in-app purchases are processed by the App Store or Google Play.",
                     "The app includes no advertising, attribution, analytics, or crash-reporting SDKs.",
                     "Other components support backup encryption, biometric unlocking, dictation, and widgets. Dictation relies on your device's speech service, which may use online processing as explained in section 5.",
                 ],
