@@ -196,7 +196,6 @@ const id: LocaleDictionary = {
         more: "Bagian lainnya",
         openMenu: "Buka menu",
         privacy: "Privasi",
-        privacyPolicy: "Kebijakan privasi",
         tryIt: "Coba aplikasi",
         security: "Keamanan",
     },

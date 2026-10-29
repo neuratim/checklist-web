@@ -195,7 +195,6 @@ const ja: LocaleDictionary = {
         more: "その他のセクション",
         openMenu: "メニューを開く",
         privacy: "プライバシー",
-        privacyPolicy: "プライバシーポリシー",
         tryIt: "アプリを試す",
         security: "セキュリティ",
     },

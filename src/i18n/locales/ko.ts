@@ -194,7 +194,6 @@ const ko: LocaleDictionary = {
         more: "다른 섹션",
         openMenu: "메뉴 열기",
         privacy: "개인정보 보호",
-        privacyPolicy: "개인정보 처리방침",
         tryIt: "앱 사용해 보기",
         security: "보안",
     },

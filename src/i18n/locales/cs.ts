@@ -195,7 +195,6 @@ const cs: LocaleDictionary = {
         more: "Další sekce",
         openMenu: "Otevřít nabídku",
         privacy: "Soukromí",
-        privacyPolicy: "Zásady ochrany soukromí",
         tryIt: "Vyzkoušet aplikaci",
         security: "Zabezpečení",
     },

@@ -195,7 +195,6 @@ const pt: LocaleDictionary = {
         more: "Mais seções",
         openMenu: "Abrir menu",
         privacy: "Privacidade",
-        privacyPolicy: "Política de privacidade",
         tryIt: "Experimente o app",
         security: "Segurança",
     },

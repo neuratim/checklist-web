@@ -194,7 +194,6 @@ const ar: LocaleDictionary = {
         more: "أقسام أخرى",
         openMenu: "فتح القائمة",
         privacy: "الخصوصية",
-        privacyPolicy: "سياسة الخصوصية",
         tryIt: "جرّب التطبيق",
         security: "الأمان",
     },

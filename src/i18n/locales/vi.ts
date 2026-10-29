@@ -195,7 +195,6 @@ const vi: LocaleDictionary = {
         more: "Các phần khác",
         openMenu: "Mở trình đơn",
         privacy: "Quyền riêng tư",
-        privacyPolicy: "Chính sách quyền riêng tư",
         tryIt: "Thử ứng dụng",
         security: "Bảo mật",
     },

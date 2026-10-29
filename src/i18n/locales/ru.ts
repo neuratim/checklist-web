@@ -195,7 +195,6 @@ const ru: LocaleDictionary = {
         more: "Другие разделы",
         openMenu: "Открыть меню",
         privacy: "Конфиденциальность",
-        privacyPolicy: "Политика конфиденциальности",
         tryIt: "Попробовать приложение",
         security: "Безопасность",
     },

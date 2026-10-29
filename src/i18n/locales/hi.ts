@@ -195,7 +195,6 @@ const hi: LocaleDictionary = {
         more: "अन्य सेक्शन",
         openMenu: "मेन्यू खोलें",
         privacy: "गोपनीयता",
-        privacyPolicy: "गोपनीयता नीति",
         tryIt: "ऐप आज़माएँ",
         security: "सुरक्षा",
     },

@@ -195,7 +195,6 @@ const bn: LocaleDictionary = {
         more: "আরও অংশ",
         openMenu: "মেনু খুলুন",
         privacy: "গোপনীয়তা",
-        privacyPolicy: "গোপনীয়তা নীতি",
         tryIt: "অ্যাপ ব্যবহার করে দেখুন",
         security: "নিরাপত্তা",
     },

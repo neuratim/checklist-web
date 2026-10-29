@@ -160,7 +160,6 @@ export interface Dictionary {
         more: string;
         openMenu: string;
         privacy: string;
-        privacyPolicy: string;
         security: string;
         tryIt: string;
     };

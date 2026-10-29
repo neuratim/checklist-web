@@ -9,6 +9,5 @@ export const NAV_LINKS: readonly NavLink[] = [
     { href: SECTION_HREFS.privacy, labelKey: "privacy" },
     { href: SECTION_HREFS.free, labelKey: "free" },
     { href: SECTION_HREFS.getApp, labelKey: "getApp" },
-    { href: ROUTE_HREFS.privacyPolicy, labelKey: "privacyPolicy" },
     { href: ROUTE_HREFS.tryApp, labelKey: "tryIt" },
 ];

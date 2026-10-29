@@ -214,7 +214,6 @@ const en: Dictionary = {
         more: "More sections",
         openMenu: "Open menu",
         privacy: "Privacy",
-        privacyPolicy: "Privacy policy",
         security: "Security",
         tryIt: "Try the app",
     },

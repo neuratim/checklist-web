@@ -67,37 +67,39 @@ export function FreeAndSupport() {
                     {/* The arithmetic behind the ask, set apart from the prose above it so a
                         visitor who only skims still meets it. A bordered aside rather than a
                         .card: it does not lift on hover, because it is the sentence the
-                        controls directly below it answer. */}
-                    <aside className="support-pledge">
-                        <span aria-hidden="true" className="support-pledge-icon">
-                            <svg
-                                fill="none"
-                                height="22"
-                                stroke="currentColor"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="1.6"
-                                viewBox="0 0 24 24"
-                                width="22"
-                            >
-                                <path d="M12 20s-7-4.35-7-9.5A3.5 3.5 0 0 1 12 8a3.5 3.5 0 0 1 7 2.5c0 5.15-7 9.5-7 9.5Z" />
-                            </svg>
-                        </span>
-                        <div className="support-pledge-text">
-                            <h3 className="support-pledge-heading">{freeSupport.pledge.heading}</h3>
-                            <p className="support-pledge-body">{freeSupport.pledge.body}</p>
-                        </div>
-                    </aside>
-
-                    {STRIPE_PUBLISHABLE_KEY && (
-                        <div ref={tipCheckoutRef}>
-                            {isTipCheckoutVisible && (
-                                <Suspense fallback={TIP_CHECKOUT_FALLBACK}>
-                                    <TipCheckout publishableKey={STRIPE_PUBLISHABLE_KEY} />
-                                </Suspense>
-                            )}
-                        </div>
-                    )}
+                        checkout answers. On a wide screen the two sit side by side, the
+                        pledge beside "Leave a tip"; on a narrow one it stacks above it. */}
+                    <div className="support-pair" data-with-tip={STRIPE_PUBLISHABLE_KEY ? "" : undefined}>
+                        <aside className="support-pledge">
+                            <span aria-hidden="true" className="support-pledge-icon">
+                                <svg
+                                    fill="none"
+                                    height="22"
+                                    stroke="currentColor"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth="1.6"
+                                    viewBox="0 0 24 24"
+                                    width="22"
+                                >
+                                    <path d="M12 20s-7-4.35-7-9.5A3.5 3.5 0 0 1 12 8a3.5 3.5 0 0 1 7 2.5c0 5.15-7 9.5-7 9.5Z" />
+                                </svg>
+                            </span>
+                            <div className="support-pledge-text">
+                                <h3 className="support-pledge-heading">{freeSupport.pledge.heading}</h3>
+                                <p className="support-pledge-body">{freeSupport.pledge.body}</p>
+                            </div>
+                        </aside>
+                        {STRIPE_PUBLISHABLE_KEY && (
+                            <div ref={tipCheckoutRef}>
+                                {isTipCheckoutVisible && (
+                                    <Suspense fallback={TIP_CHECKOUT_FALLBACK}>
+                                        <TipCheckout publishableKey={STRIPE_PUBLISHABLE_KEY} />
+                                    </Suspense>
+                                )}
+                            </div>
+                        )}
+                    </div>
 
                     {availableTipLinks.length > 0 && (
                         <div className="free-tip-links">

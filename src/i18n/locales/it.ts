@@ -200,7 +200,6 @@ const it: LocaleDictionary = {
         more: "Altre sezioni",
         openMenu: "Apri menu",
         privacy: "Privacy",
-        privacyPolicy: "Informativa sulla privacy",
         tryIt: "Prova l'app",
         security: "Sicurezza",
     },

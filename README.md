@@ -21,17 +21,19 @@ translated entries in the same semantic order.
 
 ## Real app screens
 
-The eight screen components use `NativeAppScreen` to display real native iOS captures,
-with the app's Misty Aurora background and the chosen language. `PhoneFrame` preserves
+The eight screen components use `NativeAppScreen` to display real native iOS captures
+in the app's default Alpine Calm style, light theme, and the chosen language. `PhoneFrame` preserves
 the complete native frame and adds no invented OS controls.
 
 `public/screens/<app-language>/` contains eight 603×1311 WebPs per language (144 images).
 The medium-iPhone originals and capture-only production-route tooling live in
-`../app/store-assets/app-store-connect/ios/.sources/screenshots/`. After recapturing, run:
+`../app/store-assets/app-store-connect/ios/.sources/screenshots/capture/`: `web_capture.dart.txt`
+(the eight views, built as `tool/web_capture.dart` in a disposable app copy with
+`store_fixture.dart.txt`), `run_web.sh` (one bounded simulator session) and
+`export_website.py`. After recapturing, run:
 
 ```sh
-python ../app/store-assets/app-store-connect/ios/.sources/screenshots/export_plain.py \
-  iphone-medium <native-capture-folder> --website public/screens
+python ../app/store-assets/app-store-connect/ios/.sources/screenshots/capture/export_website.py   <native-capture-folder> public/screens
 ```
 
 The exporter requires Pillow and expects eighteen store-locale folders. It maps
@@ -40,10 +42,13 @@ It resizes the complete 1206×2622 frame once, without editing UI or cropping co
 Review the source captures and website layout after every image refresh. See
 [the store assets](../app/store-assets/README.md) for device and capture provenance.
 
-The October 2026 refresh was compiled locally. All eight image views were manually
-inspected in Czech desktop and Arabic mobile (390×578), with additional Arabic
-desktop Hero/Run review. [Review evidence](../app/store-assets/app-store-connect/ios/.sources/screenshots/evidence/website-review.json)
-records the scope; test suites were not run after the user's instruction. No deployment was performed.
+The 29 October 2026 refresh recaptured all 144 views from Checklist 1.6.0+31 (`dev` 2498c1f,
+iPhone 17, iOS 26.5, 9:41 status bar) after the app's redesign. Seven views come straight from
+`dev`. **Backup & restore (`09-backup`) was captured from a disposable copy of `dev` with
+`ai/checklist-encrypted-backups` (a775a53) applied**, because this site's copy describes
+passphrase-encrypted backups that `dev` does not have yet. Once that branch is merged, recapture
+`09-backup` from `dev`. All 18 languages were reviewed as contact sheets; `npm test` checks the
+files exist at the exported size. No deployment was performed.
 
 ## React + TypeScript + Vite
 

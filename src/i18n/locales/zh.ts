@@ -193,7 +193,6 @@ const zh: LocaleDictionary = {
         more: "更多章节",
         openMenu: "打开菜单",
         privacy: "隐私",
-        privacyPolicy: "隐私政策",
         tryIt: "试用应用",
         security: "安全",
     },

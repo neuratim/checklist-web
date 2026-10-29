@@ -94,7 +94,7 @@ static document. Read [SEO.md](SEO.md) for the URL and build contract.
 `NativeAppScreen` selects `/screens/<app-language>/<view>.webp` using the active
 `LanguageProvider`. The eight view wrappers show Checklists, Templates, Run, Schedule,
 Condition, Start, Statistics and Backup. The images are native iOS framebuffer captures
-of the actual production routes with isolated fictional data, light theme and Misty Aurora.
+of the actual production routes with isolated fictional data, default Alpine Calm style and light theme.
 They retain the app's real background, localized content and system bars.
 
 `PhoneFrame` is a decorative shell; it adds no status bar, Dynamic Island or home indicator.
@@ -104,7 +104,8 @@ The surrounding translated prose explains these decorative images to assistive t
 
 When the app UI changes, capture it first. Use the capture-only production entrypoint in
 `../app/store-assets/app-store-connect/ios/.sources/screenshots/capture/` on the medium
-iPhone, then run `export_plain.py iphone-medium <native-captures> --website public/screens`.
+iPhone, then run `capture/export_website.py <native-captures> public/screens` (see README.md for the
+eight-view entrypoint and the Backup & restore provenance note).
 The exporter preserves the whole native frame and creates all 144 website images.
 It maps store locale folders `en-US/es-ES/fr-FR/pt-BR/zh-Hans` to runtime folders
 `en/es/fr/pt/zh`; the other thirteen identifiers are shared. Review the real captures

@@ -24,6 +24,11 @@ use the sibling `../app/` only while preparing images; CI consumes committed med
 `src/lib/pageLinks.ts` accepts the slashless URL and preserves the active language path.
 `src/types/app.ts` defines explicit static/browser route selection.
 `src/App.tsx` also keeps legacy `#privacy-policy` navigation working.
+The top menu (`src/constants/navigation.ts`) lists page sections and _Try the app_ only; the
+policy is linked from the footer and the Privacy section, not from the menu.
+`FreeAndSupport.tsx`/`.css` place the "One dollar a month" pledge beside the _Leave a tip_
+checkout from 901 px up (`.support-pair`), stacked above it below that.
+`scripts/nav-and-screens.test.mjs` guards both, the dictionaries' nav keys and the 144 screen images.
 `src/components/PrivacyPolicy.tsx` renders the app policy and owns its safe-inset
 surface through `PrivacyPolicy.css`. Its wrapping `policy-nav` keeps Back left
 and the language selector physically right in LTR and RTL, and is hidden in print.

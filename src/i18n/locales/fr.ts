@@ -196,7 +196,6 @@ const fr: LocaleDictionary = {
         more: "Autres sections",
         openMenu: "Ouvrir le menu",
         privacy: "Confidentialité",
-        privacyPolicy: "Politique de confidentialité",
         tryIt: "Essayer l'application",
         security: "Sécurité",
     },

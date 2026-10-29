@@ -9,7 +9,7 @@ import {
 } from "react";
 import { BRAND_NAME } from "../constants/brand";
 import { NAV_LINKS } from "../constants/navigation";
-import { PAGE_PATHS, ROUTE_HREFS, SECTION_HREFS, SECTION_IDS } from "../constants/routes";
+import { SECTION_HREFS, SECTION_IDS } from "../constants/routes";
 import {
     APP_ICON_SMALL_SRC,
     NAV_BRAND_ICON_SIZE,
@@ -19,7 +19,6 @@ import {
 } from "../constants/ui";
 import { useActiveSection } from "../hooks/useActiveSection";
 import { useLanguage } from "../i18n/useLanguage";
-import { localizedPageHref } from "../lib/pageLinks";
 import { shortBrand } from "../lib/brand";
 import { countFittingLinks, fittingBrandStage, navContentWidth } from "../lib/navFit";
 import type { BrandStage, ResolvedNavLink } from "../types/navigation";
@@ -28,7 +27,7 @@ import "./NavigationTarget.css";
 import "./Nav.css";
 
 export function Nav() {
-    const { dictionary, language } = useLanguage();
+    const { dictionary } = useLanguage();
     const { nav } = dictionary;
 
     const brandFull = BRAND_NAME;
@@ -37,13 +36,10 @@ export function Nav() {
     const navLinks = useMemo<ResolvedNavLink[]>(
         () =>
             NAV_LINKS.map((link) => ({
-                href:
-                    link.href === ROUTE_HREFS.privacyPolicy
-                        ? localizedPageHref(PAGE_PATHS.privacyPolicy, language)
-                        : link.href,
+                href: link.href,
                 label: nav[link.labelKey],
             })),
-        [language, nav],
+        [nav],
     );
     const activeSection = useActiveSection(navLinks.map((link) => link.href));
 

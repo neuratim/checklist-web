@@ -195,7 +195,6 @@ const pl: LocaleDictionary = {
         more: "Więcej sekcji",
         openMenu: "Otwórz menu",
         privacy: "Prywatność",
-        privacyPolicy: "Polityka prywatności",
         tryIt: "Wypróbuj aplikację",
         security: "Bezpieczeństwo",
     },

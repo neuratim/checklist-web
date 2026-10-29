@@ -27,6 +27,34 @@
     font-size: 0.98rem;
 }
 
+/* The pledge and the checkout it answers. Stacked on a narrow screen, so the appeal is
+   read first; side by side on a wide one, the pledge beside "Leave a tip". Without a
+   checkout (no publishable key) the pledge simply fills the row. */
+.support-pair {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+}
+
+@media (min-width: 901px) {
+    /* Room for the pair, while the prose keeps the line length it was written for. */
+    .support-note {
+        max-width: 980px;
+    }
+
+    .support-note > p {
+        max-width: 680px;
+    }
+
+    .support-pair[data-with-tip] {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 420px);
+        gap: 1.5rem;
+        align-items: stretch;
+    }
+}
+
 .free-tip-links {
     display: flex;
     flex-direction: column;

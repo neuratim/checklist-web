@@ -196,7 +196,6 @@ const tr: LocaleDictionary = {
         more: "Diğer bölümler",
         openMenu: "Menüyü aç",
         privacy: "Gizlilik",
-        privacyPolicy: "Gizlilik politikası",
         tryIt: "Uygulamayı deneyin",
         security: "Güvenlik",
     },
