@@ -20,6 +20,13 @@
     );
 }
 
+/* The stage takes focus after a swipe so the arrow keys keep working; the planets carry the
+   visible focus ring, not the whole block. */
+.site-share-orbit:focus,
+.site-share-orbit:focus-visible {
+    outline: none;
+}
+
 .site-share-orbit::before {
     background: radial-gradient(
         ellipse,

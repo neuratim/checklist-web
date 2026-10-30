@@ -91,6 +91,8 @@ function focusWithoutScrolling(element: HTMLElement): void {
     const spelledItsOwn = element.hasAttribute("tabindex");
     if (!spelledItsOwn) {
         element.setAttribute("tabindex", "-1");
+        // A landing point, not a control: the browser's ring would box the whole section.
+        element.style.outline = "none";
     }
 
     element.focus({ preventScroll: true });
@@ -98,7 +100,14 @@ function focusWithoutScrolling(element: HTMLElement): void {
     if (!spelledItsOwn) {
         // -1 is not a tab stop, so this is tidiness rather than a fix — but an
         // attribute this code invented should not outlive the reason for it.
-        element.addEventListener("blur", () => element.removeAttribute("tabindex"), { once: true });
+        element.addEventListener(
+            "blur",
+            () => {
+                element.removeAttribute("tabindex");
+                element.style.removeProperty("outline");
+            },
+            { once: true },
+        );
     }
 }
 
