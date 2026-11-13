@@ -4,7 +4,7 @@ import { basename, dirname, join, resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { parsers } from "prettier/plugins/babel";
 
-// Exact existing Git-integrated Workers; drafts and unactivated Manfile are excluded.
+// Exact existing Git-integrated Workers; drafts are excluded.
 export const hostingSites = {
     "canvasforge.neuratim.com": { name: "canvasforge-web", site: "canvasforge" },
     "checklist.neuratim.com": { name: "checklist-web", site: "checklist" },
