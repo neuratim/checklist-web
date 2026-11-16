@@ -10,13 +10,13 @@ export const hostingSites = {
     "checklist.neuratim.com": { name: "checklist-web", site: "checklist" },
     "decolab.neuratim.com": { name: "decolab-web", site: "decolab" },
     "frameosu.neuratim.com": { name: "frameosu-web", site: "frameosu" },
-    "inklume.neuratim.com": { name: "inklume", site: "inklume" },
+    "inklume.neuratim.com": { name: "inklume-web", site: "inklume" },
     "lifecue.neuratim.com": { name: "lifecue-web", site: "lifecue" },
     "moodlo.neuratim.com": { name: "moodlo-web", site: "moodlo" },
     "neuratim.com": { name: "neuratim-web", output: "dist/client", site: "web" },
-    "possessionary.neuratim.com": {
-        name: "possessionary-web",
-        site: "possessionary",
+    "ownoria.neuratim.com": {
+        name: "ownoria-web",
+        site: "ownoria",
     },
     "recordry.neuratim.com": { name: "recordry-web", site: "recordry" },
     "settlo.neuratim.com": { name: "settlo-web", site: "settlo" },
