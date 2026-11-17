@@ -103,7 +103,7 @@ website WebPs are 603×1311. The Hero loads eagerly at high priority and other v
 The surrounding translated prose explains these decorative images to assistive technology.
 
 When the app UI changes, capture it first. Use the capture-only production entrypoint in
-`../app/store-assets/app-store-connect/ios/.sources/screenshots/capture/` on the medium
+`../store-assets/app-store-connect/ios/.sources/screenshots/capture/` on the medium
 iPhone, then run `capture/export_website.py <native-captures> public/screens` (see README.md for the
 eight-view entrypoint and the Backup & restore provenance note).
 The exporter preserves the whole native frame and creates all 144 website images.

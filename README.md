@@ -27,20 +27,20 @@ the complete native frame and adds no invented OS controls.
 
 `public/screens/<app-language>/` contains eight 603×1311 WebPs per language (144 images).
 The medium-iPhone originals and capture-only production-route tooling live in
-`../app/store-assets/app-store-connect/ios/.sources/screenshots/capture/`: `web_capture.dart.txt`
+`../store-assets/app-store-connect/ios/.sources/screenshots/capture/`: `web_capture.dart.txt`
 (the eight views, built as `tool/web_capture.dart` in a disposable app copy with
 `store_fixture.dart.txt`), `run_web.sh` (one bounded simulator session) and
 `export_website.py`. After recapturing, run:
 
 ```sh
-python ../app/store-assets/app-store-connect/ios/.sources/screenshots/capture/export_website.py   <native-capture-folder> public/screens
+python ../store-assets/app-store-connect/ios/.sources/screenshots/capture/export_website.py   <native-capture-folder> public/screens
 ```
 
 The exporter requires Pillow and expects eighteen store-locale folders. It maps
 `en-US/es-ES/fr-FR/pt-BR/zh-Hans` to runtime `en/es/fr/pt/zh`, retaining the other codes.
 It resizes the complete 1206×2622 frame once, without editing UI or cropping content.
 Review the source captures and website layout after every image refresh. See
-[the store assets](../app/store-assets/README.md) for device and capture provenance.
+[the store assets](../store-assets/README.md) for device and capture provenance.
 
 The 29 October 2026 refresh recaptured all 144 views from Checklist 1.6.0+31 (`dev` 2498c1f,
 iPhone 17, iOS 26.5, 9:41 status bar) after the app's redesign. Seven views come straight from
